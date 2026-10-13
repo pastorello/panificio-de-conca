@@ -17,12 +17,12 @@ items:
     vintage: true
   - year: '1958'
     text: 'Die Ladenaufschrift lautet nun „Il Fornaio di De Conca Almerindo e figli“: Anna, Aida, Antonio und Alfonso arbeiten mit ihrem Vater.'
+  - year: '1965'
+    text: 'Antonio und Alfonso übernehmen den Betrieb. Für zwei Generationen in Gaeta sind sie „die Brüder De Conca“: Brot, Tielle in allen Varianten, Pizza, Pizzette, Tozzi, Kekse, herzhaftes Gebäck, Torten und Festtagsgebäck.'
     image: '../../assets/photos/epoca-insegna-fornaio-flli-de-conca-bn.jpg'
     alt: 'Schwarzweißfoto: das Holzschild „Fornaio F.lli De Conca“ über der Tür'
     caption: 'Das Schild „Fornaio F.lli De Conca“ über der Tür, [[JAHR]]'
     vintage: true
-  - year: '1965'
-    text: 'Antonio und Alfonso übernehmen den Betrieb. Für zwei Generationen in Gaeta sind sie „die Brüder De Conca“: Brot, Tielle in allen Varianten, Pizza, Pizzette, Tozzi, Kekse, herzhaftes Gebäck, Torten und Festtagsgebäck.'
   - year: '2005'
     text: 'Alessandro, der Sohn von Alfonso, übernimmt die Leitung. Die Rezepte bleiben; neue Produkte kommen dazu.'
   - year: '2022'

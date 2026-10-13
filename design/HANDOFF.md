@@ -118,6 +118,23 @@ Decisioni confermate durante la build (14 ottobre 2026, componenti):
 | Scheda MapLinks: «Google Maps» e «Apple Maps» non si traducono | «Apple Karten» in tedesco | Per i contenuti vale il brief §8.8 |
 | Frasi degli stati di OpenNow e HoursTable solo in italiano nella scheda degli stati | `hours.closed_now`, `hours.next_today`, `hours.next_tomorrow`, `hours.next_day`, `hours.closed`, `hours.today`, `hours.table_caption` in `src/content/site/*.json`; inglese e tedesco proposti | Da far rileggere a madrelingua con gli altri testi (brief §8) |
 
+Decisioni confermate durante la build (14 ottobre 2026, pagine):
+
+| Nei mockup o nel design | Nel sito | Perché |
+| --- | --- | --- |
+| Tiella: riquadro finale «Prenota il giorno prima e dicci a che ora passi», assente dal brief | Il riquadro del mockup: titolo `cta.day_before`, testo = seconda frase di «Quando la trovi» con il telefono; inglese e tedesco proposti | C'è nel mockup e in DESIGN.md §5.4; la regola della prenotazione resta in ogni pagina |
+| Prodotti e Ordini: riquadro «Il fresco si prenota il giorno prima» con un testo del mockup («si preparano la notte prima… meglio due») | Testo del brief §8.7; Prodotti lo legge da `src/content/pages/<lingua>/orders.json` | Per i contenuti vale il brief; un solo testo da mantenere |
+| Prodotti: righe di «Calzoncini e rustici» e «Focaccine» diverse dal brief | Righe del brief §8.6 | Per i contenuti vale il brief |
+| Contatti senza «Vieni a trovarci» (mockup, DESIGN.md §5.8, §3 qui sopra), contro DESIGN.md §6.5 | Senza il blocco | La pagina è già orari e indirizzo; «Orari completi» porterebbe alla pagina stessa |
+| Contatti: riga «Orari [[da confermare]]; estivi e invernali possono cambiare.» | Assente | Non è nel brief |
+| Note legali: informativa in tre frasi | Le parole del brief §8.10 | Per i contenuti vale il brief |
+| Bottone di chiamata: [Chiama], [Call us], [Anrufen] nel brief di Home e Ordini | `cta.call` («Chiama e prenota»), come la CtaBar e i mockup; in Tiella «Chiama per prenotare» (brief e mockup) | Una sola etichetta per la stessa azione |
+| Storia: foto dell'insegna «Fornaio F.lli De Conca» sotto il 1958 (DESIGN.md §5.6, mockup) | Sotto il 1965 | Nel 1958 l'insegna era «Il Fornaio di De Conca Almerindo e figli»; i «fratelli» sono del 1965 |
+| Voci del brief «nome — riga» (card della Home, schede prodotto, ripieni della tiella) | Nome e riga separati, riga con la maiuscola iniziale, come nei mockup | Struttura della ProductCard |
+| §3 qui sopra: card dei maritozzi senza foto | Segnaposto della foto 13, come nel mockup | La foto è nella lista del brief §9 |
+| Brief §10: prezzi indicativi da raccogliere (pizzetta, pane al chilo, ciambelline, tozzetti, cornetto) | Nessun prezzo né segnaposto nelle card finché non arrivano; il campo `price` c'è | Il brief §8.6 non li mette nelle schede; DESIGN.md §6.5: prezzo solo se nel contenuto |
+| Testi assenti dal brief | Alt e didascalie di tutte le foto (l'italiano dai mockup); nomi dei prodotti e titoli delle categorie in inglese e tedesco, «Categorie»; H1 di Prodotti in inglese e tedesco dai meta title; titoli delle sezioni di Contatti in inglese e tedesco, «Come arrivare», «E-mail»; «Fonti»; link della 404 (dal mockup); etichette dei dati societari, «Informativa privacy» e Note legali intere in inglese e tedesco | Proposti e accettati; da far rileggere a madrelingua (brief §8 e §2.3). Ogni file di contenuto li elenca nel campo `_review` |
+
 ## 6. Foto usate nei mockup
 
 Tutte in `mockups/html/assets/`, bassa risoluzione (800 × 600 le card, 780 × 520 e 960 × 720 le hero, 900 × 600 le foto d'epoca). Nome → soggetto → numero nella lista foto del brief §9:

@@ -17,12 +17,12 @@ items:
     vintage: true
   - year: '1958'
     text: 'L''insegna diventa "Il Fornaio di De Conca Almerindo e figli": Anna, Aida, Antonio e Alfonso lavorano con il padre.'
+  - year: '1965'
+    text: 'Antonio e Alfonso prendono in mano il forno. Per due generazioni di gaetani sono "i fratelli De Conca": pane, tielle di tutti i tipi, pizze, pizzette, tozzi, biscotti, rustici, torte e dolci delle feste.'
     image: '../../assets/photos/epoca-insegna-fornaio-flli-de-conca-bn.jpg'
     alt: "Foto in bianco e nero: l'insegna in legno «Fornaio F.lli De Conca» sopra la porta"
     caption: "L'insegna «Fornaio F.lli De Conca» sopra la porta, [[ANNO]]"
     vintage: true
-  - year: '1965'
-    text: 'Antonio e Alfonso prendono in mano il forno. Per due generazioni di gaetani sono "i fratelli De Conca": pane, tielle di tutti i tipi, pizze, pizzette, tozzi, biscotti, rustici, torte e dolci delle feste.'
   - year: '2005'
     text: 'Alessandro, figlio di Alfonso, subentra alla guida. Le ricette restano quelle; accanto arrivano nuovi prodotti.'
   - year: '2022'
