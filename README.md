@@ -17,6 +17,7 @@ npm run check    # astro check, ESLint, Prettier, token
 npm run test     # test degli orari (tests/) e verifiche su dist/
 npm run test:e2e # comportamento su dist/: menu, tastiera, fallback senza JS, link mappe
 npm run shots    # screenshot a 390 × 844 e 1440 × 900 in .shots/ (--menu, --nojs, --at=2026-10-13T10:00)
+npm run compare  # mockup e pagina affiancati, a fette, in .shots/compare/ (stesso browser, ora dei mockup)
 ```
 
 Con `--at` l'orologio è fermo a quell'ora di Roma, così OpenNow e la riga «oggi» sono quelli dei mockup (martedì, aperto). I testi delle pagine sono in `src/content/pages/{it,en,de}/`, le schede prodotto in `src/content/products/`, la storia in `src/content/story/`; i modelli delle pagine in `src/views/`.
