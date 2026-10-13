@@ -105,6 +105,19 @@ Decisioni confermate durante la build (13 ottobre 2026):
 | Paragrafo «Prenota oggi, ritira domani» della Home con un testo diverso dal brief | Testo del brief §8.3 | Per i contenuti vale il brief |
 | OpenNow senza JavaScript: «giovedì pomeriggio 17:00–20:00» | «giovedì 7:30–13:15 e 17:00–20:00», generato da `business.json` | «pomeriggio» non ha traduzione nel brief |
 
+Decisioni confermate durante la build (14 ottobre 2026, componenti):
+
+| Nei mockup o nel design | Nel sito | Perché |
+| --- | --- | --- |
+| OpenNow nel periodo delle feste: «Aperto oggi …» con il chip «Orari delle feste» | Finché gli orari delle feste non sono confermati (`pending` in `business.json`): il chip e il segnaposto, senza «Aperto oggi» | «Aperto oggi» non sarebbe verificato |
+| Fasce orarie spezzate a metà quando vanno a capo («16:30–» / «20:00») | Si va a capo solo tra una fascia e l'altra («7:30–13:15 ·» / «16:30–20:00») | Una fascia spezzata si legge male |
+| Scheda SeasonTag: il chip sta su una riga | Nelle card il chip va a capo se non entra | «KARNEVAL UND JOSEFSTAG» a 390 px veniva tagliato |
+| Timeline desktop: «Dopoguerra» esce dalla colonna degli anni e copre il punto rosso | «Dopoguerra» va su due righe dentro la colonna | Nessun testo sopra il punto |
+| Contatti: riquadro delle feste con la frase del mockup («Luminarie, dal 9 novembre all'11 gennaio: aperture straordinarie nei weekend …») | «9 novembre – 11 gennaio: [[…]]», costruito da `business.json` | Date e fasce vengono dai dati; la frase del mockup non è nel brief |
+| Scheda ProductCard: nella card della tiella è link solo «La tiella →» | Tutta la card è un link, come nel mockup | Bersaglio più grande; la freccia resta |
+| Scheda MapLinks: «Google Maps» e «Apple Maps» non si traducono | «Apple Karten» in tedesco | Per i contenuti vale il brief §8.8 |
+| Frasi degli stati di OpenNow e HoursTable solo in italiano nella scheda degli stati | `hours.closed_now`, `hours.next_today`, `hours.next_tomorrow`, `hours.next_day`, `hours.closed`, `hours.today`, `hours.table_caption` in `src/content/site/*.json`; inglese e tedesco proposti | Da far rileggere a madrelingua con gli altri testi (brief §8) |
+
 ## 6. Foto usate nei mockup
 
 Tutte in `mockups/html/assets/`, bassa risoluzione (800 × 600 le card, 780 × 520 e 960 × 720 le hero, 900 × 600 le foto d'epoca). Nome → soggetto → numero nella lista foto del brief §9:
