@@ -1,0 +1,18 @@
+{
+  "_review": "Aufbau nach Brief §8.9; der Hinweis stammt aus dem Brief. Nicht im Brief, Vorschlag vom 14. Oktober 2026, muttersprachlich prüfen lassen: die Überschriften (DESIGN.md §5.8 nennt sie nur auf Italienisch), der Link „So finden Sie uns“ und „E-Mail“. Die Adresse ist die aus Brief §8.8 mit „Parkplätze an der Promenade.“ aus §8.3, wie im Mockup.",
+  "page": "contact",
+  "title": "Kontakt",
+  "hours": {
+    "title": "Öffnungszeiten"
+  },
+  "address": {
+    "title": "Adresse",
+    "text": "Lungomare Giovanni Caboto [[CIVICO]], 04024 Gaeta (LT), Italien — Ecke Salita Porta di Terra, gegenüber dem Marinestützpunkt. Parkplätze an der Promenade.",
+    "more": "So finden Sie uns"
+  },
+  "social": {
+    "title": "Social Media",
+    "note": "Wir haben kein Kontaktformular: am Telefon sind wir schneller.",
+    "email": "E-Mail"
+  }
+}

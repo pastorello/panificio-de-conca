@@ -1,10 +1,18 @@
 ---
-// Every page in every language, from the slug map in src/routes.ts.
-// Phase 1: empty pages that show the shared layout; contents arrive page by page in phase 3.
+// Every page in every language, from the slug map in src/routes.ts. The copy of each page
+// lives in src/content/ and its template in src/views/.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { staticPaths, type Locale, type RouteKey } from '../routes';
 import { getBusiness, getStrings } from '../lib/site';
 import { bakeryJsonLd } from '../lib/jsonld';
+import Home from '../views/Home.astro';
+import Tiella from '../views/Tiella.astro';
+import Products from '../views/Products.astro';
+import Story from '../views/Story.astro';
+import Orders from '../views/Orders.astro';
+import FindUs from '../views/FindUs.astro';
+import Contact from '../views/Contact.astro';
+import Legal from '../views/Legal.astro';
 
 export function getStaticPaths() {
   return staticPaths();
@@ -21,6 +29,9 @@ const business = await getBusiness();
 const site = Astro.site ?? new URL('http://localhost:4321');
 const meta = t.meta[routeKey];
 const withJsonLd = routeKey === 'home' || routeKey === 'findus';
+// Contatti already is hours and address: no VisitBlock there, as in DESIGN.md §5.8 and the mockup.
+const visit = routeKey !== 'legal' && routeKey !== 'contact';
+const view = { locale, t, business };
 ---
 
 <BaseLayout
@@ -28,6 +39,16 @@ const withJsonLd = routeKey === 'home' || routeKey === 'findus';
   routeKey={routeKey}
   title={meta.title}
   description={meta.description}
-  visit={routeKey !== 'legal'}
+  visit={visit}
+  flush={routeKey === 'home'}
   jsonLd={withJsonLd ? bakeryJsonLd(business, site) : undefined}
-/>
+>
+  {routeKey === 'home' && <Home {...view} />}
+  {routeKey === 'tiella' && <Tiella {...view} />}
+  {routeKey === 'products' && <Products {...view} />}
+  {routeKey === 'story' && <Story {...view} />}
+  {routeKey === 'orders' && <Orders {...view} />}
+  {routeKey === 'findus' && <FindUs {...view} />}
+  {routeKey === 'contact' && <Contact {...view} />}
+  {routeKey === 'legal' && <Legal {...view} />}
+</BaseLayout>

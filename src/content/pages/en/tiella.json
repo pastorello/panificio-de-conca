@@ -1,0 +1,49 @@
+{
+  "_review": "Copied from the brief §8.5. Fillings are split into name and line as in the mockup («Octopus» / «With Gaeta olives and tomato — the most popular.»). Not in the brief: photo alt and caption, the placeholders of photos 5 and 6, the closing «rule» box (from the mockup: the second sentence of «When to find it» with the phone number; to be confirmed). Proposed on 14 October 2026, to be reviewed by a native speaker.",
+  "page": "tiella",
+  "title": "Tiella di Gaeta",
+  "subtitle": "Two thin sheets of dough, a filling from the sea or the garden, the oven. We have baked it since 1922.",
+  "call": "Call to order",
+  "photo": {
+    "image": "../../../assets/photos/tielle-intere.jpg",
+    "alt": "Whole tielle di Gaeta, just out of the oven, on a tray",
+    "caption": "Whole tielle on a tray"
+  },
+  "what": {
+    "title": "What it is",
+    "text": [
+      "The tiella is Gaeta's stuffed pie: two thin discs of dough sealed at the edge and baked in a round tin. It began as the meal of fishermen and farmers, carried onto boats and into the fields, and it is eaten at room temperature. Since 2005 it has carried the town's own designation of origin (De.Co.) and it is listed among the traditional products of Lazio."
+    ]
+  },
+  "fillings": {
+    "title": "Our fillings",
+    "items": [
+      {
+        "name": "Octopus",
+        "line": "With Gaeta olives and tomato — the most popular.",
+        "placeholder": "Photo 5 — sliced tiella, octopus filling, 4:3"
+      },
+      {
+        "name": "Onion",
+        "line": "Sweet, with olives and a little pecorino.",
+        "placeholder": "Photo 6 — onion tiella, 4:3"
+      }
+    ],
+    "more": "[[Other fillings: escarole, anchovies, courgettes, salt cod… to confirm]]",
+    "note": "Fillings change with the season and the catch: ask at the counter what's in today."
+  },
+  "when": {
+    "title": "When to find it and what it costs",
+    "text": [
+      "Every day we're open, [[time slots]]. By the slice [[PRICE_SLICE]], whole [[PRICE_WHOLE]] ([[size]], serves [[portions]]).",
+      "Whole tielle can be ordered by phone with [[ANTICIPO]] notice — for the beach, the boat or the journey home."
+    ]
+  },
+  "takeaway": {
+    "title": "Taking it away",
+    "text": [
+      "It is eaten at room temperature and keeps well for [[HOURS: to confirm]]; wrapped and in a cool bag it reaches Rome or Naples intact. [[If active: \"On request we vacuum-pack it: it keeps 10 days in the fridge.\"]]"
+    ]
+  },
+  "rule": "Whole tielle can be ordered by phone on +39 0771 460651 with [[ANTICIPO]] notice — for the beach, the boat or the journey home."
+}

@@ -11,9 +11,13 @@ interface Props {
   t: Strings;
   business: Business;
   variant: 'fixed' | 'row';
+  /** Label of the call button in the row, when the page's copy has its own (Tiella). */
+  call?: string;
+  /** The row in a page opening: shown only from 1024 px, where the fixed bar disappears. */
+  intro?: boolean;
 }
 
-const { t, business, variant } = Astro.props;
+const { t, business, variant, call = t.cta.call, intro = false } = Astro.props;
 // The line from the mockups, «Prenota il giorno prima e dicci a che ora passi», chosen over
 // cta.rule of the brief (design/HANDOFF.md §5).
 const rule = { value: t.cta.day_before };
@@ -33,11 +37,11 @@ const rule = { value: t.cta.day_before };
       </div>
     </div>
   ) : (
-    <div class="dc-ctarow">
+    <div class:list={['dc-ctarow', { 'dc-ctarow--intro': intro }]}>
       <div class="dc-actions">
         <a class="dc-btn dc-btn--primary" href={telHref(business)}>
           <Icon name="phone" />
-          {t.cta.call}
+          {call}
         </a>
         <DirectionsButton business={business} label={t.cta.directions} />
       </div>

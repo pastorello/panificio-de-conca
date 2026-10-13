@@ -1,0 +1,20 @@
+{
+  "_review": "The brief §8.10 asks for the same content as the Italian page, translated: the whole page is a proposal of 14 October 2026 and must be reviewed by a native speaker before publication (brief §2.3). The title is footer.legal of the brief.",
+  "page": "legal",
+  "title": "Legal & privacy",
+  "company": {
+    "name": "Company",
+    "office": "Registered office",
+    "vat": "VAT number",
+    "rea": "REA",
+    "phone": "Phone",
+    "email": "Email / PEC"
+  },
+  "privacy": {
+    "title": "Privacy notice",
+    "text": [
+      "This site uses no cookies and collects no personal data; visit statistics are aggregated and anonymous (Cloudflare Web Analytics); the links to Google Maps, Apple Maps, Facebook and Instagram lead to services with their own privacy notices.",
+      "Data controller: De Conca Alessandro e C. S.n.c."
+    ]
+  }
+}

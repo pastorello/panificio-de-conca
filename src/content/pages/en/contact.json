@@ -1,0 +1,18 @@
+{
+  "_review": "Layout of the brief §8.9; the note is the brief's. Not in the brief, proposed on 14 October 2026 and to be reviewed by a native speaker: the headings (DESIGN.md §5.8 gives them in Italian), the link «How to get here» and the label «Email». The address is the brief's §8.8 one with «Parking on the seafront.» from §8.3, as in the mockup.",
+  "page": "contact",
+  "title": "Contact",
+  "hours": {
+    "title": "Opening hours"
+  },
+  "address": {
+    "title": "Address",
+    "text": "Lungomare Giovanni Caboto [[CIVICO]], 04024 Gaeta (LT), Italy — corner of Salita Porta di Terra, opposite the naval base. Parking on the seafront.",
+    "more": "How to get here"
+  },
+  "social": {
+    "title": "Social media",
+    "note": "We have no contact form: we're quicker on the phone.",
+    "email": "Email"
+  }
+}

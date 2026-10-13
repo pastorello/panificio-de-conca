@@ -1,0 +1,69 @@
+{
+  "_review": "Copied from the brief §8.3. Card lines are the brief's items after the dash, capitalised as in the mockups. Not in the brief: alt texts and caption (proposed on 14 October 2026, to be reviewed by a native speaker), the card label «The tiella» (nav.tiella).",
+  "page": "home",
+  "title": "Gaeta's seafront bakery, since 1922",
+  "subtitle": "Bread, tiella di Gaeta, pizzette and holiday sweets. Three generations, one oven, the same shop facing the sea.",
+  "hero": {
+    "image": "../../../assets/photos/banco-hero-mobile-3x2.jpg",
+    "imageDesktop": "../../../assets/photos/banco-hero-desktop-4x3.jpg",
+    "alt": "The bakery counter with pizzette, focaccia and the scales"
+  },
+  "counter": {
+    "title": "What you'll find at the counter",
+    "items": [
+      {
+        "name": "Daily bread",
+        "line": "Baked in the morning and again in the afternoon; yeast-free bread every [[GIORNO]].",
+        "image": "../../../assets/photos/pane-di-giornata.jpg",
+        "alt": "Loaves fresh out of the oven"
+      },
+      {
+        "name": "Tiella di Gaeta",
+        "line": "Gaeta's stuffed pie, with octopus, with onion and the other traditional fillings; by the slice or whole.",
+        "image": "../../../assets/photos/tiella-card.jpg",
+        "alt": "Tielle di Gaeta on a tray",
+        "link": "tiella"
+      },
+      {
+        "name": "Red pizzette",
+        "line": "The bakery's signature little tomato pizzas, good cold too.",
+        "image": "../../../assets/photos/pizzette-rosse.jpg",
+        "alt": "Red pizzette and focaccine on a tray"
+      },
+      {
+        "name": "Wine ring biscuits and almond tozzetti",
+        "line": "The biscuits our customers take home after their holiday.",
+        "image": "../../../assets/photos/ciambelline-al-vino.jpg",
+        "alt": "Wine ring biscuits"
+      },
+      {
+        "name": "Croissants and breakfast",
+        "line": "Baked fresh every day from 7:30.",
+        "image": "../../../assets/photos/cornetti.jpg",
+        "alt": "Croissants and focaccia in the counter in the morning"
+      },
+      {
+        "name": "Holiday sweets",
+        "line": "Zeppole at Carnival, pigna at Easter, sciuscelle and mostaccioli at Christmas.",
+        "image": "../../../assets/photos/dolci-di-natale.jpg",
+        "alt": "Gift baskets of Christmas sweets"
+      }
+    ],
+    "more": "See all products"
+  },
+  "story": {
+    "title": "Since 1922, in the same shop",
+    "text": "Almerindo De Conca came back from America and on 4 April 1922 opened this bakery with his wife Annunziata, on the corner of Salita Porta di Terra. Three generations have kneaded here since: Almerindo, his children (the \"De Conca brothers\") and today Alessandro. In 2022 the town of Gaeta celebrated our first hundred years with us.",
+    "photo": {
+      "image": "../../../assets/photos/epoca-fornai-in-laboratorio-bn.jpg",
+      "alt": "Old black-and-white photo: the bakers at work in the bakehouse",
+      "caption": "At work in the bakehouse, [[YEAR]]"
+    },
+    "more": "Read our story"
+  },
+  "order": {
+    "title": "Order today, collect tomorrow",
+    "text": "Calzoncini, potato frittatine, focaccine, tielle and pizzette are baked in quantities decided the day before: call +39 0771 460651 by [[ORA_LIMITE]] and they'll be ready at the time you ask for; walk in without ordering and you'll get them if any are left. Whole tielle, cakes, maritozzi and gift baskets need [[ANTICIPO]] notice. No forms, no apps: the shop answers.",
+    "more": "How to order"
+  }
+}

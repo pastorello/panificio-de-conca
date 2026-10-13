@@ -1,0 +1,103 @@
+---
+// Pane e prodotti (BRIEF.md §8.6, DESIGN.md §5.5): the cards of products/<locale>/ grouped in the
+// six categories of the brief, with anchor links at the top (not tabs). Grid of 2, 3 and 4 columns.
+// Only the tiella card is a link. The booking rule at the end is the first section of Ordini.
+import { getCollection } from 'astro:content';
+import { pathFor, type Locale } from '../routes';
+import { getPage, type Business, type Strings } from '../lib/site';
+import CtaBar from '../components/CtaBar.astro';
+import OrderRule from '../components/OrderRule.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Text from '../components/Text.astro';
+
+interface Props {
+  locale: Locale;
+  t: Strings;
+  business: Business;
+}
+
+const { locale, t, business } = Astro.props;
+const page = await getPage('products', locale);
+const orders = await getPage('orders', locale);
+const products = (await getCollection('products', (entry) => entry.id.startsWith(`${locale}/`)))
+  .map((entry) => entry.data)
+  .sort((a, b) => a.order - b.order);
+const categories = ['pane', 'salato', 'colazione', 'biscotti', 'dolci', 'feste'] as const;
+---
+
+<section class="dc-container dc-intro">
+  <h1 class="dc-h1"><Text value={page.title} /></h1>
+  <p class="lead"><Text value={page.subtitle} /></p>
+  <CtaBar t={t} business={business} variant="row" intro />
+  <nav class="cats" aria-label={page.categoriesLabel}>
+    <ul class="dc-cats">
+      {
+        categories.map((key) => (
+          <li>
+            <a class="dc-cat" href={`#${key}`}>
+              {page.categories[key]}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</section>
+
+{
+  categories.map((key) => (
+    <section class="dc-container dc-anchor category" id={key}>
+      <h2 class="dc-h2">{page.categories[key]}</h2>
+      <div class="dc-grid">
+        {products
+          .filter((product) => product.category === key)
+          .map((product) => (
+            <ProductCard
+              locale={locale}
+              t={t}
+              name={product.name}
+              line={product.line}
+              price={product.price}
+              chip={product.season && t.season[product.season]}
+              image={product.image}
+              alt={product.alt}
+              placeholder={product.placeholder}
+              link={
+                product.link && { href: pathFor(product.link, locale), label: t.nav[product.link] }
+              }
+            />
+          ))}
+      </div>
+    </section>
+  ))
+}
+
+<div class="dc-container">
+  <OrderRule
+    business={business}
+    size="h3"
+    title={orders.fresh.title}
+    text={orders.fresh.text}
+    more={{ href: pathFor('orders', locale), label: page.more }}
+    split
+  />
+</div>
+
+<style>
+  .lead {
+    max-width: var(--measure);
+  }
+  .category {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  @media (min-width: 1024px) {
+    .cats {
+      margin-top: var(--space-3);
+    }
+    .category {
+      gap: var(--space-5);
+    }
+  }
+</style>

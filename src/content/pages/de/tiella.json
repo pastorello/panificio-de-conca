@@ -1,0 +1,49 @@
+{
+  "_review": "Aus dem Brief §8.5 übernommen. Die Füllungen sind wie im Mockup in Name und Zeile geteilt („Oktopus“ / „Mit Gaeta-Oliven und Tomate — die beliebteste.“). Nicht im Brief: Alt-Text und Bildunterschrift, die Platzhalter der Fotos 5 und 6, der Kasten „rule“ am Ende (aus dem Mockup: der zweite Satz von „Wann es sie gibt“ mit der Telefonnummer; zu bestätigen). Vorschlag vom 14. Oktober 2026, muttersprachlich prüfen lassen.",
+  "page": "tiella",
+  "title": "Tiella di Gaeta",
+  "subtitle": "Zwei dünne Teigplatten, eine Füllung aus dem Meer oder dem Garten, der Ofen. Wir backen sie seit 1922.",
+  "call": "Anrufen und bestellen",
+  "photo": {
+    "image": "../../../assets/photos/tielle-intere.jpg",
+    "alt": "Ganze Tielle di Gaeta, frisch aus dem Ofen, auf einem Tablett",
+    "caption": "Ganze Tielle auf dem Tablett"
+  },
+  "what": {
+    "title": "Was das ist",
+    "text": [
+      "Die Tiella ist die gefüllte Teigspezialität aus Gaeta: zwei dünne Teigscheiben, am Rand verschlossen und in einer runden Form gebacken. Sie war das Essen der Fischer und Bauern, das mit aufs Boot oder aufs Feld kam, und wird bei Zimmertemperatur gegessen. Seit 2005 trägt sie die kommunale Herkunftsbezeichnung (De.Co.) der Stadt Gaeta und zählt zu den traditionellen Produkten Latiums."
+    ]
+  },
+  "fillings": {
+    "title": "Unsere Füllungen",
+    "items": [
+      {
+        "name": "Oktopus",
+        "line": "Mit Gaeta-Oliven und Tomate — die beliebteste.",
+        "placeholder": "Foto 5 — Tiella in Stücken, Oktopusfüllung, 4:3"
+      },
+      {
+        "name": "Zwiebel",
+        "line": "Süßlich, mit Oliven und etwas Pecorino.",
+        "placeholder": "Foto 6 — Tiella mit Zwiebeln, 4:3"
+      }
+    ],
+    "more": "[[Weitere Füllungen: Endivie, Sardellen, Zucchini, Klippfisch … zu bestätigen]]",
+    "note": "Die Füllungen wechseln mit der Saison und dem Fang: Fragen Sie an der Theke, was es heute gibt."
+  },
+  "when": {
+    "title": "Wann es sie gibt und was sie kostet",
+    "text": [
+      "An allen Öffnungstagen, [[Zeitfenster]]. Als Stück [[PREIS_STÜCK]], ganz [[PREIS_GANZ]] ([[Größe]], für [[Portionen]] Personen).",
+      "Ganze Tielle können Sie mit [[ANTICIPO]] Vorlauf telefonisch bestellen — für den Strand, das Boot oder die Heimreise."
+    ]
+  },
+  "takeaway": {
+    "title": "Zum Mitnehmen",
+    "text": [
+      "Sie wird bei Zimmertemperatur gegessen und hält sich gut [[STUNDEN: zu bestätigen]]; eingewickelt und in einer Kühltasche kommt sie unversehrt in Rom oder Neapel an. [[Falls aktiv: „Auf Wunsch vakuumieren wir sie: so hält sie 10 Tage im Kühlschrank.“]]"
+    ]
+  },
+  "rule": "Ganze Tielle können Sie mit [[ANTICIPO]] Vorlauf telefonisch unter +39 0771 460651 bestellen — für den Strand, das Boot oder die Heimreise."
+}

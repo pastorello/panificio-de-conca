@@ -1,0 +1,16 @@
+{
+  "_review": "Testi copiati dal brief §8.6. Il titolo «Pane, pizzette e dolci» è la prima parte del meta title del brief, come nei mockup e in DESIGN.md §5.5. Il riquadro finale ripete la prima sezione di Ordini (brief §8.7, letta da pages/it/orders.json). Non sono nel brief: l'etichetta «Categorie», gli alt delle schede (dai mockup) e il segnaposto della foto 13.",
+  "page": "products",
+  "title": "Pane, pizzette e dolci",
+  "subtitle": "Tutto quello che vendiamo esce dal nostro forno. La lista cambia con le stagioni e con le feste: quello che vedi qui è quello che trovi di solito; per il resto chiedi al banco.",
+  "categoriesLabel": "Categorie",
+  "categories": {
+    "pane": "Pane",
+    "salato": "Salato",
+    "colazione": "Colazione",
+    "biscotti": "Biscotti",
+    "dolci": "Dolci",
+    "feste": "Feste"
+  },
+  "more": "Come prenotare"
+}

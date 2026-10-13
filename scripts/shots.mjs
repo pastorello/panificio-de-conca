@@ -5,6 +5,8 @@
 //   npm run shots -- --menu /         also the open NavSheet at 390 px
 //   npm run shots -- /componenti/     the component gallery (build with SITE_GALLERY=true)
 //   npm run shots -- --nojs /         with JavaScript disabled, to check the fallbacks (-nojs.png)
+//   npm run shots -- --at=2026-10-13T10:00 /   the clock fixed at that time in Rome, so that OpenNow
+//                                     and the «oggi» row show the state of the mockups (Tuesday, open)
 // Elements with data-force="hover|focus-visible|active" get that pseudo-class forced through the
 // Chrome DevTools Protocol, so the gallery shows the real :hover, :focus-visible and :active.
 // At 390 px it also saves the first screen only (-screen.png), with the fixed CtaBar in place.
@@ -37,6 +39,14 @@ const TYPES = {
 const args = process.argv.slice(2);
 const withMenu = args.includes('--menu');
 const noJs = args.includes('--nojs');
+const at = args.find((arg) => arg.startsWith('--at='))?.slice(5);
+/** "2026-10-13T10:00" read as Rome time (summer or winter offset of that date). */
+function romeInstant(local) {
+  const guess = new Date(`${local}Z`);
+  const rome = new Date(guess.toLocaleString('en-US', { timeZone: 'Europe/Rome' }));
+  const utc = new Date(guess.toLocaleString('en-US', { timeZone: 'UTC' }));
+  return new Date(guess.getTime() - (rome.getTime() - utc.getTime()));
+}
 const requested = args.filter((arg) => arg.startsWith('/'));
 const paths = requested.length
   ? requested
@@ -102,6 +112,7 @@ try {
       timezoneId: 'Europe/Rome',
       javaScriptEnabled: !noJs,
     });
+    if (at) await context.clock.setFixedTime(romeInstant(at));
     const page = await context.newPage();
     for (const path of paths) {
       await page.goto(origin + path, { waitUntil: 'networkidle' });

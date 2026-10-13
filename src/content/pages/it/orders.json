@@ -1,0 +1,47 @@
+{
+  "_review": "Testi copiati dal brief §8.7. Non è nel brief: l'etichetta del bottone del listino delle feste (segnaposto, come nel mockup).",
+  "page": "orders",
+  "title": "Si ordina per telefono",
+  "subtitle": "Chiama il 0771 460651 negli orari di apertura. Risponde il negozio, non un centralino.",
+  "fresh": {
+    "title": "Il fresco si prenota il giorno prima",
+    "text": [
+      "Calzoncini, frittatine di patate, focaccine, tielle e pizzette si preparano ogni giorno nella quantità prenotata più poco altro. Regola semplice: **chiami entro le [[ORA_LIMITE]], ritiri domani all'ora che vuoi**. Sfornate: [[ORARI_SFORNATE, es. calzoncini e frittatine alle 11, pizzette alle 17]]. Se un prodotto è finito, al banco te lo mettono da parte per il giorno dopo."
+    ]
+  },
+  "what": {
+    "title": "Cosa si prenota",
+    "text": [
+      "Tielle intere, torte, maritozzi, pane senza lievito, vassoi di pizzette e rustici, cesti regalo. Anticipo consigliato: [[ANTICIPO]]; per le feste (Natale, Pasqua) entro le date del listino stagionale [[LINK PDF/immagine del listino]]."
+    ]
+  },
+  "holidays": {
+    "title": "Feste e ricorrenze",
+    "text": [
+      "Ogni anno prepariamo il listino delle feste: Natale (sciuscelle, mostaccioli, cesti), Carnevale e San Giuseppe (zeppole), Pasqua (pigna, casatiello). Lo trovi in negozio e qui sotto."
+    ],
+    "priceList": {
+      "label": "[[Listino delle feste]]",
+      "href": "[[LINK PDF/immagine del listino]]"
+    }
+  },
+  "business": {
+    "title": "Bar, ristoranti, B&B e hotel",
+    "text": [
+      "Forniamo pane, pizzette, cornetti e tielle ad attività di Gaeta e del Golfo, con consegna [[ORARIO DI CONSEGNA: da confermare]]. Chiama per un listino e una prova."
+    ]
+  },
+  "boats": {
+    "title": "Barche",
+    "text": [
+      "Per chi è ormeggiato a Gaeta: pane, pizzette e tielle per la cambusa, ordinati entro [[ORA LIMITE: da confermare]] per il giorno dopo, pronti all'ora che ci dici."
+    ]
+  },
+  "shipping": {
+    "title": "Spedizioni",
+    "text": [
+      "[[Se attive: \"Spediamo in Italia ciambelline, tozzetti, taralli e tielle sottovuoto: chiama per il box del forno.\"]]",
+      "[[Se non attive: \"Non spediamo ancora: per ora viaggia tutto in valigia. Chiedi al banco il pacchetto da valigia.\"]]"
+    ]
+  }
+}

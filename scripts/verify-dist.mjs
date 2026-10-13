@@ -14,8 +14,8 @@ const DIST = 'dist';
 const env = { ...loadEnv('production', process.cwd(), ''), ...process.env };
 const phase = env.SITE_PHASE || 'preview';
 const site = env.SITE_URL || 'http://localhost:4321';
-/** Phase 3 turns this on, when every page has its content. */
-const H1_REQUIRED = false;
+/** Every page has exactly one H1 (CLAUDE.md, Accessibilità). */
+const H1_REQUIRED = true;
 
 const errors = [];
 const warnings = [];

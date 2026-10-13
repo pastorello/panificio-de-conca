@@ -160,3 +160,15 @@
   /* Movimento: solo colore, al massimo 150 ms (DESIGN.md §7, decisione 14) */
   --transition: 150ms;
 }
+
+/* ---------------------------------------------------------------------------
+   Valori delle pagine — scritti a mano nelle tavole di design/mockups/html/.
+   Le colonne da 1024 px sono rapporti (fr) con le stesse proporzioni, così reggono anche sotto i 1120 px.
+   --------------------------------------------------------------------------- */
+:root {
+  --gap-columns: 40px; /* tra testo e foto nelle due colonne della Home desktop */
+  --gap-intro: 20px; /* tra H1, sottotitolo, OpenNow e riga CTA da 1024 px */
+  --cols-hero: minmax(0, 11fr) minmax(0, 16fr); /* Home desktop A: testo 440 px, foto 4:3 640 px */
+  --cols-home-story: minmax(0, 13fr) minmax(0, 14fr); /* Home desktop: «Dal 1922» 520 px, foto 560 px */
+  --cat-pad: 14px; /* rientro orizzontale delle ancore di categoria in Prodotti (.cat dei mockup) */
+}

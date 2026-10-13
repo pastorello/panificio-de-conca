@@ -1,0 +1,18 @@
+{
+  "_review": "Schema del brief §8.9; la nota è del brief. Non sono nel brief: i titoli «Orari», «Indirizzo», «Social» (DESIGN.md §5.8) e il link «Come arrivare» (dal mockup). L'indirizzo è quello del brief §8.8 con «Parcheggio sul lungomare.» del brief §8.3, come nel mockup.",
+  "page": "contact",
+  "title": "Contatti",
+  "hours": {
+    "title": "Orari"
+  },
+  "address": {
+    "title": "Indirizzo",
+    "text": "Lungomare Giovanni Caboto [[CIVICO]], 04024 Gaeta (LT) — angolo Salita Porta di Terra, di fronte alla base della Marina. Parcheggio sul lungomare.",
+    "more": "Come arrivare"
+  },
+  "social": {
+    "title": "Social",
+    "note": "Non abbiamo un modulo di contatto: al telefono siamo più veloci.",
+    "email": "E-mail"
+  }
+}

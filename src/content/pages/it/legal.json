@@ -1,0 +1,20 @@
+{
+  "_review": "Contenuti del brief §8.10, con le sue parole. Non sono nel brief: le etichette dei dati societari e il titolo «Informativa privacy» (dal mockup).",
+  "page": "legal",
+  "title": "Note legali e privacy",
+  "company": {
+    "name": "Ragione sociale",
+    "office": "Sede",
+    "vat": "Partita IVA",
+    "rea": "REA",
+    "phone": "Telefono",
+    "email": "E-mail / PEC"
+  },
+  "privacy": {
+    "title": "Informativa privacy",
+    "text": [
+      "Il sito non usa cookie né raccoglie dati personali; le statistiche di visita sono aggregate e anonime (Cloudflare Web Analytics); i link a Google Maps, Apple Maps, Facebook e Instagram portano a servizi con le proprie informative.",
+      "Titolare del trattamento: De Conca Alessandro e C. S.n.c."
+    ]
+  }
+}

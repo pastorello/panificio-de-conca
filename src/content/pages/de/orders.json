@@ -1,0 +1,47 @@
+{
+  "_review": "Aus dem Brief §8.7 übernommen. Nicht im Brief: die Beschriftung der Schaltfläche zur Festtagsliste (Platzhalter, wie im Mockup).",
+  "page": "orders",
+  "title": "Bestellungen nehmen wir telefonisch entgegen",
+  "subtitle": "Rufen Sie während der Öffnungszeiten +39 0771 460651 an. Es antwortet der Laden, keine Zentrale. Wir sprechen [[LINGUE_AL_BANCO]].",
+  "fresh": {
+    "title": "Frisches wird am Vortag bestellt",
+    "text": [
+      "Calzoncini, Kartoffel-Frittatine, Focaccine, Tielle und Pizzette backen wir jeden Tag in der bestellten Menge plus einer kleinen Reserve. Einfache Regel: **bis [[ORA_LIMITE]] Uhr anrufen, morgen zur Wunschzeit abholen**. Backzeiten: [[ORARI_SFORNATE]]. Ist etwas ausverkauft, legt es die Theke für Sie für den nächsten Tag zurück."
+    ]
+  },
+  "what": {
+    "title": "Was Sie bestellen können",
+    "text": [
+      "Ganze Tielle, Torten, Maritozzi, hefefreies Brot, Platten mit Pizzette und herzhaftem Gebäck, Geschenkkörbe. Empfohlener Vorlauf: [[ANTICIPO]]; zu Weihnachten und Ostern bis zu den Terminen der Festtagsliste [[LINK]]."
+    ]
+  },
+  "holidays": {
+    "title": "Feiertage",
+    "text": [
+      "Jedes Jahr stellen wir eine Festtagsliste zusammen: Weihnachten (Sciuscelle, Mostaccioli, Körbe), Karneval und Josefstag (Zeppole), Ostern (Pigna, Casatiello). Sie liegt im Laden aus und steht hier unten."
+    ],
+    "priceList": {
+      "label": "[[Festtagsliste]]",
+      "href": "[[LINK]]"
+    }
+  },
+  "business": {
+    "title": "Bars, Restaurants, B&Bs und Hotels",
+    "text": [
+      "Wir beliefern Betriebe in Gaeta und am Golf mit Brot, Pizzette, Croissants und Tielle, Lieferung [[LIEFERZEIT: zu bestätigen]]. Rufen Sie an für eine Preisliste und eine Probelieferung."
+    ]
+  },
+  "boats": {
+    "title": "Boote",
+    "text": [
+      "Ihr Boot liegt in Gaeta? Brot, Pizzette und Tielle für die Kombüse, bis [[BESTELLSCHLUSS: zu bestätigen]] für den nächsten Tag bestellt, fertig zur gewünschten Uhrzeit."
+    ]
+  },
+  "shipping": {
+    "title": "Versand",
+    "text": [
+      "[[Falls aktiv: „Wir versenden Weinkringel, Tozzetti, Taralli und vakuumierte Tielle innerhalb Italiens: Rufen Sie an für die Bäckerei-Box.“]]",
+      "[[Falls nicht: „Wir versenden noch nicht: Vorerst reist alles im Koffer mit. Fragen Sie an der Theke nach dem Kofferpaket.“]]"
+    ]
+  }
+}

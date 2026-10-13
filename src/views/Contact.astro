@@ -1,0 +1,67 @@
+---
+// Contatti (BRIEF.md §8.9, DESIGN.md §5.8): big phone number and OpenNow, the week in a table with
+// holiday hours above it, the address with both map links, social links and the note on the
+// missing form. The e-mail line appears only while business.json has an address (brief: «solo se
+// il titolare la legge»). No desktop mockup: the 720 px column of desktop-tiella.
+import { pathFor, type Locale } from '../routes';
+import { getPage, type Business, type Strings } from '../lib/site';
+import { hasPlaceholder } from '../lib/text';
+import Button from '../components/Button.astro';
+import CtaBar from '../components/CtaBar.astro';
+import HoursTable from '../components/HoursTable.astro';
+import MapLinks from '../components/MapLinks.astro';
+import OpenNow from '../components/OpenNow.astro';
+import PhoneNumber from '../components/PhoneNumber.astro';
+import Section from '../components/Section.astro';
+import Text from '../components/Text.astro';
+
+interface Props {
+  locale: Locale;
+  t: Strings;
+  business: Business;
+}
+
+const { locale, t, business } = Astro.props;
+const page = await getPage('contact', locale);
+const { hours, address, social } = page;
+const { facebook, instagram } = business.social;
+---
+
+<section class="dc-col dc-intro">
+  <h1 class="dc-h1"><Text value={page.title} /></h1>
+  <PhoneNumber locale={locale} business={business} />
+  <OpenNow locale={locale} t={t} business={business} />
+  <CtaBar t={t} business={business} variant="row" intro />
+</section>
+
+<Section title={hours.title}>
+  <HoursTable locale={locale} t={t} business={business} />
+</Section>
+
+<Section title={address.title} text={[address.text]}>
+  <MapLinks business={business} t={t} variant="pair" />
+  <div>
+    <Button variant="link" href={pathFor('findus', locale)}>{address.more}</Button>
+  </div>
+</Section>
+
+<Section title={social.title}>
+  <p>
+    <a href={facebook}>Facebook</a> · {
+      hasPlaceholder(instagram) ? <Text value={instagram} /> : <a href={instagram}>Instagram</a>
+    }
+  </p>
+  <p><Text value={social.note} /></p>
+  {
+    business.email && (
+      <p>
+        {social.email}:{' '}
+        {hasPlaceholder(business.email) ? (
+          <Text value={business.email} />
+        ) : (
+          <a href={`mailto:${business.email}`}>{business.email}</a>
+        )}
+      </p>
+    )
+  }
+</Section>

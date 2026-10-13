@@ -1,0 +1,16 @@
+{
+  "_review": "Aus dem Brief §8.6 übernommen. Der Titel ist der erste Teil des Meta-Titels im Brief. Der Kasten am Ende wiederholt den ersten Abschnitt von Bestellen (Brief §8.7, aus pages/de/orders.json). Nicht im Brief, Vorschlag vom 14. Oktober 2026, muttersprachlich prüfen lassen: die Kategorien und „Kategorien“, die Produktnamen in products/de/ (der Brief nennt sie nur auf Italienisch), Alt-Texte und der Platzhalter von Foto 13.",
+  "page": "products",
+  "title": "Brot, Pizzette und Gebäck",
+  "subtitle": "Alles, was wir verkaufen, kommt aus unserem eigenen Ofen. Das Angebot wechselt mit den Jahreszeiten und den Festen: Was Sie hier sehen, finden Sie in der Regel; alles Weitere erfragen Sie bitte an der Theke.",
+  "categoriesLabel": "Kategorien",
+  "categories": {
+    "pane": "Brot",
+    "salato": "Herzhaftes",
+    "colazione": "Frühstück",
+    "biscotti": "Kekse",
+    "dolci": "Kuchen",
+    "feste": "Feiertage"
+  },
+  "more": "So bestellen Sie"
+}
