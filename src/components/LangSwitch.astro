@@ -1,0 +1,49 @@
+---
+// "IT · EN · DE": same page in the other language, never the home (DESIGN.md §6.5).
+import { languageLinks, type Locale, type RouteKey } from '../routes';
+
+interface Props {
+  locale: Locale;
+  /** Undefined on the 404 page: no current entry, language links to the homes. */
+  routeKey?: RouteKey;
+  /** "Lingua" / "Language" / "Sprache"; shown in the sheet and footer, aria-label everywhere. */
+  label: string;
+  variant: 'header' | 'sheet' | 'footer';
+}
+
+const { locale, routeKey, label, variant } = Astro.props;
+const links = languageLinks(routeKey ?? 'home');
+// Endonyms from the platform's locale data ("Italiano", "English", "Deutsch"), for screen readers.
+const languageName = (code: Locale) => {
+  const name = new Intl.DisplayNames([code], { type: 'language' }).of(code) ?? code;
+  return name.charAt(0).toLocaleUpperCase(code) + name.slice(1);
+};
+---
+
+<nav aria-label={label} class={variant === 'header' ? 'dc-header__lang' : undefined}>
+  <ul class:list={['dc-lang', { 'dc-lang--sheet': variant === 'sheet' }]}>
+    {variant !== 'header' && <li class="dc-lang__label">{label}</li>}
+    {
+      links.map((link, index) => (
+        <>
+          {index > 0 && (
+            <li class="dc-lang__sep" aria-hidden="true">
+              ·
+            </li>
+          )}
+          <li>
+            <a
+              href={link.href}
+              lang={link.locale}
+              hreflang={link.locale}
+              aria-label={languageName(link.locale)}
+              aria-current={link.locale === locale ? 'page' : undefined}
+            >
+              {link.locale.toUpperCase()}
+            </a>
+          </li>
+        </>
+      ))
+    }
+  </ul>
+</nav>

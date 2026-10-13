@@ -1,0 +1,49 @@
+---
+// The two actions the site exists for (DESIGN.md §5.1, §6.5). "fixed": bar at the bottom of
+// the screen below 1024 px, rule line above the buttons. "row": the CTA row of the desktop
+// hero, rule line below the buttons.
+import { telHref, type Business, type Strings } from '../lib/site';
+import DirectionsButton from './DirectionsButton.astro';
+import Icon from './Icon.astro';
+import Text from './Text.astro';
+
+interface Props {
+  t: Strings;
+  business: Business;
+  variant: 'fixed' | 'row';
+}
+
+const { t, business, variant } = Astro.props;
+// The line from the mockups, «Prenota il giorno prima e dicci a che ora passi», chosen over
+// cta.rule of the brief (design/HANDOFF.md §5).
+const rule = { value: t.cta.day_before };
+---
+
+{
+  variant === 'fixed' ? (
+    <div class="dc-ctabar dc-ctabar--fixed">
+      <p class="dc-ctabar__rule">
+        <Text {...rule} />
+      </p>
+      <div class="dc-ctabar__actions">
+        <a class="dc-btn dc-btn--primary" href={telHref(business)}>
+          {t.cta.call}
+        </a>
+        <DirectionsButton business={business} label={t.cta.directions} icon={false} />
+      </div>
+    </div>
+  ) : (
+    <div class="dc-ctarow">
+      <div class="dc-actions">
+        <a class="dc-btn dc-btn--primary" href={telHref(business)}>
+          <Icon name="phone" />
+          {t.cta.call}
+        </a>
+        <DirectionsButton business={business} label={t.cta.directions} />
+      </div>
+      <p class="dc-ctarow__rule">
+        <Text {...rule} />
+      </p>
+    </div>
+  )
+}

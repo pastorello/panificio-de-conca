@@ -1,0 +1,10 @@
+dist/
+.astro/
+node_modules/
+design/
+.shots/
+package-lock.json
+BRIEF.md
+DESIGN.md
+CLAUDE.md
+src/styles/tokens.css

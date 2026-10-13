@@ -1,0 +1,95 @@
+{
+  "_review": "Copied from the brief §8.1–8.3. Not in the brief: cta.day_before (CtaBar line, from the mockups), the ui keys and the meta of the legal and 404 pages; translations proposed on 13 October 2026, to be reviewed by a native speaker with the other texts (brief §8).",
+  "nav": {
+    "home": "Home",
+    "story": "Our story",
+    "tiella": "The tiella",
+    "products": "Bread & pastries",
+    "orders": "Orders",
+    "findus": "Find us",
+    "contact": "Contact"
+  },
+  "cta": {
+    "call": "Call to order",
+    "rule": "Order by {time} for tomorrow",
+    "day_before": "Order the day before and tell us when you'll come by",
+    "sold_out": "Fresh items sell out fast: order ahead",
+    "directions": "Directions"
+  },
+  "hours": {
+    "open_today": "Open today {ranges}",
+    "closed_today": "Closed today · opens {next}",
+    "closed_sunday": "Closed on Sundays",
+    "special": "Holiday hours"
+  },
+  "visit": {
+    "title": "Come and see us",
+    "address": "Lungomare Caboto [[CIVICO]], Gaeta, in the medieval quarter, opposite the naval base. Parking on the seafront.",
+    "full_hours": "Full hours"
+  },
+  "footer": {
+    "legal": "Legal & privacy",
+    "since": "Bakery in Gaeta since 1922"
+  },
+  "lang": {
+    "switch": "Language"
+  },
+  "season": {
+    "christmas": "Christmas only",
+    "easter": "Easter only",
+    "carnival": "Carnival and St Joseph's Day",
+    "order": "Made to order"
+  },
+  "price": {
+    "from": "from"
+  },
+  "meta": {
+    "home": {
+      "title": "Panificio De Conca – Bakery in Gaeta since 1922",
+      "description": "Bread, tiella di Gaeta, pizzette and holiday sweets from a family bakery on the Gaeta seafront, three generations in the same shop. Hours and phone."
+    },
+    "story": {
+      "title": "Our story: a Gaeta bakery since 1922",
+      "description": "From Almerindo De Conca's return from America to the 2022 centenary: a hundred years of bread in the same shop in Gaeta's medieval quarter."
+    },
+    "tiella": {
+      "title": "Tiella di Gaeta: what it is and where to buy it",
+      "description": "Gaeta's stuffed pie from a bakery founded in 1922: octopus, onion and the other fillings, when to find it, prices and how to take it away."
+    },
+    "products": {
+      "title": "Bread, pizzette and pastries – Panificio De Conca",
+      "description": "Fresh bread daily, yeast-free bread, red pizzette, wine ring biscuits, almond tozzetti, croissants and Gaeta's holiday sweets."
+    },
+    "orders": {
+      "title": "Orders by phone and wholesale – Panificio De Conca",
+      "description": "Whole tielle, cakes, maritozzi and gift baskets are ordered by phone. Supplies for bars, restaurants, B&Bs, hotels and boats."
+    },
+    "findus": {
+      "title": "Find us: Lungomare Caboto, Gaeta",
+      "description": "In the medieval quarter, opposite the naval base, with parking on the seafront. How to get here from Formia station, Rome and Naples."
+    },
+    "contact": {
+      "title": "Contact – Panificio De Conca, Gaeta",
+      "description": "Phone, opening hours and address of Panificio De Conca, Lungomare Caboto, Gaeta."
+    },
+    "legal": {
+      "title": "Legal & privacy – Panificio De Conca, Gaeta",
+      "description": "Company details of Panificio De Conca (De Conca Alessandro e C. S.n.c.) and privacy notice: this site uses no cookies and collects no personal data."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist: go back to the home page or call the shop."
+    }
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "menu_close": "Close menu",
+    "nav_label": "Main",
+    "footer_nav_label": "Pages",
+    "call": "Call {phone}",
+    "preview_notice": "Site preview: provisional text and photos",
+    "vat": "VAT no.",
+    "rea": "REA"
+  }
+}

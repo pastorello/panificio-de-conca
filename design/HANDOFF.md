@@ -94,6 +94,17 @@ Le pagine desktop non disegnate (Ordini, Contatti, Note legali, 404) seguono il 
 | OG con la foto del banco di Facebook | OG con la foto vera del banco, stessa composizione | Risoluzione |
 | Classi `dc-*` di `bundle.css` | Stesse classi, senza prefisso o con, a scelta di chi costruisce; stessi nomi dei token | `bundle.css` è già scritto sui token: si può riprendere quasi alla lettera in `src/styles/components.css` e far emettere ai componenti Astro lo stesso markup di `components/<Nome>/preview.html` |
 
+Decisioni confermate durante la build (13 ottobre 2026):
+
+| Nei mockup o nel design | Nel sito | Perché |
+| --- | --- | --- |
+| Riga della CtaBar e della riga CTA «Prenota il giorno prima e dicci a che ora passi», assente dal brief (che ha `cta.rule`, «Ordini entro le {time} per domani») | La riga dei mockup, chiave `cta.day_before`: tedesco dalla scheda CtaBar, inglese proposto; `cta.rule` resta nei contenuti ma la barra non la usa | Scelta confermata: la frase chiede anche l'ora del ritiro |
+| Testi d'interfaccia solo in italiano o assenti: skip link, «Menu», «Chiudi il menu», etichette dei menu e del telefono, riga di anteprima del footer, «P.IVA»/«REA», meta di Note legali e 404 | In `src/content/site/*.json` (`ui.*`, `meta.legal`, `meta.notFound`), inglese e tedesco proposti | Da far rileggere a madrelingua con gli altri testi (brief §8) |
+| `--font-display` senza «Fraunces Fallback», definito ma non usato | `src/styles/tokens.css` lo inserisce prima di Georgia | Limita il salto dei titoli mentre Fraunces si carica |
+| Header desktop su una riga (solo in italiano) | In tedesco a 1440 la navigazione va su due righe e l'header passa da 72 a 92 px | Come lo schema di `DESIGN.md` §5.1; nessuna etichetta accorciata |
+| Paragrafo «Prenota oggi, ritira domani» della Home con un testo diverso dal brief | Testo del brief §8.3 | Per i contenuti vale il brief |
+| OpenNow senza JavaScript: «giovedì pomeriggio 17:00–20:00» | «giovedì 7:30–13:15 e 17:00–20:00», generato da `business.json` | «pomeriggio» non ha traduzione nel brief |
+
 ## 6. Foto usate nei mockup
 
 Tutte in `mockups/html/assets/`, bassa risoluzione (800 × 600 le card, 780 × 520 e 960 × 720 le hero, 900 × 600 le foto d'epoca). Nome → soggetto → numero nella lista foto del brief §9:

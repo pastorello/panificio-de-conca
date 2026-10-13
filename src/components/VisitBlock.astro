@@ -1,0 +1,29 @@
+---
+// "Vieni a trovarci" (DESIGN.md §5.1, §6.5): closes every page except Note legali and 404.
+// No primary button here: the CtaBar (mobile) and the hero CTA row (desktop) already have it.
+import { pathFor, type Locale } from '../routes';
+import type { Business, Strings } from '../lib/site';
+import DirectionsButton from './DirectionsButton.astro';
+import OpenNow from './OpenNow.astro';
+import Text from './Text.astro';
+
+interface Props {
+  locale: Locale;
+  t: Strings;
+  business: Business;
+}
+
+const { locale, t, business } = Astro.props;
+---
+
+<section class="dc-visit" aria-labelledby="visit-title">
+  <h2 class="dc-h2" id="visit-title">{t.visit.title}</h2>
+  <div class="dc-visit__hours">
+    <OpenNow locale={locale} t={t} business={business} />
+  </div>
+  <p class="dc-visit__address"><Text value={t.visit.address} /></p>
+  <div class="dc-actions">
+    <a class="dc-btn dc-btn--secondary" href={pathFor('contact', locale)}>{t.visit.full_hours}</a>
+    <DirectionsButton business={business} label={t.cta.directions} />
+  </div>
+</section>

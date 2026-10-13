@@ -1,0 +1,74 @@
+---
+// Footer (DESIGN.md §5.1, §6.5): three columns from 1024 px, stacked below. The navigation
+// has id="menu": it is where "Menu" leads without JavaScript.
+import { Image } from 'astro:assets';
+import logo from '../assets/photos/logo-192.jpg';
+import { footerNav, pathFor, type Locale, type RouteKey } from '../routes';
+import { displayPhone, navLabel, telHref, type Business, type Strings } from '../lib/site';
+import { hasPlaceholder, isPreview } from '../lib/text';
+import LangSwitch from './LangSwitch.astro';
+import Text from './Text.astro';
+
+interface Props {
+  locale: Locale;
+  /** Undefined on the 404 page: no current entry, language links to the homes. */
+  routeKey?: RouteKey;
+  t: Strings;
+  business: Business;
+}
+
+const { locale, routeKey, t, business } = Astro.props;
+const { address, social } = business;
+---
+
+<footer class="dc-footer">
+  <div class="dc-footer__cols">
+    <div>
+      <Image
+        class="dc-footer__logo"
+        src={logo}
+        alt={business.alternateName}
+        width={96}
+        height={96}
+        densities={[1, 2]}
+      />
+      <p class="dc-footer__title">{t.footer.since}</p>
+      <p>{business.legalName}</p>
+      <p>{t.ui.vat} {business.vatId} · {t.ui.rea} {business.rea}</p>
+    </div>
+    <div>
+      <p>
+        {address.street}
+        <Text value={address.number} />, {address.postalCode}
+        {address.locality} ({address.region})
+      </p>
+      <p><a href={telHref(business)}>{displayPhone(business, locale)}</a></p>
+      <p>
+        <a href={social.facebook}>Facebook</a> · {
+          hasPlaceholder(social.instagram) ? (
+            <Text value={social.instagram} />
+          ) : (
+            <a href={social.instagram}>Instagram</a>
+          )
+        }
+      </p>
+    </div>
+    <div>
+      <nav id="menu" aria-label={t.ui.footer_nav_label}>
+        <ul class="dc-footer__nav">
+          {
+            footerNav.map((key) => (
+              <li>
+                <a href={pathFor(key, locale)} aria-current={key === routeKey ? 'page' : undefined}>
+                  {navLabel(t, key)}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <LangSwitch locale={locale} routeKey={routeKey} label={t.lang.switch} variant="footer" />
+    </div>
+  </div>
+  {isPreview && <p class="dc-footer__fine">{t.ui.preview_notice}</p>}
+</footer>

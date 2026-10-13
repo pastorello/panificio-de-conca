@@ -1,0 +1,11 @@
+---
+// Trilingual 404 (BRIEF.md §4, DESIGN.md §5.9). Phase 1: empty, layout only.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getStrings } from '../lib/site';
+
+const [it, en, de] = await Promise.all([getStrings('it'), getStrings('en'), getStrings('de')]);
+const title = [it, en, de].map((t) => t.meta.notFound.title).join(' · ');
+const description = [it, en, de].map((t) => t.meta.notFound.description).join(' ');
+---
+
+<BaseLayout locale="it" title={title} description={description} visit={false} />
