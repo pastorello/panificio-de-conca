@@ -1,0 +1,86 @@
+---
+// Weekly hours (DESIGN.md §5.8, §6.5): a real <table>, day in <th scope="row">, 24-hour ranges.
+// Today's row (paper-deep and the word «oggi») is computed in Europe/Rome in the browser; without
+// JavaScript no row is highlighted. Holiday hours sit above in a Callout from 30 days before they
+// start until they end: decided at build time, checked again in the browser.
+import type { Locale } from '../routes';
+import type { Business, Strings } from '../lib/site';
+import {
+  capitalize,
+  describeSpecial,
+  formatPeriod,
+  formatRangesTable,
+  romeTime,
+  specialVisible,
+  weekdayName,
+  weekdays,
+} from '../lib/hours';
+import Callout from './Callout.astro';
+import Text from './Text.astro';
+
+interface Props {
+  locale: Locale;
+  t: Strings;
+  business: Business;
+  /** Fixed instant (ISO 8601) instead of now: only for the component gallery. */
+  at?: string;
+}
+
+const { locale, t, business, at } = Astro.props;
+const { weekly, special } = business.hours;
+const today = romeTime(at ? new Date(at) : new Date()).date;
+const specials = special.filter((period) => period.to >= today);
+---
+
+<div class="dc-hourstable" data-hours={JSON.stringify({ today: t.hours.today, special, at })}>
+  {
+    specials.map((period) => (
+      <Callout
+        label={t.hours.special}
+        data-special={period.id}
+        hidden={!specialVisible(period, today)}
+      >
+        {formatPeriod(period.from, period.to, locale)}:{' '}
+        <Text value={describeSpecial(period, t.hours, locale)} />
+      </Callout>
+    ))
+  }
+  <table class="dc-hours">
+    <caption class="dc-sr">{t.hours.table_caption}</caption>
+    <tbody>
+      {
+        weekdays.map((day) => (
+          <tr data-day={day}>
+            <th scope="row">{capitalize(weekdayName(day, locale), locale)}</th>
+            <td>{weekly[day].length ? formatRangesTable(weekly[day]) : t.hours.closed}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+
+<script>
+  import { romeTime, specialVisible, type Special } from '../lib/hours';
+
+  for (const table of document.querySelectorAll<HTMLElement>('[data-hours]')) {
+    const data = JSON.parse(table.dataset.hours ?? '{}') as {
+      today: string;
+      special: Special[];
+      at?: string;
+    };
+    const now = romeTime(data.at ? new Date(data.at) : new Date());
+    const row = table.querySelector<HTMLTableRowElement>(`tr[data-day="${now.day}"]`);
+    if (row) {
+      row.classList.add('dc-hours__today');
+      const badge = document.createElement('span');
+      badge.className = 'dc-hours__badge';
+      badge.textContent = data.today;
+      row.querySelector('th')?.append(badge);
+    }
+    for (const period of data.special) {
+      const callout = table.querySelector<HTMLElement>(`[data-special="${period.id}"]`);
+      if (callout) callout.hidden = !specialVisible(period, now.date);
+    }
+  }
+</script>

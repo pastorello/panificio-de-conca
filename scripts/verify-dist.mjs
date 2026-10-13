@@ -66,6 +66,13 @@ const jsonLdPaths = new Set(
 
 const placeholderCounts = [];
 
+/** The component gallery exists only in builds with SITE_GALLERY=true, never online. */
+const GALLERY = '/componenti/';
+if (pages.has(GALLERY)) {
+  if (phase === 'live') fail(GALLERY, 'component gallery in a live build (unset SITE_GALLERY)');
+  pages.delete(GALLERY);
+}
+
 for (const [path, html] of pages) {
   const isNotFound = path === '/404.html';
   const head = html.slice(0, html.indexOf('</head>'));

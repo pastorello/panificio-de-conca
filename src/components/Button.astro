@@ -1,0 +1,36 @@
+---
+// Button (DESIGN.md §6.5): always a real <a href>. Primary (brand fill, at most once per view,
+// always «Chiama e prenota»), secondary (2 px ink border), link with arrow («Tutti i prodotti →»).
+import type { HTMLAttributes } from 'astro/types';
+import Icon from './Icon.astro';
+
+type IconName = 'phone' | 'map-pin';
+
+interface Props extends Omit<HTMLAttributes<'a'>, 'class'> {
+  href: string;
+  variant?: 'primary' | 'secondary' | 'link';
+  /** Leading icon for buttons; links always end with the arrow. */
+  icon?: IconName;
+  block?: boolean;
+}
+
+const { href, variant = 'secondary', icon, block = false, ...attrs } = Astro.props;
+---
+
+{
+  variant === 'link' ? (
+    <a class="dc-link" href={href} {...attrs}>
+      <slot />
+      <Icon name="arrow-right" />
+    </a>
+  ) : (
+    <a
+      class:list={['dc-btn', `dc-btn--${variant}`, { 'dc-btn--block': block }]}
+      href={href}
+      {...attrs}
+    >
+      {icon && <Icon name={icon} />}
+      <slot />
+    </a>
+  )
+}

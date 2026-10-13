@@ -1,0 +1,11 @@
+---
+// Chip with the season or how to get a product (DESIGN.md §6.5): «Solo a Natale», «Su
+// prenotazione»… Also the «Orari delle feste» label of OpenNow and Callout. Never clickable.
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<span class="dc-chip">{label}</span>

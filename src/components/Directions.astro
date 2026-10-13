@@ -1,0 +1,27 @@
+---
+// How to get here (DESIGN.md §5.7, §6.5): one section per way of arriving, with its Lucide icon
+// (car, train-front, footprints, sailboat) next to the H2. Photo, address and MapLinks are placed
+// by the page, because in the mockups OpenNow sits between the photo and the address.
+import Icon from './Icon.astro';
+import Text from './Text.astro';
+
+interface Props {
+  modes: { icon: 'car' | 'train-front' | 'footprints' | 'sailboat'; title: string; text: string }[];
+}
+
+const { modes } = Astro.props;
+---
+
+{
+  modes.map((mode) => (
+    <section class="dc-mode">
+      <h2 class="dc-h2 dc-mode__title">
+        <Icon name={mode.icon} />
+        {mode.title}
+      </h2>
+      <p>
+        <Text value={mode.text} />
+      </p>
+    </section>
+  ))
+}

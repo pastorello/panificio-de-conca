@@ -1,8 +1,11 @@
 ---
 // "Vieni a trovarci" (DESIGN.md §5.1, §6.5): closes every page except Note legali and 404.
 // No primary button here: the CtaBar (mobile) and the hero CTA row (desktop) already have it.
+// On desktop the static week stays under OpenNow, as in the mockups, once JavaScript has
+// written today's state above it.
 import { pathFor, type Locale } from '../routes';
 import type { Business, Strings } from '../lib/site';
+import { summarizeWeek } from '../lib/hours';
 import DirectionsButton from './DirectionsButton.astro';
 import OpenNow from './OpenNow.astro';
 import Text from './Text.astro';
@@ -14,12 +17,17 @@ interface Props {
 }
 
 const { locale, t, business } = Astro.props;
+const week = summarizeWeek(business.hours.weekly, locale, t.hours.closed_sunday);
 ---
 
 <section class="dc-visit" aria-labelledby="visit-title">
   <h2 class="dc-h2" id="visit-title">{t.visit.title}</h2>
   <div class="dc-visit__hours">
     <OpenNow locale={locale} t={t} business={business} />
+    <p class="dc-visit__week" data-week hidden>
+      {week.lead}
+      {[week.ranges, ...week.exceptions].join(', ')} · {week.closed}
+    </p>
   </div>
   <p class="dc-visit__address"><Text value={t.visit.address} /></p>
   <div class="dc-actions">

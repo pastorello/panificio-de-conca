@@ -1,5 +1,5 @@
 {
-  "_review": "Testi copiati dal brief §8.1–8.3. Non sono nel brief: cta.day_before (riga della CtaBar, dai mockup), le chiavi ui e i meta di Note legali e 404; italiano da DESIGN.md e dalle schede dei componenti, confermati il 13 ottobre 2026.",
+  "_review": "Testi copiati dal brief §8.1–8.3. Non sono nel brief: cta.day_before (riga della CtaBar, dai mockup), le chiavi ui, i meta di Note legali e 404 e le chiavi di hours oltre a open_today, closed_today, closed_sunday e special (dalla scheda degli stati); confermati il 13 ottobre 2026.",
   "nav": {
     "home": "Home",
     "story": "La storia",
@@ -18,14 +18,25 @@
   },
   "hours": {
     "open_today": "Aperto oggi {ranges}",
+    "closed_now": "Chiuso ora · riapre {next}",
     "closed_today": "Oggi chiuso · riapre {next}",
     "closed_sunday": "Domenica chiuso",
-    "special": "Orari delle feste"
+    "next_today": "oggi alle {time}",
+    "next_tomorrow": "domani alle {time}",
+    "next_day": "{day} alle {time}",
+    "closed": "Chiuso",
+    "today": "oggi",
+    "special": "Orari delle feste",
+    "table_caption": "Orari di apertura"
   },
   "visit": {
     "title": "Vieni a trovarci",
     "address": "Lungomare Caboto [[CIVICO]], Gaeta, nel quartiere medievale, di fronte alla base. Parcheggio sul lungomare.",
     "full_hours": "Orari completi"
+  },
+  "maps": {
+    "google": "Google Maps",
+    "apple": "Apple Maps"
   },
   "footer": {
     "legal": "Note legali e privacy",

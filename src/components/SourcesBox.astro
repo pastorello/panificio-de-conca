@@ -1,0 +1,26 @@
+---
+// Sources at the end of La storia (DESIGN.md §6.5): label and links on paper-deep, 15 px.
+// Without this box the site does not write «il più antico della provincia».
+import { rich } from '../lib/text';
+
+interface Props {
+  label: string;
+  items: { href: string; text: string; note?: string }[];
+}
+
+const { label, items } = Astro.props;
+---
+
+<aside class="dc-sources" aria-labelledby="sources-label">
+  <span class="dc-sources__label" id="sources-label">{label}</span>
+  <ul>
+    {
+      items.map((item) => (
+        <li>
+          <a href={item.href} set:html={rich(item.text)} />
+          {item.note && ` ${item.note}`}
+        </li>
+      ))
+    }
+  </ul>
+</aside>

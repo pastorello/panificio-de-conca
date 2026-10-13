@@ -1,0 +1,18 @@
+---
+// The big phone number of Ordini and Contatti (DESIGN.md §5.4, §5.8): Fraunces 36 px,
+// tabular figures, a tel: link with the phone icon.
+import type { Locale } from '../routes';
+import { displayPhone, telHref, type Business } from '../lib/site';
+import Icon from './Icon.astro';
+
+interface Props {
+  locale: Locale;
+  business: Business;
+}
+
+const { locale, business } = Astro.props;
+---
+
+<a class="dc-number dc-phone" href={telHref(business)}>
+  <Icon name="phone" />{displayPhone(business, locale)}
+</a>

@@ -44,3 +44,11 @@ export function mapUrls(business: Business): { google: string; apple: string } {
 export function navLabel(t: Strings, key: RouteKey): string {
   return key === 'legal' ? t.footer.legal : t.nav[key];
 }
+
+/** The shop's number wherever the copy writes it, as a tel: link (Text, OrderRule). */
+export function telLink(business: Business): { numbers: string[]; href: string } {
+  return {
+    numbers: [business.phone.national, business.phone.international],
+    href: telHref(business),
+  };
+}

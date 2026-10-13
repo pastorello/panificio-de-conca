@@ -1,5 +1,5 @@
 {
-  "_review": "Aus dem Brief §8.1–8.3 übernommen. Nicht im Brief: cta.day_before (Zeile der CtaBar, aus den Mockups und der CtaBar-Komponente), die Schlüssel unter ui und die Meta-Angaben von Impressum und 404; Übersetzungen vom 13. Oktober 2026, mit den übrigen Texten muttersprachlich prüfen lassen (Brief §8).",
+  "_review": "Aus dem Brief §8.1–8.3 übernommen. Nicht im Brief: cta.day_before (Zeile der CtaBar, aus den Mockups und der CtaBar-Komponente), die Schlüssel unter ui, die Meta-Angaben von Impressum und 404 und die Schlüssel unter hours außer open_today, closed_today, closed_sunday und special; Übersetzungen vom 13. Oktober 2026, mit den übrigen Texten muttersprachlich prüfen lassen (Brief §8).",
   "nav": {
     "home": "Start",
     "story": "Geschichte",
@@ -18,14 +18,25 @@
   },
   "hours": {
     "open_today": "Heute geöffnet {ranges}",
+    "closed_now": "Jetzt geschlossen · öffnet {next}",
     "closed_today": "Heute geschlossen · öffnet {next}",
     "closed_sunday": "Sonntags geschlossen",
-    "special": "Feiertagsöffnungszeiten"
+    "next_today": "heute um {time} Uhr",
+    "next_tomorrow": "morgen um {time} Uhr",
+    "next_day": "{day} um {time} Uhr",
+    "closed": "Geschlossen",
+    "today": "heute",
+    "special": "Feiertagsöffnungszeiten",
+    "table_caption": "Öffnungszeiten"
   },
   "visit": {
     "title": "Besuchen Sie uns",
     "address": "Lungomare Caboto [[CIVICO]], Gaeta, in der Altstadt, gegenüber dem Marinestützpunkt. Parkplätze an der Promenade.",
     "full_hours": "Alle Öffnungszeiten"
+  },
+  "maps": {
+    "google": "Google Maps",
+    "apple": "Apple Karten"
   },
   "footer": {
     "legal": "Impressum & Datenschutz",

@@ -1,0 +1,54 @@
+---
+// The booking rule (DESIGN.md §6.5): paper-deep box with the 4 px brand border on the left,
+// title and sentence from the brief, the phone number as a tel: link. With button: the primary
+// «Chiama e prenota» and the link «Come prenotare →». On desktop, "split" puts the actions in a
+// column on the right, as in the Home mockup.
+import { telHref, telLink, type Business } from '../lib/site';
+import Button from './Button.astro';
+import Text from './Text.astro';
+
+interface Props {
+  business: Business;
+  title: string;
+  text: string;
+  /** Title size: h2 in Home and Ordini, h3 inside a section. */
+  size?: 'h2' | 'h3';
+  call?: string;
+  more?: { href: string; label: string };
+  split?: boolean;
+  id?: string;
+}
+
+const { business, title, text, size = 'h2', call, more, split = false } = Astro.props;
+const id =
+  Astro.props.id ??
+  `rule-${title
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')}`;
+const Heading = size;
+---
+
+<section class:list={['dc-orderrule', { 'dc-orderrule--split': split }]} aria-labelledby={id}>
+  <div class="dc-orderrule__text">
+    <Heading class={`dc-${size}`} id={id}>{title}</Heading>
+    <p><Text value={text} tel={telLink(business)} /></p>
+  </div>
+  {
+    (call || more) && (
+      <div class="dc-actions">
+        {call && (
+          <Button variant="primary" icon="phone" href={telHref(business)}>
+            {call}
+          </Button>
+        )}
+        {more && (
+          <Button variant="link" href={more.href}>
+            {more.label}
+          </Button>
+        )}
+      </div>
+    )
+  }
+</section>

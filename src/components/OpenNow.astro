@@ -1,23 +1,110 @@
 ---
-// Open/closed line (DESIGN.md §6.5). Phase 1: only state 5, the static week that pages
-// show without JavaScript; the live states computed in Europe/Rome come in phase 2.
+// Open/closed line (DESIGN.md §6.5, design/HANDOFF.md §4). The HTML carries state 5, the static
+// week; with JavaScript the line is computed in Europe/Rome from business.json: open today (1),
+// closed now and reopening today (2), closed today (3), with the «Orari delle feste» chip when
+// holiday hours apply (4). Words carry the state, never colour (DESIGN.md §7, decision 7).
 import type { Locale } from '../routes';
 import type { Business, Strings } from '../lib/site';
 import { summarizeWeek } from '../lib/hours';
+import { isPreview } from '../lib/text';
 import Icon from './Icon.astro';
 
 interface Props {
   locale: Locale;
   t: Strings;
   business: Business;
+  /** Fixed instant (ISO 8601) instead of now: only for the component gallery. */
+  at?: string;
+  /** Keep the static week even with JavaScript: only for the component gallery. */
+  static?: boolean;
 }
 
-const { locale, t, business } = Astro.props;
+const { locale, t, business, at, static: isStatic = false } = Astro.props;
 const week = summarizeWeek(business.hours.weekly, locale, t.hours.closed_sunday);
 const rest = [week.ranges, ...week.exceptions].join(', ');
+const data = isStatic
+  ? undefined
+  : JSON.stringify({
+      locale,
+      weekly: business.hours.weekly,
+      special: business.hours.special,
+      strings: t.hours,
+      preview: isPreview,
+      at,
+    });
 ---
 
-<p class="dc-opennow">
+<p class="dc-opennow" data-opennow={data}>
   <Icon name="clock" />
   <span class="dc-opennow__text"><strong>{week.lead}</strong> {rest} · {week.closed}</span>
 </p>
+
+<script>
+  import { describeState, openState, romeTime, type StateText } from '../lib/hours';
+
+  interface Data {
+    locale: string;
+    weekly: Parameters<typeof openState>[1];
+    special: Parameters<typeof openState>[2];
+    strings: Parameters<typeof describeState>[1];
+    preview: boolean;
+    at?: string;
+  }
+
+  /** Appends text, turning [[placeholders]] into <mark class="todo"> in preview. */
+  function appendText(parent: HTMLElement, text: string, preview: boolean) {
+    for (const part of text.split(/(\[\[[\s\S]+?\]\])/)) {
+      if (!part) continue;
+      if (preview && part.startsWith('[[')) {
+        const mark = document.createElement('mark');
+        mark.className = 'todo';
+        mark.textContent = part;
+        parent.append(mark);
+      } else {
+        parent.append(part);
+      }
+    }
+  }
+
+  function render(target: HTMLElement, text: StateText, preview: boolean) {
+    const span = document.createElement('span');
+    span.className = 'dc-opennow__text';
+    if (text.chip) {
+      const chip = document.createElement('span');
+      chip.className = 'dc-chip';
+      chip.textContent = text.chip;
+      span.append(chip);
+    }
+    if (text.lead) {
+      const strong = document.createElement('strong');
+      strong.textContent = text.lead;
+      span.append(strong);
+    }
+    appendText(span, text.pending ?? text.rest, preview);
+    target.querySelector('.dc-opennow__text')?.replaceWith(span);
+  }
+
+  function update() {
+    for (const element of document.querySelectorAll<HTMLElement>('[data-opennow]')) {
+      const data = JSON.parse(element.dataset.opennow ?? '{}') as Data;
+      const now = romeTime(data.at ? new Date(data.at) : new Date());
+      const state = openState(now, data.weekly, data.special);
+      render(element, describeState(state, data.strings, data.locale), data.preview);
+    }
+    // The static week next to OpenNow (VisitBlock, desktop) is only useful once the line
+    // above says what happens today.
+    document.querySelectorAll<HTMLElement>('[data-week]').forEach((week) => (week.hidden = false));
+  }
+
+  // Announced once, politely, then the region goes quiet (DESIGN.md §6.5).
+  const first = document.querySelector<HTMLElement>('[data-opennow]');
+  first?.setAttribute('aria-live', 'polite');
+  requestAnimationFrame(() => {
+    update();
+    setTimeout(() => first?.removeAttribute('aria-live'), 1000);
+  });
+  // A tab left open is brought up to date, silently, when the visitor comes back.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') update();
+  });
+</script>
