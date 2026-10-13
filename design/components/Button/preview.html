@@ -1,0 +1,61 @@
+<!-- @dsCard group="Azioni" height=420 subtitle="Primario, secondario, link con freccia · normale, hover, focus, attivo" -->
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Button — anteprima</title>
+<link rel="stylesheet" href="../../components/bundle.css">
+<link rel="stylesheet" href="../../components/preview.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+</svg>
+
+<div class="dc-stage dc-stage--column">
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">Primario · normale, hover, focus, attivo</span>
+    <div class="dc-stage__row">
+      <a class="dc-btn dc-btn--primary" href="tel:+390771460651"><svg class="dc-icon" aria-hidden="true"><use href="#i-phone"/></svg>Chiama e prenota</a>
+      <a class="dc-btn dc-btn--primary is-hover" href="tel:+390771460651"><svg class="dc-icon" aria-hidden="true"><use href="#i-phone"/></svg>Chiama e prenota</a>
+      <a class="dc-btn dc-btn--primary is-focus" href="tel:+390771460651"><svg class="dc-icon" aria-hidden="true"><use href="#i-phone"/></svg>Chiama e prenota</a>
+      <a class="dc-btn dc-btn--primary is-active" href="tel:+390771460651"><svg class="dc-icon" aria-hidden="true"><use href="#i-phone"/></svg>Chiama e prenota</a>
+    </div>
+  </div>
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">Secondario · normale, hover, focus, attivo</span>
+    <div class="dc-stage__row">
+      <a class="dc-btn dc-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Indicazioni</a>
+      <a class="dc-btn dc-btn--secondary is-hover" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Indicazioni</a>
+      <a class="dc-btn dc-btn--secondary is-focus" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Indicazioni</a>
+      <a class="dc-btn dc-btn--secondary is-active" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Indicazioni</a>
+    </div>
+  </div>
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">Link con freccia · normale, hover, focus, attivo</span>
+    <div class="dc-stage__row">
+      <a class="dc-link" href="#prodotti">Tutti i prodotti<svg class="dc-icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="dc-link is-hover" href="#prodotti">Tutti i prodotti<svg class="dc-icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="dc-link is-focus" href="#prodotti">Tutti i prodotti<svg class="dc-icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="dc-link is-active" href="#prodotti">Tutti i prodotti<svg class="dc-icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </div>
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">Le etichette più lunghe · tedesco e inglese</span>
+    <div class="dc-stage__row">
+      <a class="dc-btn dc-btn--primary" lang="de" href="tel:+390771460651"><svg class="dc-icon" aria-hidden="true"><use href="#i-phone"/></svg>Anrufen und bestellen</a>
+      <a class="dc-btn dc-btn--secondary" lang="de" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Route</a>
+      <a class="dc-btn dc-btn--primary" lang="en" href="tel:+390771460651"><svg class="dc-icon" aria-hidden="true"><use href="#i-phone"/></svg>Call to order</a>
+      <a class="dc-btn dc-btn--secondary" lang="en" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Directions</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

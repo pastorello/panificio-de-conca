@@ -1,0 +1,142 @@
+[
+  {
+    "html": "mobile-home.html",
+    "png": "mobile/home.png",
+    "w": 390,
+    "h": 4200,
+    "title": "Home · mobile"
+  },
+  {
+    "html": "mobile-storia.html",
+    "png": "mobile/storia.png",
+    "w": 390,
+    "h": 4800,
+    "title": "La storia · mobile"
+  },
+  {
+    "html": "mobile-tiella.html",
+    "png": "mobile/tiella.png",
+    "w": 390,
+    "h": 3800,
+    "title": "La tiella di Gaeta · mobile"
+  },
+  {
+    "html": "mobile-prodotti.html",
+    "png": "mobile/prodotti.png",
+    "w": 390,
+    "h": 6100,
+    "title": "Pane e prodotti · mobile"
+  },
+  {
+    "html": "mobile-ordini.html",
+    "png": "mobile/ordini.png",
+    "w": 390,
+    "h": 3800,
+    "title": "Ordini e forniture · mobile"
+  },
+  {
+    "html": "mobile-dove-siamo.html",
+    "png": "mobile/dove-siamo.png",
+    "w": 390,
+    "h": 3400,
+    "title": "Dove siamo · mobile"
+  },
+  {
+    "html": "mobile-contatti.html",
+    "png": "mobile/contatti.png",
+    "w": 390,
+    "h": 2700,
+    "title": "Contatti · mobile"
+  },
+  {
+    "html": "mobile-note-legali.html",
+    "png": "mobile/note-legali.png",
+    "w": 390,
+    "h": 2100,
+    "title": "Note legali · mobile"
+  },
+  {
+    "html": "mobile-404.html",
+    "png": "mobile/404.png",
+    "w": 390,
+    "h": 1600,
+    "title": "404 · mobile"
+  },
+  {
+    "html": "mobile-home-de.html",
+    "png": "mobile/home-de.png",
+    "w": 390,
+    "h": 4500,
+    "title": "Start · Deutsch"
+  },
+  {
+    "html": "mobile-ordini-de.html",
+    "png": "mobile/ordini-de.png",
+    "w": 390,
+    "h": 4300,
+    "title": "Bestellen · Deutsch"
+  },
+  {
+    "html": "desktop-home-a.html",
+    "png": "desktop/home-a.png",
+    "w": 1440,
+    "h": 3300,
+    "title": "Home · desktop, variante A (due colonne)"
+  },
+  {
+    "html": "desktop-home-b.html",
+    "png": "desktop/home-b.png",
+    "w": 1440,
+    "h": 3500,
+    "title": "Home · desktop, variante B (foto a tutta larghezza)"
+  },
+  {
+    "html": "desktop-prodotti.html",
+    "png": "desktop/prodotti.png",
+    "w": 1440,
+    "h": 4600,
+    "title": "Pane e prodotti · desktop"
+  },
+  {
+    "html": "desktop-storia.html",
+    "png": "desktop/storia.png",
+    "w": 1440,
+    "h": 4300,
+    "title": "La storia · desktop"
+  },
+  {
+    "html": "desktop-tiella.html",
+    "png": "desktop/tiella.png",
+    "w": 1440,
+    "h": 3400,
+    "title": "La tiella di Gaeta · desktop"
+  },
+  {
+    "html": "desktop-dove-siamo.html",
+    "png": "desktop/dove-siamo.png",
+    "w": 1440,
+    "h": 3000,
+    "title": "Dove siamo · desktop"
+  },
+  {
+    "html": "states.html",
+    "png": "states.png",
+    "w": 1200,
+    "h": 1500,
+    "title": "Scheda degli stati"
+  },
+  {
+    "html": "og-template.html",
+    "png": "og-template.png",
+    "w": 1200,
+    "h": 630,
+    "title": "Open Graph 1200 × 630"
+  },
+  {
+    "html": "icon-512.html",
+    "png": "icon-512.png",
+    "w": 512,
+    "h": 512,
+    "title": "Icona 512 × 512"
+  }
+]

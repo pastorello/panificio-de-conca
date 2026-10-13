@@ -1,0 +1,118 @@
+/* Token del design system "Panificio De Conca" — generati da design/tokens.json.
+   Stessi nomi nel design system e nel sito: copiare in src/styles/tokens.css e usare solo var(--…). */
+
+:root {
+  color-scheme: light;
+
+  /* Colori */
+  --brand: #DF2329;
+  --brand-deep: #B3181F;
+  --ink: #2A1A14;
+  --ink-soft: #6B4E3A;
+  --paper: #FBF6EC;
+  --paper-deep: #F2E8D5;
+  --line: #DCCFB6;
+  --focus: #2A1A14;
+  --on-brand: #FFFFFF;
+
+  /* Font */
+  --font-display: "Fraunces", "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --font-text: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Scala tipografica (dimensione / interlinea / peso) */
+  --text-h1: 36px;
+  --leading-h1: 1.1;
+  --weight-h1: 700;
+  --text-h1-desktop: 56px;
+  --leading-h1-desktop: 1.05;
+  --weight-h1-desktop: 700;
+  --text-h2: 28px;
+  --leading-h2: 1.15;
+  --weight-h2: 600;
+  --text-h2-desktop: 36px;
+  --leading-h2-desktop: 1.15;
+  --weight-h2-desktop: 600;
+  --text-h3: 22px;
+  --leading-h3: 1.25;
+  --weight-h3: 600;
+  --text-h3-desktop: 24px;
+  --leading-h3-desktop: 1.25;
+  --weight-h3-desktop: 600;
+  --text-number: 36px;
+  --leading-number: 1.1;
+  --weight-number: 700;
+  --text-body: 18px;
+  --leading-body: 1.55;
+  --weight-body: 400;
+  --text-body-strong: 18px;
+  --leading-body-strong: 1.55;
+  --weight-body-strong: 700;
+  --text-button: 18px;
+  --leading-button: 1;
+  --weight-button: 700;
+  --text-small: 15px;
+  --leading-small: 1.5;
+  --weight-small: 400;
+  --text-micro: 13px;
+  --leading-micro: 1.4;
+  --weight-micro: 400;
+  --text-chip: 13px;
+  --leading-chip: 1.4;
+  --weight-chip: 600;
+  --tracking-chip: 0.04em;
+
+  /* Spaziature (base 4 px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Raggi */
+  --radius-md: 4px;
+  --radius-sm: 2px;
+  --radius-none: 0;
+
+  /* Bordi */
+  --border-hairline: 1px;
+  --border-rule: 2px;
+  --border-mark: 4px;
+  --focus-ring: 3px;
+
+  /* Layout */
+  --container: 1120px;
+  --measure: 720px;
+  --gutter-mobile: 20px;
+  --gutter-tablet: 32px;
+  --header-mobile: 56px;
+  --header-desktop: 72px;
+  --ctabar: 84px;
+  --control: 48px;
+  --target: 44px;
+  --fold: 660px;
+
+  /* Breakpoint (solo documentazione: le custom property non funzionano nelle media query) */
+  --bp-tablet: 600px;
+  --bp-desktop: 1024px;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces-latin-full-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback con size-adjust per limitare il salto di layout mentre Fraunces si carica */
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Georgia");
+  size-adjust: 104%;
+  ascent-override: 92%;
+  descent-override: 24%;
+}

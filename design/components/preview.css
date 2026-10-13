@@ -1,0 +1,30 @@
+/* Panificio De Conca — components/preview.css
+   Solo per le anteprime del design system (palcoscenico, etichette, riserva dei token). Non fa parte del sito. */
+
+/* Riserva: gli stessi valori di tokens.json, in un layer, così tokens.css (senza layer) vince sempre quando è caricato. */
+@layer ds-fallback {
+  :root {
+    --brand: #df2329; --brand-deep: #b3181f; --ink: #2a1a14; --ink-soft: #6b4e3a;
+    --paper: #fbf6ec; --paper-deep: #f2e8d5; --line: #dccfb6; --focus: #2a1a14; --on-brand: #ffffff;
+    --font-display: "Fraunces", "Fraunces Variable", Georgia, "Times New Roman", serif;
+    --font-text: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 96px;
+    --radius-md: 4px; --radius-sm: 2px; --radius-none: 0;
+    --border-hairline: 1px; --border-rule: 2px; --border-mark: 4px; --focus-ring: 3px;
+    --container: 1120px; --measure: 720px; --gutter-mobile: 20px; --gutter-tablet: 32px;
+    --header-mobile: 56px; --header-desktop: 72px; --ctabar: 84px; --control: 48px; --target: 44px; --fold: 660px;
+    --bp-tablet: 600px; --bp-desktop: 1024px;
+  }
+  @font-face { font-family: "Fraunces"; src: url("../fonts/fraunces-latin-full-normal.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+}
+
+/* Palcoscenico delle anteprime */
+.dc-stage { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: flex-start; padding: var(--space-5); }
+.dc-stage--column { flex-direction: column; align-items: stretch; }
+.dc-stage--tight { gap: var(--space-4); }
+.dc-stage__item { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.dc-stage__item--phone { width: 390px; max-width: 100%; }
+.dc-stage__item--wide { width: 100%; }
+.dc-stage__label { font-size: 13px; line-height: 1.4; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
+.dc-stage__frame { border: var(--border-hairline) dashed var(--line); }
+.dc-stage__row { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }

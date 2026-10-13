@@ -1,0 +1,44 @@
+<!-- @dsCard group="Orari e visita" height=420 subtitle="Cinque stati, solo testo con l'icona clock: nessun verde, nessun rosso" -->
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>OpenNow — anteprima</title>
+<link rel="stylesheet" href="../../components/bundle.css">
+<link rel="stylesheet" href="../../components/preview.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+</svg>
+
+<div class="dc-stage dc-stage--column dc-stage--tight" style="max-width: 560px">
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">1 · Aperto oggi</span>
+    <p class="dc-opennow"><svg class="dc-icon" aria-hidden="true"><use href="#i-clock"/></svg><span class="dc-opennow__text"><strong>Aperto oggi</strong> 7:30–13:15 e 16:30–20:00</span></p>
+  </div>
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">2 · Chiuso ora, riapre oggi</span>
+    <p class="dc-opennow"><svg class="dc-icon" aria-hidden="true"><use href="#i-clock"/></svg><span class="dc-opennow__text"><strong>Chiuso ora</strong> · riapre oggi alle 16:30</span></p>
+  </div>
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">3 · Chiuso oggi, riapre domani</span>
+    <p class="dc-opennow"><svg class="dc-icon" aria-hidden="true"><use href="#i-clock"/></svg><span class="dc-opennow__text"><strong>Oggi chiuso</strong> · riapre domani alle 7:30</span></p>
+  </div>
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">4 · Orari speciali in vigore</span>
+    <p class="dc-opennow"><svg class="dc-icon" aria-hidden="true"><use href="#i-clock"/></svg><span class="dc-opennow__text"><span class="dc-chip">Orari delle feste</span><strong>Aperto oggi</strong> <em class="dc-placeholder">[[fasce orarie delle feste]]</em></span></p>
+  </div>
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">5 · Senza JavaScript: le fasce della settimana, statiche</span>
+    <p class="dc-opennow"><svg class="dc-icon" aria-hidden="true"><use href="#i-clock"/></svg><span class="dc-opennow__text"><strong>Lunedì–sabato</strong> 7:30–13:15 e 16:30–20:00, giovedì pomeriggio 17:00–20:00 · Domenica chiuso</span></p>
+  </div>
+
+</div>
+</body>
+</html>

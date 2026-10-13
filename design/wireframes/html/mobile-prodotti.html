@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Pane e prodotti — wireframe mobile</title>
+
+<style>
+body{margin:0}
+a{color:#2E2E2E}a:hover{color:#000}
+.wf{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#1A1A1A;background:#fff;box-sizing:border-box}
+.wf *{box-sizing:border-box}
+.h1{font-size:36px;line-height:1.1;font-weight:700;margin:0}
+.h2{font-size:28px;line-height:1.15;font-weight:600;margin:0}
+.h3{font-size:22px;line-height:1.25;font-weight:600;margin:0}
+.body{font-size:18px;line-height:1.55;margin:0}
+.small{font-size:15px;line-height:1.5;margin:0;color:#5A5A5A}
+.micro{font-size:13px;line-height:1.4;margin:0;color:#5A5A5A}
+.ph{position:relative;background:#D9D9D9;border:1px solid #B8B8B8;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin:0}
+.ph svg{position:absolute;inset:0;width:100%;height:100%;stroke:#B8B8B8;stroke-width:1}
+.ph span{position:relative;font-size:14px;line-height:1.3;font-weight:600;color:#1A1A1A;background:#fff;border:1px solid #B8B8B8;padding:4px 8px;max-width:90%}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 16px;border-radius:4px;font-size:18px;font-weight:700;line-height:1;text-decoration:none;white-space:nowrap;cursor:pointer;font-family:inherit}
+.btn-p{background:#3D3D3D;color:#fff;border:2px solid #3D3D3D}
+.btn-s{background:#fff;color:#1A1A1A;border:2px solid #1A1A1A}
+.lnk{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:18px;font-weight:700;color:#2E2E2E;text-decoration:underline}
+.chip{display:inline-block;font-size:13px;line-height:1.4;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#5A5A5A;border:1px solid #B8B8B8;border-radius:2px;padding:2px 8px;background:#fff;align-self:flex-start}
+.anc{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #1A1A1A;border-radius:4px;font-size:15px;font-weight:600;color:#1A1A1A;text-decoration:none}
+.ico{width:24px;height:24px;flex:none}
+.card{border:1px solid #B8B8B8;border-radius:4px;background:#fff;display:flex;flex-direction:column;overflow:hidden;text-decoration:none;color:#1A1A1A}
+.card .ph{border:0;border-bottom:1px solid #B8B8B8;width:100%;aspect-ratio:4/3}
+.card .tx{padding:12px;display:flex;flex-direction:column;gap:8px}
+.card .tx p{font-size:15px;line-height:1.5;margin:0;color:#1A1A1A}
+.grid{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:16px;align-items:stretch}
+.sec{padding:0 20px;display:flex;flex-direction:column;gap:16px}
+.deep{background:#EDEDED}
+.open{display:flex;align-items:flex-start;gap:8px;font-size:18px;line-height:1.55;margin:0}
+.open .ico{margin-top:2px}
+.nav a{display:flex;align-items:center;min-height:44px;color:#1A1A1A;text-decoration:underline;font-size:15px}
+.logo{width:32px;height:32px;flex:none;background:#D9D9D9;border:1px solid #B8B8B8;display:inline-flex;align-items:center;justify-content:center;font-size:9px;color:#1A1A1A}
+</style>
+
+</head>
+<body>
+
+
+<div class="wf" style="position:relative;width:390px;min-height:5700px;display:flex;flex-direction:column">
+
+  <header style="height:56px;border-bottom:1px solid #B8B8B8;background:#fff;display:flex;align-items:center;gap:4px;padding:0 8px 0 20px;flex:none">
+    <a href="mobile-home.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1A1A1A;min-height:44px;flex:1 1 auto"><span class="logo">logo</span><span style="font-size:18px;font-weight:700">Panificio De Conca</span></a>
+    <a href="tel:+390771460651" aria-label="Chiama" style="width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:#1A1A1A"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
+    <a href="#menu" style="display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 8px;color:#1A1A1A;text-decoration:none;font-size:15px;font-weight:700">Menu<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></a>
+  </header>
+
+  <main style="display:flex;flex-direction:column;gap:48px;padding-bottom:48px">
+
+    <section style="padding:24px 20px 0;display:flex;flex-direction:column;gap:12px">
+      <h1 class="h1">Pane, pizzette e dolci</h1>
+      <p class="body">Tutto quello che vendiamo esce dal nostro forno. La lista cambia con le stagioni e con le feste: quello che vedi qui è quello che trovi di solito; per il resto chiedi al banco.</p>
+      <nav aria-label="Categorie" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+        <a class="anc" href="#pane">Pane</a>
+        <a class="anc" href="#salato">Salato</a>
+        <a class="anc" href="#colazione">Colazione</a>
+        <a class="anc" href="#biscotti">Biscotti</a>
+        <a class="anc" href="#dolci">Dolci</a>
+        <a class="anc" href="#feste">Feste</a>
+      </nav>
+    </section>
+
+    <section class="sec" id="pane">
+      <h2 class="h2">Pane</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 8 — pane di giornata, 4:3</span></div>
+          <div class="tx"><h3 class="h3">Pane di giornata</h3><p>Filoni e pagnotte sfornati due volte al giorno; al chilo.</p></div>
+        </article>
+        <article class="card">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 9 — pane senza lievito, 4:3</span></div>
+          <div class="tx"><h3 class="h3">Pane senza lievito</h3><p>Solo il [[GIORNO]], una volta a settimana: prenotalo.</p><span class="chip">Su prenotazione</span></div>
+        </article>
+        <article class="card">
+          <div class="tx"><h3 class="h3">Freselle e taralli</h3><p>Secchi, per la barca, la spiaggia e la valigia.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="salato">
+      <h2 class="h2">Salato</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 7 — pizzette rosse sul vassoio, 4:3</span></div>
+          <div class="tx"><h3 class="h3">Pizzette rosse</h3><p>Le pizzette "storiche" del forno, con il pomodoro.</p></div>
+        </article>
+        <article class="card">
+          <div class="tx"><h3 class="h3">Panini napoletani</h3><p>Con salumi e formaggio nell'impasto; pranzo in una mano.</p></div>
+        </article>
+        <article class="card">
+          <div class="tx"><h3 class="h3">Calzoncini e rustici</h3><p>Con le verdure di stagione, ricotta e salumi; finiscono presto, meglio prenotarli il giorno prima.</p></div>
+        </article>
+        <article class="card">
+          <div class="tx"><h3 class="h3">Frittatine di patate</h3><p>Le frittatine di patate del forno: finiscono in pochi minuti, prenotale il giorno prima.</p></div>
+        </article>
+        <article class="card">
+          <div class="tx"><h3 class="h3">Focaccine</h3><p>Piccole focacce da spuntino; prenotandole il giorno prima le trovi appena sfornate.</p></div>
+        </article>
+        <a class="card" href="mobile-tiella.html">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 4 — tiella intera, 4:3</span></div>
+          <div class="tx"><h3 class="h3" style="display:flex;align-items:center;justify-content:space-between;gap:8px;text-decoration:underline">Tiella di Gaeta<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></h3><p>A fette o intera; vedi la pagina dedicata.</p></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="sec" id="colazione">
+      <h2 class="h2">Colazione</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 12 — cornetti al mattino, 4:3</span></div>
+          <div class="tx"><h3 class="h3">Cornetti</h3><p>Semplici e ripieni, ogni mattina dalle 7:30.</p></div>
+        </article>
+        <article class="card">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 13 — maritozzi con la panna, 4:3</span></div>
+          <div class="tx"><h3 class="h3">Maritozzi</h3><p>Con la panna, fatti al momento: su prenotazione.</p><span class="chip">Su prenotazione</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="biscotti">
+      <h2 class="h2">Biscotti</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 10 — ciambelline al vino in sacchetto, 4:3</span></div>
+          <div class="tx"><h3 class="h3">Ciambelline al vino</h3><p>Il biscotto da portare via: durano settimane.</p></div>
+        </article>
+        <article class="card">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 11 — tozzetti alle mandorle, 4:3</span></div>
+          <div class="tx"><h3 class="h3">Tozzi e tozzetti alle mandorle</h3><p>Da inzuppare nel vino o nel caffè.</p></div>
+        </article>
+        <article class="card">
+          <div class="tx"><h3 class="h3">Biscottoni e crostatine</h3><p>Con le visciole e la marmellata.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="dolci">
+      <h2 class="h2">Dolci</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="tx"><h3 class="h3">Torte e plumcake</h3><p>Torta di mele, torte su prenotazione per feste e compleanni.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="feste">
+      <h2 class="h2">Feste</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 18 — zeppole, 4:3</span></div>
+          <div class="tx"><h3 class="h3">Zeppole</h3><p>Carnevale e San Giuseppe (19 marzo).</p><span class="chip">Carnevale e San Giuseppe</span></div>
+        </article>
+        <article class="card">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 17 — pigna e casatiello, 4:3</span></div>
+          <div class="tx"><h3 class="h3">Pigna e casatiello</h3><p>Pasqua: la pigna dolce e il casatiello salato.</p><span class="chip">Solo a Pasqua</span></div>
+        </article>
+        <article class="card">
+          <div class="ph"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 16 — dolci di Natale confezionati, 4:3</span></div>
+          <div class="tx"><h3 class="h3">Sciuscelle e mostaccioli</h3><p>Natale: i dolci di Gaeta, anche confezionati per regalo.</p><span class="chip">Solo a Natale</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section style="padding:0 20px">
+      <div style="border-left:4px solid #3D3D3D;background:#EDEDED;padding:24px;border-radius:0 4px 4px 0;display:flex;flex-direction:column;gap:12px">
+        <h2 class="h2">Il fresco si prenota il giorno prima</h2>
+        <p class="body">Calzoncini, frittatine di patate, focaccine, tielle e pizzette si preparano la notte prima. Regola semplice: <b>chiami il giorno prima, meglio due, entro la chiusura, dici a che ora passi e li trovi appena sfornati</b>. Se un prodotto è finito, lo prenoti per domani con una telefonata.</p>
+        <a class="btn btn-p" href="tel:+390771460651" style="align-self:flex-start"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Chiama e prenota</a>
+        <a class="lnk" href="mobile-ordini.html">Come prenotare<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </section>
+
+    <section class="deep" style="padding:24px 20px;display:flex;flex-direction:column;gap:12px">
+      <h2 class="h2">Vieni a trovarci</h2>
+      <p class="open"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><b>Aperto oggi</b> 7:30–13:15 e 16:30–20:00</span></p>
+      <p class="body">Lungomare Caboto [[CIVICO]], Gaeta, nel quartiere medievale, di fronte alla base. Parcheggio sul lungomare.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+        <a class="btn btn-s" href="mobile-contatti.html">Orari completi</a>
+        <a class="btn btn-p" href="mobile-dove-siamo.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Indicazioni</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="deep" style="border-top:1px solid #B8B8B8;padding:32px 20px 48px;display:flex;flex-direction:column;gap:24px;flex:1 0 auto">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <span class="logo" style="margin-bottom:8px">logo</span>
+      <p class="small" style="color:#1A1A1A;font-weight:600">Panificio a Gaeta dal 1922</p>
+      <p class="small">De Conca Alessandro e C. S.n.c.</p>
+      <p class="small">P.IVA 01960040598 · REA LT-135120</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <p class="small">Lungomare Giovanni Caboto [[CIVICO]], 04024 Gaeta (LT)</p>
+      <a href="tel:+390771460651" style="font-size:15px;color:#1A1A1A;text-decoration:underline;min-height:44px;display:inline-flex;align-items:center;align-self:flex-start">0771 460651</a>
+      <div style="display:flex;gap:16px">
+        <a href="https://www.facebook.com/panificio.deconca/" style="font-size:15px;color:#1A1A1A;text-decoration:underline;min-height:44px;display:inline-flex;align-items:center">Facebook</a>
+        <a href="#" style="font-size:15px;color:#1A1A1A;text-decoration:underline;min-height:44px;display:inline-flex;align-items:center">Instagram</a>
+      </div>
+    </div>
+    <nav id="menu" class="nav" aria-label="Navigazione" style="display:flex;flex-direction:column">
+      <a href="mobile-home.html">Home</a>
+      <a href="mobile-storia.html">La storia</a>
+      <a href="mobile-tiella.html">La tiella</a>
+      <a href="mobile-prodotti.html" aria-current="page">Pane e prodotti</a>
+      <a href="mobile-ordini.html">Ordini</a>
+      <a href="mobile-dove-siamo.html">Dove siamo</a>
+      <a href="mobile-contatti.html">Contatti</a>
+      <a href="mobile-note-legali.html">Note legali e privacy</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;min-height:44px">
+      <span class="small">Lingua</span>
+      <span style="display:flex;align-items:center;font-size:15px;font-weight:600"><a href="#" lang="it" hreflang="it" aria-current="true" style="display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:#1A1A1A;text-decoration:underline">IT</a><span aria-hidden="true">·</span><a href="#" lang="en" hreflang="en" style="display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:#1A1A1A;text-decoration:none">EN</a><span aria-hidden="true">·</span><a href="#" lang="de" hreflang="de" style="display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:#1A1A1A;text-decoration:none">DE</a></span>
+    </div>
+  </footer>
+
+  <div style="position:absolute;left:0;top:576px;width:390px;height:84px;background:#fff;border-top:1px solid #B8B8B8;padding:8px 20px;display:flex;flex-direction:column;gap:4px;z-index:2">
+    <p class="micro">Prenota il giorno prima e dicci a che ora passi</p>
+    <div style="display:flex;gap:8px">
+      <a class="btn btn-p" href="tel:+390771460651" style="flex:1 1 0;min-width:0;padding:0 10px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Chiama e prenota</a>
+      <a class="btn btn-s" href="mobile-dove-siamo.html" style="flex:0 0 auto;padding:0 10px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Indicazioni</a>
+    </div>
+  </div>
+  <div aria-hidden="true" style="position:absolute;left:0;top:660px;width:390px;border-top:2px dashed #6E6E6E;pointer-events:none;z-index:3">
+    <span style="position:absolute;right:8px;top:6px;font-size:11px;line-height:1;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1A1A1A;background:#fff;border:1px solid #6E6E6E;padding:4px 6px">piega · 660 px</span>
+  </div>
+
+</div>
+
+</body>
+</html>

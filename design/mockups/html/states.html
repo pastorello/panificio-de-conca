@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Scheda degli stati — Panificio De Conca</title>
+<link rel="stylesheet" href="../../components/bundle.css">
+
+<style>
+:root{--brand:#DF2329;--brand-deep:#B3181F;--ink:#2A1A14;--ink-soft:#6B4E3A;--paper:#FBF6EC;--paper-deep:#F2E8D5;--line:#DCCFB6;--focus:#2A1A14;--on-brand:#FFFFFF;--font-display:"Fraunces","Fraunces Variable",Georgia,"Times New Roman",serif;--font-text:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--radius-md:4px;--radius-sm:2px;--radius-none:0;--border-hairline:1px;--border-rule:2px;--border-mark:4px;--focus-ring:3px;--container:1120px;--measure:720px;--gutter-mobile:20px;--gutter-tablet:32px;--header-mobile:56px;--header-desktop:72px;--ctabar:84px;--control:48px;--target:44px;--fold:660px}
+@font-face{font-family:"Fraunces";src:url("../../fonts/fraunces-latin-full-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+body{margin:0;background:#FBF6EC}
+a{color:#B3181F}a:hover{color:#2A1A14}
+.pg{width:1200px;position:relative;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font-family:var(--font-text);font-size:18px;line-height:1.55}
+.pg *{box-sizing:border-box}
+.pl{font-style:italic}
+.lbl{font-size:13px;line-height:1.4;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
+.sec{display:flex;flex-direction:column;gap:16px}
+.row{display:grid;grid-template-columns:160px repeat(4, minmax(0, 1fr));gap:16px;align-items:center}
+.st{display:grid;grid-template-columns:260px minmax(0, 1fr);gap:16px;align-items:start;padding:12px 0;border-top:1px solid var(--line)}
+</style>
+
+</head>
+<body>
+
+
+<div class="pg" style="min-height: 1500px; padding: 48px">
+
+  <div style="display: flex; flex-direction: column; gap: 48px">
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h1 class="dc-h1" style="font-size: 36px; line-height: 1.1">Scheda degli stati</h1>
+      <p class="dc-small dc-soft" style="margin: 0">Componenti del design system Panificio De Conca nei loro stati, in alta fedeltà. Gli stati hover, focus e attivo sono mostrati con le classi gemelle del foglio di stile.</p>
+    </div>
+
+    <section class="sec">
+      <h2 class="dc-h2" style="font-size: 28px">Button</h2>
+      <div class="row">
+        <span class="lbl"></span>
+        <span class="lbl">Normale</span>
+        <span class="lbl">Hover</span>
+        <span class="lbl">Focus</span>
+        <span class="lbl">Attivo</span>
+      </div>
+      <div class="row">
+        <span class="lbl">Primario</span>
+        <a class="dc-btn dc-btn--primary" href="tel:+390771460651"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Chiama e prenota</a>
+        <a class="dc-btn dc-btn--primary is-hover" href="tel:+390771460651"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Chiama e prenota</a>
+        <a class="dc-btn dc-btn--primary is-focus" href="tel:+390771460651"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Chiama e prenota</a>
+        <a class="dc-btn dc-btn--primary is-active" href="tel:+390771460651"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Chiama e prenota</a>
+      </div>
+      <div class="row">
+        <span class="lbl">Secondario</span>
+        <a class="dc-btn dc-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Indicazioni</a>
+        <a class="dc-btn dc-btn--secondary is-hover" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Indicazioni</a>
+        <a class="dc-btn dc-btn--secondary is-focus" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Indicazioni</a>
+        <a class="dc-btn dc-btn--secondary is-active" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Indicazioni</a>
+      </div>
+      <div class="row">
+        <span class="lbl">Link con freccia</span>
+        <a class="dc-link" href="mobile-prodotti.html">Tutti i prodotti<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="dc-link is-hover" href="mobile-prodotti.html">Tutti i prodotti<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="dc-link is-focus" href="mobile-prodotti.html" style="align-self: start; margin: 4px">Tutti i prodotti<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="dc-link is-active" href="mobile-prodotti.html">Tutti i prodotti<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2 class="dc-h2" style="font-size: 28px">OpenNow</h2>
+      <div style="display: flex; flex-direction: column">
+        <div class="st">
+          <span class="lbl" style="padding-top: 6px">1 · Aperto oggi</span>
+          <p class="dc-opennow"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="dc-opennow__text"><strong>Aperto oggi</strong> 7:30–13:15 e 16:30–20:00</span></p>
+        </div>
+        <div class="st">
+          <span class="lbl" style="padding-top: 6px">2 · Chiuso ora, riapre oggi</span>
+          <p class="dc-opennow"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="dc-opennow__text"><strong>Chiuso ora</strong> · riapre oggi alle 16:30</span></p>
+        </div>
+        <div class="st">
+          <span class="lbl" style="padding-top: 6px">3 · Oggi chiuso, riapre domani</span>
+          <p class="dc-opennow"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="dc-opennow__text"><strong>Oggi chiuso</strong> · riapre domani alle 7:30</span></p>
+        </div>
+        <div class="st">
+          <span class="lbl" style="padding-top: 6px">4 · Orari speciali in vigore</span>
+          <p class="dc-opennow"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="dc-opennow__text"><span class="dc-chip">Orari delle feste</span><strong>Aperto oggi</strong> <span class="pl">[[fasce orarie delle luminarie]]</span></span></p>
+        </div>
+        <div class="st" style="border-bottom: 1px solid var(--line)">
+          <span class="lbl" style="padding-top: 6px">5 · Senza JavaScript (statico)</span>
+          <p class="dc-opennow"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="dc-opennow__text"><strong>Lunedì–sabato</strong> 7:30–13:15 e 16:30–20:00, giovedì pomeriggio 17:00–20:00 · Domenica chiuso</span></p>
+        </div>
+      </div>
+    </section>
+
+    <div style="display: grid; grid-template-columns: 390px minmax(0, 1fr); gap: 64px; align-items: start">
+
+      <section class="sec">
+        <h2 class="dc-h2" style="font-size: 28px">NavSheet aperto</h2>
+        <div class="dc-navsheet" role="dialog" aria-label="Menu">
+          <div class="dc-navsheet__head">
+            <span>Panificio De Conca</span>
+            <a class="dc-iconbtn" href="#" aria-label="Chiudi il menu"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></a>
+          </div>
+          <ul class="dc-navsheet__list">
+            <li><a href="mobile-home.html">Home</a></li>
+            <li><a href="mobile-storia.html">La storia</a></li>
+            <li><a href="mobile-tiella.html" aria-current="page">La tiella</a></li>
+            <li><a href="mobile-prodotti.html">Pane e prodotti</a></li>
+            <li><a href="mobile-ordini.html">Ordini</a></li>
+            <li><a href="mobile-dove-siamo.html">Dove siamo</a></li>
+            <li><a href="mobile-contatti.html">Contatti</a></li>
+          </ul>
+          <div class="dc-navsheet__foot">
+            <ul class="dc-lang dc-lang--sheet">
+              <li class="dc-lang__label">Lingua</li>
+              <li><a href="mobile-tiella.html" lang="it" hreflang="it" aria-current="page">IT</a></li>
+              <li class="dc-lang__sep" aria-hidden="true">·</li>
+              <li><a href="mobile-tiella.html" lang="en" hreflang="en">EN</a></li>
+              <li class="dc-lang__sep" aria-hidden="true">·</li>
+              <li><a href="mobile-tiella.html" lang="de" hreflang="de">DE</a></li>
+            </ul>
+            <a class="dc-navsheet__phone" href="tel:+390771460651"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0771 460651</a>
+          </div>
+        </div>
+      </section>
+
+      <div style="display: flex; flex-direction: column; gap: 48px">
+
+        <section class="sec">
+          <h2 class="dc-h2" style="font-size: 28px">HoursTable con la riga "oggi"</h2>
+          <table class="dc-hours" style="max-width: 560px">
+            <tbody>
+              <tr><th scope="row">Lunedì</th><td>7:30–13:15 · 16:30–20:00</td></tr>
+              <tr class="dc-hours__today"><th scope="row">Martedì<span class="dc-hours__badge">oggi</span></th><td>7:30–13:15 · 16:30–20:00</td></tr>
+              <tr><th scope="row">Mercoledì</th><td>7:30–13:15 · 16:30–20:00</td></tr>
+              <tr><th scope="row">Giovedì</th><td>7:30–13:15 · 17:00–20:00</td></tr>
+              <tr><th scope="row">Venerdì</th><td>7:30–13:15 · 16:30–20:00</td></tr>
+              <tr><th scope="row">Sabato</th><td>7:30–13:15 · 16:30–20:00</td></tr>
+              <tr><th scope="row">Domenica</th><td>Chiuso</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="sec">
+          <h2 class="dc-h2" style="font-size: 28px">SeasonTag</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+            <span class="dc-chip">Solo a Natale</span>
+            <span class="dc-chip">Solo a Pasqua</span>
+            <span class="dc-chip">Carnevale e San Giuseppe</span>
+            <span class="dc-chip">Su prenotazione</span>
+          </div>
+        </section>
+
+        <section class="sec">
+          <h2 class="dc-h2" style="font-size: 28px">ProductCard senza foto</h2>
+          <div style="display: grid; grid-template-columns: repeat(2, 268px); gap: 16px; align-items: stretch">
+            <article class="dc-card">
+              <div class="dc-card__body">
+                <h3 class="dc-card__name" style="font-size: 22px">Frittatine di patate</h3>
+                <p class="dc-card__line">Le frittatine di patate del forno: finiscono in pochi minuti, prenotale il giorno prima.</p>
+              </div>
+            </article>
+            <article class="dc-card">
+              <div class="dc-card__body">
+                <h3 class="dc-card__name" style="font-size: 22px">Maritozzi</h3>
+                <p class="dc-card__line">Con la panna, fatti al momento: su prenotazione.</p>
+                <div class="dc-card__meta"><span class="dc-chip">Su prenotazione</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

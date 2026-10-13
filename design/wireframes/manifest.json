@@ -1,0 +1,93 @@
+[
+  {
+    "html": "componenti.html",
+    "png": "componenti.png",
+    "w": 1640,
+    "h": 2400,
+    "title": "Scheda componenti"
+  },
+  {
+    "html": "mobile-home.html",
+    "png": "mobile/home.png",
+    "w": 390,
+    "h": 4300,
+    "title": "Home · mobile"
+  },
+  {
+    "html": "mobile-storia.html",
+    "png": "mobile/storia.png",
+    "w": 390,
+    "h": 4300,
+    "title": "La storia · mobile"
+  },
+  {
+    "html": "mobile-tiella.html",
+    "png": "mobile/tiella.png",
+    "w": 390,
+    "h": 3700,
+    "title": "La tiella di Gaeta · mobile"
+  },
+  {
+    "html": "mobile-prodotti.html",
+    "png": "mobile/prodotti.png",
+    "w": 390,
+    "h": 5700,
+    "title": "Pane e prodotti · mobile"
+  },
+  {
+    "html": "mobile-ordini.html",
+    "png": "mobile/ordini.png",
+    "w": 390,
+    "h": 3400,
+    "title": "Ordini e forniture · mobile"
+  },
+  {
+    "html": "mobile-dove-siamo.html",
+    "png": "mobile/dove-siamo.png",
+    "w": 390,
+    "h": 3000,
+    "title": "Dove siamo · mobile"
+  },
+  {
+    "html": "mobile-contatti.html",
+    "png": "mobile/contatti.png",
+    "w": 390,
+    "h": 2000,
+    "title": "Contatti · mobile"
+  },
+  {
+    "html": "mobile-note-legali.html",
+    "png": "mobile/note-legali.png",
+    "w": 390,
+    "h": 1500,
+    "title": "Note legali · mobile"
+  },
+  {
+    "html": "mobile-404.html",
+    "png": "mobile/404.png",
+    "w": 390,
+    "h": 1400,
+    "title": "404 · mobile"
+  },
+  {
+    "html": "desktop-home.html",
+    "png": "desktop/home.png",
+    "w": 1440,
+    "h": 3500,
+    "title": "Home · desktop, variante A"
+  },
+  {
+    "html": "desktop-prodotti.html",
+    "png": "desktop/prodotti.png",
+    "w": 1440,
+    "h": 5000,
+    "title": "Pane e prodotti · desktop"
+  },
+  {
+    "html": "desktop-storia.html",
+    "png": "desktop/storia.png",
+    "w": 1440,
+    "h": 4300,
+    "title": "La storia · desktop"
+  }
+]

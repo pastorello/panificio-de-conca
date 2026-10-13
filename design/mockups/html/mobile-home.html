@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Home — Panificio De Conca</title>
+<link rel="stylesheet" href="../../components/bundle.css">
+
+<style>
+:root{--brand:#DF2329;--brand-deep:#B3181F;--ink:#2A1A14;--ink-soft:#6B4E3A;--paper:#FBF6EC;--paper-deep:#F2E8D5;--line:#DCCFB6;--focus:#2A1A14;--on-brand:#FFFFFF;--font-display:"Fraunces","Fraunces Variable",Georgia,"Times New Roman",serif;--font-text:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--radius-md:4px;--radius-sm:2px;--radius-none:0;--border-hairline:1px;--border-rule:2px;--border-mark:4px;--focus-ring:3px;--container:1120px;--measure:720px;--gutter-mobile:20px;--gutter-tablet:32px;--header-mobile:56px;--header-desktop:72px;--ctabar:84px;--control:48px;--target:44px;--fold:660px}
+@font-face{font-family:"Fraunces";src:url("../../fonts/fraunces-latin-full-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+body{margin:0;background:#FBF6EC}
+a{color:#B3181F}a:hover{color:#2A1A14}
+.pg{width:390px;position:relative;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font-family:var(--font-text);font-size:18px;line-height:1.55;hyphens:auto}
+.pg *{box-sizing:border-box}
+.pl{font-style:italic}
+</style>
+
+</head>
+<body>
+
+
+<div class="pg" style="min-height: 4200px">
+
+  <header class="dc-header" style="flex: none; gap: 4px; padding-right: 8px">
+    <a class="dc-header__brand" href="mobile-home.html"><img class="dc-header__logo" src="assets/logo-192.jpg" alt="" width="32" height="32">Panificio De Conca</a>
+    <a class="dc-iconbtn" href="tel:+390771460651" aria-label="Chiama il 0771 460651"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+    <a class="dc-header__menu" href="#menu">Menu<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></a>
+  </header>
+
+  <main style="display: flex; flex-direction: column; gap: 48px; padding-bottom: 48px">
+
+    <section>
+      <img src="assets/banco-hero-mobile-3x2.jpg" alt="Il banco del panificio con pizzette, focacce e la bilancia" width="390" height="260" style="display: block; width: 390px; height: 260px; object-fit: cover">
+      <div style="padding: 20px 20px 0; display: flex; flex-direction: column; gap: 12px">
+        <h1 class="dc-h1 dc-h1--home" style="font-size: 36px; line-height: 1.1">Il forno del lungomare di Gaeta, dal 1922</h1>
+        <p style="margin: 0">Pane, tiella di Gaeta, pizzette e dolci delle feste. Tre generazioni, stesso forno, stesso locale di fronte al mare.</p>
+        <p class="dc-opennow"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="dc-opennow__text"><strong>Aperto oggi</strong> 7:30–13:15 e 16:30–20:00</span></p>
+      </div>
+    </section>
+
+    <section style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px">
+      <h2 class="dc-h2" style="font-size: 28px">Cosa trovi al banco</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch">
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/pane-di-giornata.jpg" alt="Pagnotte e filoni appena sfornati" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Pane di giornata</h3>
+            <p class="dc-card__line">Sfornato al mattino e nel pomeriggio; il pane senza lievito ogni <span class="pl">[[GIORNO]]</span>.</p>
+          </div>
+        </article>
+        <a class="dc-card dc-card--link" href="mobile-tiella.html" style="text-decoration: none; color: inherit">
+          <img class="dc-card__media" src="assets/tiella-card.jpg" alt="Tielle di Gaeta sul vassoio" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Tiella di Gaeta</h3>
+            <p class="dc-card__line">Con il polpo, con la cipolla e gli altri ripieni della tradizione; a fette o intera.</p>
+            <span class="dc-link">La tiella<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/pizzette-rosse.jpg" alt="Pizzette rosse e focaccine sul vassoio" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Pizzette rosse</h3>
+            <p class="dc-card__line">Le "storiche" pizzette del forno, buone anche fredde.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/ciambelline-al-vino.jpg" alt="Ciambelline al vino" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Ciambelline al vino e tozzetti alle mandorle</h3>
+            <p class="dc-card__line">I biscotti che i clienti portano a casa dopo le vacanze.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/cornetti.jpg" alt="Cornetti e focacce nel banco del mattino" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Cornetti e colazione</h3>
+            <p class="dc-card__line">Produzione giornaliera dalle 7:30.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/dolci-di-natale.jpg" alt="Cesti di dolci di Natale confezionati" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Dolci delle feste</h3>
+            <p class="dc-card__line">Zeppole a Carnevale, pigna a Pasqua, sciuscelle e mostaccioli a Natale.</p>
+          </div>
+        </article>
+      </div>
+      <a class="dc-link" href="mobile-prodotti.html">Tutti i prodotti<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </section>
+
+    <section style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px">
+      <h2 class="dc-h2" style="font-size: 28px">Dal 1922, nello stesso locale</h2>
+      <figure class="dc-figure dc-figure--3x2 dc-figure--vintage">
+        <img src="assets/epoca-fornai-in-laboratorio-bn.jpg" alt="Foto d'epoca in bianco e nero: i fornai al lavoro in laboratorio" width="900" height="600">
+        <figcaption>Al lavoro in laboratorio, <span class="pl">[[ANNO]]</span></figcaption>
+      </figure>
+      <p style="margin: 0">Almerindo De Conca tornò dall'America e il 4 aprile 1922 aprì il forno con la moglie Annunziata, all'angolo di Salita Porta di Terra. Da allora tre generazioni hanno impastato qui: Almerindo, i figli (i "fratelli De Conca") e oggi Alessandro. Nel 2022 il Comune di Gaeta ha festeggiato con noi i cento anni.</p>
+      <a class="dc-link" href="mobile-storia.html">Leggi la storia<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </section>
+
+    <section style="padding: 0 20px">
+      <div class="dc-orderrule">
+        <h2 class="dc-h2" style="font-size: 28px">Prenota oggi, ritira domani</h2>
+        <p>Calzoncini, frittatine di patate, focaccine, tielle e pizzette si preparano la notte prima: chi telefona il giorno prima al <a href="tel:+390771460651">0771 460651</a> e dice a che ora passa li trova appena sfornati; chi passa senza prenotare li trova se ne sono rimasti. Tielle intere, torte, maritozzi e cesti si prenotano con <span class="pl">[[ANTICIPO]]</span> di anticipo. Nessun modulo, nessuna app: risponde il negozio.</p>
+        <div class="dc-actions">
+          <a class="dc-btn dc-btn--primary" href="tel:+390771460651"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Chiama e prenota</a>
+          <a class="dc-link" href="mobile-ordini.html">Come prenotare<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dc-visit" style="padding: 48px 20px 0">
+      <h2 class="dc-h2" style="font-size: 28px">Vieni a trovarci</h2>
+      <p class="dc-opennow"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="dc-opennow__text"><strong>Aperto oggi</strong> 7:30–13:15 e 16:30–20:00</span></p>
+      <p class="dc-visit__address">Lungomare Caboto <span class="pl">[[CIVICO]]</span>, Gaeta, nel quartiere medievale, di fronte alla base. Parcheggio sul lungomare.</p>
+      <div class="dc-actions">
+        <a class="dc-btn dc-btn--secondary" href="mobile-contatti.html">Orari completi</a>
+        <a class="dc-btn dc-btn--secondary" href="mobile-dove-siamo.html">Indicazioni</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="dc-footer" style="flex: 1 0 auto">
+    <div class="dc-footer__cols">
+      <div>
+        <img class="dc-footer__logo" src="assets/logo-192.jpg" alt="Il Fornaio De Conca" width="96" height="96">
+        <p class="dc-footer__title">Panificio a Gaeta dal 1922</p>
+        <p>De Conca Alessandro e C. S.n.c.</p>
+        <p>P.IVA 01960040598 · REA LT-135120</p>
+      </div>
+      <div>
+        <p>Lungomare Giovanni Caboto <span class="pl">[[CIVICO]]</span>, 04024 Gaeta (LT)</p>
+        <p><a href="tel:+390771460651">0771 460651</a></p>
+        <p><a href="https://www.facebook.com/panificio.deconca/">Facebook</a> · <span class="pl">[[Instagram, quando creato]]</span></p>
+      </div>
+      <div>
+        <ul class="dc-footer__nav" id="menu" aria-label="Navigazione">
+          <li><a href="mobile-home.html" aria-current="page">Home</a></li>
+          <li><a href="mobile-storia.html">La storia</a></li>
+          <li><a href="mobile-tiella.html">La tiella</a></li>
+          <li><a href="mobile-prodotti.html">Pane e prodotti</a></li>
+          <li><a href="mobile-ordini.html">Ordini</a></li>
+          <li><a href="mobile-dove-siamo.html">Dove siamo</a></li>
+          <li><a href="mobile-contatti.html">Contatti</a></li>
+          <li><a href="mobile-note-legali.html">Note legali e privacy</a></li>
+        </ul>
+        <ul class="dc-lang" style="margin-top: 16px">
+          <li class="dc-lang__label">Lingua</li>
+          <li><a href="mobile-home.html" lang="it" hreflang="it" aria-current="page">IT</a></li>
+          <li class="dc-lang__sep" aria-hidden="true">·</li>
+          <li><a href="mobile-home.html" lang="en" hreflang="en">EN</a></li>
+          <li class="dc-lang__sep" aria-hidden="true">·</li>
+          <li><a href="mobile-home-de.html" lang="de" hreflang="de">DE</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="dc-ctabar" style="position: absolute; left: 0; right: 0; top: 760px; z-index: 10">
+    <p class="dc-ctabar__rule">Prenota il giorno prima e dicci a che ora passi</p>
+    <div class="dc-ctabar__actions">
+      <a class="dc-btn dc-btn--primary" href="tel:+390771460651">Chiama e prenota</a>
+      <a class="dc-btn dc-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta">Indicazioni</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

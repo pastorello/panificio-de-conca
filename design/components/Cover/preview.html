@@ -1,0 +1,53 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Panificio De Conca</title>
+<link rel="stylesheet" href="../../components/preview.css">
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--font-text); overflow: hidden; }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; }
+  /* la composizione: un riquadro di 480 px a destra, libero dal nome */
+  .art { position: absolute; top: 0; left: 480px; width: 480px; height: 288px; overflow: hidden; }
+  .art svg { display: block; width: 480px; height: 288px; }
+  .brand { fill: var(--brand); }
+  .deep { fill: var(--ink); }
+  .tint { fill: var(--paper-deep); }
+  .slab { rx: var(--radius-md); }
+  .arch-paper { fill: var(--paper); }
+  .arch-line { fill: var(--line); }
+  .words { position: absolute; left: var(--space-6); bottom: var(--space-6); max-width: 440px; }
+  .name { margin: 0; font-family: var(--font-display); font-variation-settings: "SOFT" 50; font-optical-sizing: auto; font-weight: 700; font-size: 80px; line-height: .95; color: var(--ink); }
+  .tag { margin: var(--space-2) 0 0 2px; font-size: 14px; line-height: 20px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocchi      brand 176×184 che sborda dal bordo superiore (il rosso del logo, il più grande) · paper-deep 176×80 sotto di esso (la carta) · ink 288×240 che sborda dal bordo destro — circa il 40 % di 960×288; nessun brand-deep, che esiste solo per il testo
+  disposizione una lastra alta di brand con la carta sotto, la lastra di ink accanto; basi su una linea a space-6 dal bordo; gutter space-4
+  motivo       archi: dal logo (l'arco del forno con i pani) e dal README («un forno di paese, non una pasticceria»): un arco grande in paper ritagliato nella lastra brand, la bocca del forno; cinque archi piccoli in line sulla lastra ink, i pani sulla pala
+  scale        lati multipli di space-2; gutter space-4; passo degli archi space-7 (48); arco = metà della larghezza (48 e 16); angoli radius-md; basi a space-6 dal bordo, archi piccoli a space-5 dalla base
+-->
+<rect class="brand slab" x="16" y="-16" width="176" height="184" rx="4"/>
+<rect class="tint slab" x="16" y="184" width="176" height="80" rx="4"/>
+<rect class="deep slab" x="208" y="24" width="288" height="240" rx="4"/>
+<path class="arch-paper" d="M56 168 V104 A48 48 0 0 1 152 104 V168 Z"/>
+<path class="arch-line" d="M232 240 V208 A16 16 0 0 1 264 208 V240 Z"/>
+<path class="arch-line" d="M280 240 V208 A16 16 0 0 1 312 208 V240 Z"/>
+<path class="arch-line" d="M328 240 V208 A16 16 0 0 1 360 208 V240 Z"/>
+<path class="arch-line" d="M376 240 V208 A16 16 0 0 1 408 208 V240 Z"/>
+<path class="arch-line" d="M424 240 V208 A16 16 0 0 1 456 208 V240 Z"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Panificio<br>De Conca</h1>
+<p class="tag">Un forno di paese con cento anni di storia.</p>
+</div>
+</div>
+</body>
+</html>

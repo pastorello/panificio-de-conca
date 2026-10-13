@@ -1,0 +1,58 @@
+<!-- @dsCard group="Navigazione" height=300 width=1240 subtitle="Mobile 56 px e desktop 72 px, non fissi; skip link come primo elemento focusabile" -->
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Header — anteprima</title>
+<link rel="stylesheet" href="../../components/bundle.css">
+<link rel="stylesheet" href="../../components/preview.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+</svg>
+
+<div class="dc-stage dc-stage--column">
+
+  <div class="dc-stage__item dc-stage__item--phone">
+    <span class="dc-stage__label">Mobile · 390 px, altezza 56</span>
+    <header class="dc-header dc-stage__frame">
+      <a class="dc-skip" href="#contenuto">Vai al contenuto</a>
+      <a class="dc-header__brand" href="/"><img class="dc-header__logo" src="/_blob/215d49050cddce54a895911408aafc7e" alt="" width="32" height="32">Panificio De Conca</a>
+      <a class="dc-iconbtn" href="tel:+390771460651" aria-label="Chiama il 0771 460651"><svg class="dc-icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
+      <a class="dc-header__menu" href="#menu" aria-haspopup="dialog">Menu<svg class="dc-icon" aria-hidden="true"><use href="#i-menu"/></svg></a>
+    </header>
+  </div>
+
+  <div class="dc-stage__item dc-stage__item--wide">
+    <span class="dc-stage__label">Desktop · da 1024 px, altezza 72, voce corrente «La storia»</span>
+    <header class="dc-header dc-header--desktop dc-stage__frame">
+      <a class="dc-skip" href="#contenuto">Vai al contenuto</a>
+      <a class="dc-header__brand" href="/"><img class="dc-header__logo" src="/_blob/215d49050cddce54a895911408aafc7e" alt="" width="40" height="40">Panificio De Conca</a>
+      <nav class="dc-header__nav" aria-label="Principale">
+        <ul class="dc-nav">
+          <li><a href="/storia/" aria-current="page">La storia</a></li>
+          <li><a href="/tiella-di-gaeta/">La tiella</a></li>
+          <li><a href="/prodotti/">Pane e prodotti</a></li>
+          <li><a href="/ordini/">Ordini</a></li>
+          <li><a href="/dove-siamo/">Dove siamo</a></li>
+          <li><a href="/contatti/">Contatti</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Lingua">
+        <ul class="dc-lang">
+          <li><a href="/storia/" lang="it" hreflang="it" aria-current="page">IT</a></li>
+          <li class="dc-lang__sep" aria-hidden="true">·</li>
+          <li><a href="/en/our-story/" lang="en" hreflang="en">EN</a></li>
+          <li class="dc-lang__sep" aria-hidden="true">·</li>
+          <li><a href="/de/geschichte/" lang="de" hreflang="de">DE</a></li>
+        </ul>
+      </nav>
+      <a class="dc-header__phone" href="tel:+390771460651"><svg class="dc-icon" aria-hidden="true"><use href="#i-phone"/></svg>0771 460651</a>
+    </header>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!-- @dsCard group="Contenuti" height=520 width=900 subtitle="Con foto 4:3, senza foto, con chip, con link (solo la tiella); la griglia da 2 colonne a 390 px" -->
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>ProductCard — anteprima</title>
+<link rel="stylesheet" href="../../components/bundle.css">
+<link rel="stylesheet" href="../../components/preview.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+</svg>
+
+<div class="dc-stage">
+
+  <div class="dc-stage__item dc-stage__item--phone">
+    <span class="dc-stage__label">Griglia mobile · 2 colonne a 390 px</span>
+    <div class="dc-grid dc-grid--2">
+      <article class="dc-card">
+        <img class="dc-card__media" src="/_blob/548f3630797215ff3bab350fc928912a" alt="Pagnotte di pane di giornata nella cesta" width="800" height="600">
+        <div class="dc-card__body">
+          <h3 class="dc-card__name">Pane di giornata</h3>
+          <p class="dc-card__line">Filoni e pagnotte sfornati due volte al giorno; al chilo.</p>
+          <p class="dc-card__price">da <em class="dc-placeholder">[[PREZZO]]</em> al chilo</p>
+        </div>
+      </article>
+      <article class="dc-card">
+        <div class="dc-card__body">
+          <h3 class="dc-card__name">Freselle e taralli</h3>
+          <p class="dc-card__line">Secchi, per la barca, la spiaggia e la valigia.</p>
+        </div>
+      </article>
+      <article class="dc-card">
+        <div class="dc-card__placeholder">Foto 9 — pane senza lievito, 4:3</div>
+        <div class="dc-card__body">
+          <h3 class="dc-card__name">Pane senza lievito</h3>
+          <p class="dc-card__line">Solo il <em class="dc-placeholder">[[GIORNO]]</em>, una volta a settimana: prenotalo.</p>
+          <div class="dc-card__meta"><span class="dc-chip">Su prenotazione</span></div>
+        </div>
+      </article>
+      <article class="dc-card dc-card--link">
+        <div class="dc-card__placeholder">Foto 4 — tiella intera, 4:3</div>
+        <div class="dc-card__body">
+          <h3 class="dc-card__name">Tiella di Gaeta</h3>
+          <p class="dc-card__line">A fette o intera; vedi la pagina dedicata.</p>
+          <a class="dc-link" href="/tiella-di-gaeta/">La tiella<svg class="dc-icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="dc-stage__item" style="width: 420px; max-width: 100%">
+    <span class="dc-stage__label">Le quattro varianti, una per una</span>
+    <div class="dc-grid dc-grid--2">
+      <article class="dc-card">
+        <img class="dc-card__media" src="/_blob/548f3630797215ff3bab350fc928912a" alt="" width="800" height="600">
+        <div class="dc-card__body"><h3 class="dc-card__name">Con foto</h3><p class="dc-card__line">Foto 4:3, nome, una riga, prezzo se c'è.</p></div>
+      </article>
+      <article class="dc-card">
+        <div class="dc-card__body"><h3 class="dc-card__name">Senza foto</h3><p class="dc-card__line">Solo testo: la card resta della stessa famiglia.</p></div>
+      </article>
+      <article class="dc-card">
+        <div class="dc-card__body"><h3 class="dc-card__name">Con chip</h3><p class="dc-card__line">Natale: i dolci di Gaeta, anche confezionati per regalo.</p><div class="dc-card__meta"><span class="dc-chip">Solo a Natale</span></div></div>
+      </article>
+      <article class="dc-card dc-card--link is-hover">
+        <div class="dc-card__body"><h3 class="dc-card__name">Con link · hover</h3><p class="dc-card__line">Solo la tiella: bordo <code>ink</code>, nome <code>brand-deep</code>.</p><a class="dc-link" href="/tiella-di-gaeta/">La tiella<svg class="dc-icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div>
+      </article>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

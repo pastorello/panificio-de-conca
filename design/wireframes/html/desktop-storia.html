@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>La storia — wireframe desktop</title>
+
+<style>
+body{margin:0}
+a{color:#2E2E2E}a:hover{color:#000}
+.wf{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#1A1A1A;background:#fff;box-sizing:border-box}
+.wf *{box-sizing:border-box}
+.h1d{font-size:56px;line-height:1.05;font-weight:700;margin:0}
+.h2d{font-size:36px;line-height:1.15;font-weight:600;margin:0}
+.body{font-size:18px;line-height:1.55;margin:0}
+.small{font-size:15px;line-height:1.5;margin:0;color:#5A5A5A}
+.ph{position:relative;background:#D9D9D9;border:1px solid #B8B8B8;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin:0}
+.ph svg{position:absolute;inset:0;width:100%;height:100%;stroke:#B8B8B8;stroke-width:1}
+.ph span{position:relative;font-size:14px;line-height:1.3;font-weight:600;color:#1A1A1A;background:#fff;border:1px solid #B8B8B8;padding:4px 8px;max-width:90%}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;border-radius:4px;font-size:18px;font-weight:700;line-height:1;text-decoration:none;white-space:nowrap;cursor:pointer;font-family:inherit}
+.btn-p{background:#3D3D3D;color:#fff;border:2px solid #3D3D3D}
+.btn-s{background:#fff;color:#1A1A1A;border:2px solid #1A1A1A}
+.lnk{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:18px;font-weight:700;color:#2E2E2E;text-decoration:underline}
+.ico{width:24px;height:24px;flex:none}
+.wrap{width:1120px;margin:0 auto}
+.col{width:720px;margin:0 auto}
+.deep{background:#EDEDED}
+.open{display:flex;align-items:flex-start;gap:8px;font-size:18px;line-height:1.55;margin:0}
+.open .ico{margin-top:2px}
+.nav a{display:flex;align-items:center;min-height:44px;color:#1A1A1A;text-decoration:underline;font-size:15px}
+.hnav a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;font-size:18px;color:#1A1A1A;text-decoration:none;white-space:nowrap}
+.logo{width:32px;height:32px;flex:none;background:#D9D9D9;border:1px solid #B8B8B8;display:inline-flex;align-items:center;justify-content:center;font-size:9px;color:#1A1A1A}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:160px 560px;gap:0;position:relative;padding-bottom:40px}
+.tl .yr{font-size:28px;line-height:1.15;font-weight:600;margin:0;font-variant-numeric:tabular-nums;padding-right:24px;position:relative}
+.tl .line{position:absolute;left:135px;top:0;bottom:0;width:2px;background:#B8B8B8}
+.tl li.last .line{bottom:auto;height:24px}
+.tl .dot{position:absolute;left:130px;top:10px;width:12px;height:12px;border-radius:50%;background:#3D3D3D}
+.tl .tx{display:flex;flex-direction:column;gap:12px;padding-left:48px}
+</style>
+
+</head>
+<body>
+
+
+<div class="wf" style="position:relative;width:1440px;min-height:4300px;display:flex;flex-direction:column">
+
+  <header style="height:72px;border-bottom:1px solid #B8B8B8;background:#fff;flex:none">
+    <div class="wrap" style="height:100%;display:flex;align-items:center;gap:16px">
+      <a href="desktop-home.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1A1A1A;min-height:44px;flex:none"><span class="logo">logo</span><span style="font-size:18px;font-weight:700;white-space:nowrap">Panificio De Conca</span></a>
+      <nav class="hnav" aria-label="Navigazione" style="display:flex;align-items:center;flex:1 1 auto;min-width:0">
+        <a href="desktop-storia.html" aria-current="page" style="text-decoration:underline">La storia</a>
+        <a href="mobile-tiella.html">La tiella</a>
+        <a href="desktop-prodotti.html">Pane e prodotti</a>
+        <a href="mobile-ordini.html">Ordini</a>
+        <a href="mobile-dove-siamo.html">Dove siamo</a>
+        <a href="mobile-contatti.html">Contatti</a>
+      </nav>
+      <div aria-label="Lingua" style="display:flex;align-items:center;font-size:15px;font-weight:600;flex:none">
+        <a href="#" lang="it" hreflang="it" aria-current="true" style="display:inline-flex;align-items:center;min-height:44px;padding:0 6px;color:#1A1A1A;text-decoration:underline">IT</a><span aria-hidden="true">·</span><a href="#" lang="en" hreflang="en" style="display:inline-flex;align-items:center;min-height:44px;padding:0 6px;color:#1A1A1A;text-decoration:none">EN</a><span aria-hidden="true">·</span><a href="#" lang="de" hreflang="de" style="display:inline-flex;align-items:center;min-height:44px;padding:0 6px;color:#1A1A1A;text-decoration:none">DE</a>
+      </div>
+      <a href="tel:+390771460651" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:18px;font-weight:600;color:#1A1A1A;text-decoration:none;white-space:nowrap;flex:none"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0771 460651</a>
+    </div>
+  </header>
+
+  <main style="display:flex;flex-direction:column;gap:64px;padding-bottom:64px">
+
+    <section class="col" style="padding-top:64px;display:flex;flex-direction:column;gap:16px">
+      <h1 class="h1d">Cento anni di pane sul lungomare</h1>
+      <p class="body">Dal 4 aprile 1922 il forno non ha mai cambiato indirizzo.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+        <a class="btn btn-p" href="tel:+390771460651"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Chiama e prenota</a>
+        <a class="btn btn-s" href="mobile-dove-siamo.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Indicazioni</a>
+      </div>
+      <p class="small">Prenota il giorno prima e dicci a che ora passi</p>
+    </section>
+
+    <section class="col">
+      <ol class="tl">
+        <li>
+          <span class="line" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <h2 class="yr">1922</h2>
+          <div class="tx">
+            <p class="body">Almerindo De Conca torna dall'America e, con la moglie Annunziata Di Schino, apre il forno all'angolo tra il Lungomare Caboto e Salita Porta di Terra, nel quartiere medievale. Gas e corrente elettrica non sono ancora arrivati nelle case: pane e dolci si fanno con la legna.</p>
+            <figure style="margin:0">
+              <div class="ph" style="width:100%;aspect-ratio:3/2"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 21 — fondatori, d'epoca b/n, 3:2</span></div>
+              <figcaption class="small" style="margin-top:8px">[[DIDASCALIA: anno e soggetto]]</figcaption>
+            </figure>
+          </div>
+        </li>
+        <li>
+          <span class="line" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <h2 class="yr">Dopoguerra</h2>
+          <div class="tx">
+            <p class="body">Il forno riapre dopo la breve interruzione della guerra. Nell'immediato dopoguerra il pane va anche a chi ne ha bisogno, tra cui gli sfollati della caserma Cosenz.</p>
+          </div>
+        </li>
+        <li>
+          <span class="line" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <h2 class="yr">1958</h2>
+          <div class="tx">
+            <p class="body">L'insegna diventa "Il Fornaio di De Conca Almerindo e figli": Anna, Aida, Antonio e Alfonso lavorano con il padre.</p>
+            <figure style="margin:0">
+              <div class="ph" style="width:100%;aspect-ratio:3/2"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 2 — insegna storica, b/n, 3:2</span></div>
+              <figcaption class="small" style="margin-top:8px">[[DIDASCALIA: anno e soggetto]]</figcaption>
+            </figure>
+          </div>
+        </li>
+        <li>
+          <span class="line" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <h2 class="yr">1965</h2>
+          <div class="tx">
+            <p class="body">Antonio e Alfonso prendono in mano il forno. Per due generazioni di gaetani sono "i fratelli De Conca": pane, tielle di tutti i tipi, pizze, pizzette, tozzi, biscotti, rustici, torte e dolci delle feste.</p>
+          </div>
+        </li>
+        <li>
+          <span class="line" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <h2 class="yr">2005</h2>
+          <div class="tx">
+            <p class="body">Alessandro, figlio di Alfonso, subentra alla guida. Le ricette restano quelle; accanto arrivano nuovi prodotti.</p>
+          </div>
+        </li>
+        <li>
+          <span class="line" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <h2 class="yr">2022</h2>
+          <div class="tx">
+            <p class="body">Il centenario. Il Comune di Gaeta consegna una pergamena "a tre generazioni che dall'aprile 1922 hanno investito capacità, sforzi e sacrifici nel Panificio De Conca, uno dei punti di riferimento della gastronomia gaetana".</p>
+            <figure style="margin:0">
+              <div class="ph" style="width:100%;aspect-ratio:3/2"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 22 — pergamena del centenario, 3:2</span></div>
+              <figcaption class="small" style="margin-top:8px">[[Foto della pergamena]]</figcaption>
+            </figure>
+          </div>
+        </li>
+        <li class="last">
+          <span class="line" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <h2 class="yr">Oggi</h2>
+          <div class="tx">
+            <p class="body">Stesso locale, stesso forno, stessa famiglia. E la Sciusciata di Capodanno, la tradizione gaetana di canti e auguri della notte del 31 dicembre, che ogni anno parte da qui [[da confermare con il titolare]].</p>
+            <figure style="margin:0">
+              <div class="ph" style="width:100%;aspect-ratio:3/2"><svg aria-hidden="true"><line x1="0" y1="0" x2="100%" y2="100%"/><line x1="100%" y1="0" x2="0" y2="100%"/></svg><span>FOTO 20 — la famiglia davanti al forno, 3:2</span></div>
+              <figcaption class="small" style="margin-top:8px">[[DIDASCALIA: anno e soggetto]]</figcaption>
+            </figure>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="col">
+      <div class="deep" style="padding:16px 20px;border-radius:4px;display:flex;flex-direction:column;gap:8px">
+        <p class="small" style="color:#1A1A1A;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:13px">Fonti</p>
+        <p class="small"><a href="https://www.ilmessaggero.it/pay/gaeta_compie_un_secolo_il_panificio_de_conca_e_il_piu_antico_della_provincia-6733111.html" style="color:#1A1A1A">Il Messaggero, 5 giugno 2022, "Gaeta, compie un secolo il panificio De Conca: è il più antico della provincia"</a> (per abbonati)</p>
+        <p class="small"><a href="https://www.arcidiocesigaeta.it/wp-content/uploads/sites/6/2022/06/13/Diocesane_Lazio7_Gaeta_20220612_E01.pdf" style="color:#1A1A1A">Lazio Sette, 12 giugno 2022, "Lo storico forno «De Conca» di Gaeta da un secolo fa il pane sul lungomare"</a></p>
+      </div>
+    </section>
+
+    <section class="deep" style="padding:48px 0;margin-top:32px">
+      <div class="wrap" style="display:flex;flex-direction:column;gap:24px">
+        <h2 class="h2d">Vieni a trovarci</h2>
+        <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:40px;align-items:start">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <p class="open"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><b>Aperto oggi</b> 7:30–13:15 e 16:30–20:00</span></p>
+            <a class="lnk" href="mobile-contatti.html" style="align-self:flex-start">Orari completi<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+          <p class="body">Lungomare Caboto [[CIVICO]], Gaeta, nel quartiere medievale, di fronte alla base. Parcheggio sul lungomare.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <a class="btn btn-p" href="tel:+390771460651"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Chiama e prenota</a>
+              <a class="btn btn-s" href="mobile-dove-siamo.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Indicazioni</a>
+            </div>
+            <p class="small">Prenota il giorno prima e dicci a che ora passi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="deep" style="border-top:1px solid #B8B8B8;padding:48px 0 64px;flex:1 0 auto">
+    <div class="wrap" style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:40px">
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <span class="logo" style="margin-bottom:8px">logo</span>
+        <p class="small" style="color:#1A1A1A;font-weight:600">Panificio a Gaeta dal 1922</p>
+        <p class="small">De Conca Alessandro e C. S.n.c.</p>
+        <p class="small">P.IVA 01960040598 · REA LT-135120</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <p class="small">Lungomare Giovanni Caboto [[CIVICO]], 04024 Gaeta (LT)</p>
+        <a href="tel:+390771460651" style="font-size:15px;color:#1A1A1A;text-decoration:underline;min-height:44px;display:inline-flex;align-items:center;align-self:flex-start">0771 460651</a>
+        <div style="display:flex;gap:16px">
+          <a href="https://www.facebook.com/panificio.deconca/" style="font-size:15px;color:#1A1A1A;text-decoration:underline;min-height:44px;display:inline-flex;align-items:center">Facebook</a>
+          <a href="#" style="font-size:15px;color:#1A1A1A;text-decoration:underline;min-height:44px;display:inline-flex;align-items:center">Instagram</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <nav id="menu" class="nav" aria-label="Navigazione" style="display:flex;flex-direction:column">
+          <a href="desktop-home.html">Home</a>
+          <a href="desktop-storia.html" aria-current="page">La storia</a>
+          <a href="mobile-tiella.html">La tiella</a>
+          <a href="desktop-prodotti.html">Pane e prodotti</a>
+          <a href="mobile-ordini.html">Ordini</a>
+          <a href="mobile-dove-siamo.html">Dove siamo</a>
+          <a href="mobile-contatti.html">Contatti</a>
+          <a href="mobile-note-legali.html">Note legali e privacy</a>
+        </nav>
+        <div style="display:flex;align-items:center;gap:12px;min-height:44px">
+          <span class="small">Lingua</span>
+          <span style="display:flex;align-items:center;font-size:15px;font-weight:600"><a href="#" lang="it" hreflang="it" aria-current="true" style="display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:#1A1A1A;text-decoration:underline">IT</a><span aria-hidden="true">·</span><a href="#" lang="en" hreflang="en" style="display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:#1A1A1A;text-decoration:none">EN</a><span aria-hidden="true">·</span><a href="#" lang="de" hreflang="de" style="display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:#1A1A1A;text-decoration:none">DE</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

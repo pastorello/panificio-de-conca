@@ -1,0 +1,34 @@
+<!-- @dsCard group="Azioni" height=220 subtitle="Due bottoni nelle pagine (Google Maps, Apple Maps), un solo bottone nella CtaBar" -->
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>MapLinks — anteprima</title>
+<link rel="stylesheet" href="../../components/bundle.css">
+<link rel="stylesheet" href="../../components/preview.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+</svg>
+
+<div class="dc-stage">
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">Pagina · Dove siamo e Contatti</span>
+    <div class="dc-maplinks">
+      <a class="dc-btn dc-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta"><svg class="dc-icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Google Maps</a>
+      <a class="dc-btn dc-btn--secondary" href="https://maps.apple.com/?q=Panificio+De+Conca&amp;ll=41.2132,13.5778"><svg class="dc-icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Apple Maps</a>
+    </div>
+  </div>
+
+  <div class="dc-stage__item">
+    <span class="dc-stage__label">CtaBar e riga CTA · un solo bottone</span>
+    <div class="dc-maplinks">
+      <a class="dc-btn dc-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta" data-apple-href="https://maps.apple.com/?q=Panificio+De+Conca&amp;ll=41.2132,13.5778"><svg class="dc-icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Indicazioni</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

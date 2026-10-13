@@ -1,0 +1,52 @@
+<!-- @dsCard group="Navigazione" height=700 subtitle="Foglio di navigazione a tutto schermo, aperto, con la voce corrente" -->
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>NavSheet — anteprima</title>
+<link rel="stylesheet" href="../../components/bundle.css">
+<link rel="stylesheet" href="../../components/preview.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+</svg>
+
+<div class="dc-stage">
+  <div class="dc-stage__item dc-stage__item--phone">
+    <span class="dc-stage__label">Aperto · 390 px, voce corrente «La tiella»</span>
+    <dialog class="dc-navsheet" id="menu" open aria-label="Menu">
+      <div class="dc-navsheet__head">
+        <span>Panificio De Conca</span>
+        <button class="dc-iconbtn" type="button" aria-label="Chiudi il menu"><svg class="dc-icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+      </div>
+      <nav aria-label="Principale">
+        <ul class="dc-navsheet__list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/storia/">La storia</a></li>
+          <li><a href="/tiella-di-gaeta/" aria-current="page">La tiella</a></li>
+          <li><a href="/prodotti/">Pane e prodotti</a></li>
+          <li><a href="/ordini/">Ordini</a></li>
+          <li><a href="/dove-siamo/">Dove siamo</a></li>
+          <li><a href="/contatti/">Contatti</a></li>
+        </ul>
+      </nav>
+      <div class="dc-navsheet__foot">
+        <nav aria-label="Lingua">
+          <ul class="dc-lang dc-lang--sheet">
+            <li class="dc-lang__label">Lingua</li>
+            <li><a href="/tiella-di-gaeta/" lang="it" hreflang="it" aria-current="page">IT</a></li>
+            <li class="dc-lang__sep" aria-hidden="true">·</li>
+            <li><a href="/en/tiella-di-gaeta/" lang="en" hreflang="en">EN</a></li>
+            <li class="dc-lang__sep" aria-hidden="true">·</li>
+            <li><a href="/de/tiella-di-gaeta/" lang="de" hreflang="de">DE</a></li>
+          </ul>
+        </nav>
+        <a class="dc-navsheet__phone" href="tel:+390771460651"><svg class="dc-icon" aria-hidden="true"><use href="#i-phone"/></svg>0771 460651</a>
+      </div>
+    </dialog>
+  </div>
+</div>
+</body>
+</html>

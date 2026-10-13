@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Pane, pizzette e dolci — Panificio De Conca</title>
+<link rel="stylesheet" href="../../components/bundle.css">
+
+<style>
+:root{--brand:#DF2329;--brand-deep:#B3181F;--ink:#2A1A14;--ink-soft:#6B4E3A;--paper:#FBF6EC;--paper-deep:#F2E8D5;--line:#DCCFB6;--focus:#2A1A14;--on-brand:#FFFFFF;--font-display:"Fraunces","Fraunces Variable",Georgia,"Times New Roman",serif;--font-text:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--radius-md:4px;--radius-sm:2px;--radius-none:0;--border-hairline:1px;--border-rule:2px;--border-mark:4px;--focus-ring:3px;--container:1120px;--measure:720px;--gutter-mobile:20px;--gutter-tablet:32px;--header-mobile:56px;--header-desktop:72px;--ctabar:84px;--control:48px;--target:44px;--fold:660px}
+@font-face{font-family:"Fraunces";src:url("../../fonts/fraunces-latin-full-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+body{margin:0;background:#FBF6EC}
+a{color:#B3181F}a:hover{color:#2A1A14}
+.pg{width:390px;position:relative;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font-family:var(--font-text);font-size:18px;line-height:1.55;hyphens:auto}
+.pg *{box-sizing:border-box}
+.pl{font-style:italic}
+.cat{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:4px;background:var(--paper-deep);color:var(--ink);font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+.cat:hover{border-color:var(--ink);color:var(--ink)}
+</style>
+
+</head>
+<body>
+
+
+<div class="pg" style="min-height: 6100px">
+
+  <header class="dc-header" style="flex: none; gap: 4px; padding-right: 8px">
+    <a class="dc-header__brand" href="mobile-home.html"><img class="dc-header__logo" src="assets/logo-192.jpg" alt="" width="32" height="32">Panificio De Conca</a>
+    <a class="dc-iconbtn" href="tel:+390771460651" aria-label="Chiama il 0771 460651"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+    <a class="dc-header__menu" href="#menu">Menu<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></a>
+  </header>
+
+  <main style="display: flex; flex-direction: column; gap: 48px; padding: 24px 0 48px">
+
+    <section style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px">
+      <h1 class="dc-h1" style="font-size: 36px; line-height: 1.1">Pane, pizzette e dolci</h1>
+      <p style="margin: 0">Tutto quello che vendiamo esce dal nostro forno. La lista cambia con le stagioni e con le feste: quello che vedi qui è quello che trovi di solito; per il resto chiedi al banco.</p>
+      <nav aria-label="Categorie" style="display: flex; flex-wrap: wrap; gap: 8px">
+        <a class="cat" href="#pane">Pane</a>
+        <a class="cat" href="#salato">Salato</a>
+        <a class="cat" href="#colazione">Colazione</a>
+        <a class="cat" href="#biscotti">Biscotti</a>
+        <a class="cat" href="#dolci">Dolci</a>
+        <a class="cat" href="#feste">Feste</a>
+      </nav>
+    </section>
+
+    <section id="pane" style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px">
+      <h2 class="dc-h2" style="font-size: 28px">Pane</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch">
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/pane-di-giornata.jpg" alt="Pagnotte e filoni appena sfornati" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Pane di giornata</h3>
+            <p class="dc-card__line">Filoni e pagnotte sfornati due volte al giorno; al chilo.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/pane-tagliato.jpg" alt="Un pane tagliato a metà tenuto tra le mani" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Pane senza lievito</h3>
+            <p class="dc-card__line">Solo il <span class="pl">[[GIORNO]]</span>, una volta a settimana: prenotalo.</p>
+            <div class="dc-card__meta"><span class="dc-chip">Su prenotazione</span></div>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/taralli.jpg" alt="Taralli sulla teglia" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Freselle e taralli</h3>
+            <p class="dc-card__line">Secchi, per la barca, la spiaggia e la valigia.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="salato" style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px">
+      <h2 class="dc-h2" style="font-size: 28px">Salato</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch">
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/pizzette-rosse.jpg" alt="Pizzette rosse e focaccine sul vassoio" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Pizzette rosse</h3>
+            <p class="dc-card__line">Le pizzette "storiche" del forno, con il pomodoro.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/panino-napoletano.jpg" alt="Panino con salumi e formaggio nell'impasto, tagliato" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Panini napoletani</h3>
+            <p class="dc-card__line">Con salumi e formaggio nell'impasto; pranzo in una mano.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/calzoncino-scarola.jpg" alt="Calzoncino con scarola e olive, aperto a metà" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Calzoncini e rustici</h3>
+            <p class="dc-card__line">Con le verdure di stagione, ricotta e salumi; finiscono presto, meglio prenotarli il giorno prima.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Frittatine di patate</h3>
+            <p class="dc-card__line">Le frittatine di patate del forno: finiscono in pochi minuti, prenotale il giorno prima.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/focaccine.jpg" alt="Focaccine sul vassoio" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Focaccine</h3>
+            <p class="dc-card__line">Piccole focacce da spuntino; prenotandole il giorno prima le trovi appena sfornate.</p>
+          </div>
+        </article>
+        <a class="dc-card dc-card--link" href="mobile-tiella.html" style="text-decoration: none; color: inherit">
+          <img class="dc-card__media" src="assets/tiella-card.jpg" alt="Tielle di Gaeta sul vassoio" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Tiella di Gaeta</h3>
+            <p class="dc-card__line">A fette o intera; vedi la pagina dedicata.</p>
+            <span class="dc-link">La tiella<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="colazione" style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px">
+      <h2 class="dc-h2" style="font-size: 28px">Colazione</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch">
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/cornetti.jpg" alt="Cornetti e focacce nel banco del mattino" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Cornetti</h3>
+            <p class="dc-card__line">Semplici e ripieni, ogni mattina dalle 7:30.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <div class="dc-card__placeholder">Foto 13 — maritozzi con la panna, 4:3</div>
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Maritozzi</h3>
+            <p class="dc-card__line">Con la panna, fatti al momento: su prenotazione.</p>
+            <div class="dc-card__meta"><span class="dc-chip">Su prenotazione</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="biscotti" style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px">
+      <h2 class="dc-h2" style="font-size: 28px">Biscotti</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch">
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/ciambelline-al-vino.jpg" alt="Ciambelline al vino" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Ciambelline al vino</h3>
+            <p class="dc-card__line">Il biscotto da portare via: durano settimane.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/tozzetti.jpg" alt="Tozzetti alle mandorle" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Tozzi e tozzetti alle mandorle</h3>
+            <p class="dc-card__line">Da inzuppare nel vino o nel caffè.</p>
+          </div>
+        </article>
+        <article class="dc-card">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Biscottoni e crostatine</h3>
+            <p class="dc-card__line">Con le visciole e la marmellata.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="dolci" style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px">
+      <h2 class="dc-h2" style="font-size: 28px">Dolci</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch">
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/torta.jpg" alt="Torta con zucchero a velo" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Torte e plumcake</h3>
+            <p class="dc-card__line">Torta di mele, torte su prenotazione per feste e compleanni.</p>
+            <div class="dc-card__meta"><span class="dc-chip">Su prenotazione</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="feste" style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px">
+      <h2 class="dc-h2" style="font-size: 28px">Feste</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch">
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/zeppole.jpg" alt="Zeppole con la crema e l'amarena" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Zeppole</h3>
+            <p class="dc-card__line">Carnevale e San Giuseppe (19 marzo).</p>
+            <div class="dc-card__meta"><span class="dc-chip">Carnevale e San Giuseppe</span></div>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/pigna-di-pasqua.jpg" alt="La pigna di Pasqua con la glassa" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Pigna e casatiello</h3>
+            <p class="dc-card__line">Pasqua: la pigna dolce e il casatiello salato.</p>
+            <div class="dc-card__meta"><span class="dc-chip">Solo a Pasqua</span></div>
+          </div>
+        </article>
+        <article class="dc-card">
+          <img class="dc-card__media" src="assets/mostaccioli.jpg" alt="Mostaccioli ricoperti di cioccolato" width="800" height="600">
+          <div class="dc-card__body">
+            <h3 class="dc-card__name" style="font-size: 22px">Sciuscelle e mostaccioli</h3>
+            <p class="dc-card__line">Natale: i dolci di Gaeta, anche confezionati per regalo.</p>
+            <div class="dc-card__meta"><span class="dc-chip">Solo a Natale</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section style="padding: 0 20px">
+      <div class="dc-orderrule">
+        <h3 class="dc-h3" style="font-size: 22px">Il fresco si prenota il giorno prima</h3>
+        <p>Calzoncini, frittatine di patate, focaccine, tielle e pizzette si preparano la notte prima. Regola semplice: <strong>chiami il giorno prima, meglio due, entro la chiusura, dici a che ora passi e li trovi appena sfornati</strong>. Se un prodotto è finito, lo prenoti per domani con una telefonata al <a href="tel:+390771460651">0771 460651</a>.</p>
+        <div class="dc-actions">
+          <a class="dc-link" href="mobile-ordini.html">Come prenotare<svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dc-visit" style="padding: 48px 20px 0">
+      <h2 class="dc-h2" style="font-size: 28px">Vieni a trovarci</h2>
+      <p class="dc-opennow"><svg class="dc-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="dc-opennow__text"><strong>Aperto oggi</strong> 7:30–13:15 e 16:30–20:00</span></p>
+      <p class="dc-visit__address">Lungomare Caboto <span class="pl">[[CIVICO]]</span>, Gaeta, nel quartiere medievale, di fronte alla base. Parcheggio sul lungomare.</p>
+      <div class="dc-actions">
+        <a class="dc-btn dc-btn--secondary" href="mobile-contatti.html">Orari completi</a>
+        <a class="dc-btn dc-btn--secondary" href="mobile-dove-siamo.html">Indicazioni</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="dc-footer" style="flex: 1 0 auto">
+    <div class="dc-footer__cols">
+      <div>
+        <img class="dc-footer__logo" src="assets/logo-192.jpg" alt="Il Fornaio De Conca" width="96" height="96">
+        <p class="dc-footer__title">Panificio a Gaeta dal 1922</p>
+        <p>De Conca Alessandro e C. S.n.c.</p>
+        <p>P.IVA 01960040598 · REA LT-135120</p>
+      </div>
+      <div>
+        <p>Lungomare Giovanni Caboto <span class="pl">[[CIVICO]]</span>, 04024 Gaeta (LT)</p>
+        <p><a href="tel:+390771460651">0771 460651</a></p>
+        <p><a href="https://www.facebook.com/panificio.deconca/">Facebook</a> · <span class="pl">[[Instagram, quando creato]]</span></p>
+      </div>
+      <div>
+        <ul class="dc-footer__nav" id="menu" aria-label="Navigazione">
+          <li><a href="mobile-home.html">Home</a></li>
+          <li><a href="mobile-storia.html">La storia</a></li>
+          <li><a href="mobile-tiella.html">La tiella</a></li>
+          <li><a href="mobile-prodotti.html" aria-current="page">Pane e prodotti</a></li>
+          <li><a href="mobile-ordini.html">Ordini</a></li>
+          <li><a href="mobile-dove-siamo.html">Dove siamo</a></li>
+          <li><a href="mobile-contatti.html">Contatti</a></li>
+          <li><a href="mobile-note-legali.html">Note legali e privacy</a></li>
+        </ul>
+        <ul class="dc-lang" style="margin-top: 16px">
+          <li class="dc-lang__label">Lingua</li>
+          <li><a href="mobile-prodotti.html" lang="it" hreflang="it" aria-current="page">IT</a></li>
+          <li class="dc-lang__sep" aria-hidden="true">·</li>
+          <li><a href="mobile-prodotti.html" lang="en" hreflang="en">EN</a></li>
+          <li class="dc-lang__sep" aria-hidden="true">·</li>
+          <li><a href="mobile-prodotti.html" lang="de" hreflang="de">DE</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="dc-ctabar" style="position: absolute; left: 0; right: 0; top: 760px; z-index: 10">
+    <p class="dc-ctabar__rule">Prenota il giorno prima e dicci a che ora passi</p>
+    <div class="dc-ctabar__actions">
+      <a class="dc-btn dc-btn--primary" href="tel:+390771460651">Chiama e prenota</a>
+      <a class="dc-btn dc-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Panificio+De+Conca+Gaeta">Indicazioni</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
