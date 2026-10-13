@@ -226,6 +226,106 @@ mark.todo {
     padding: var(--space-8) 0 var(--space-9);
   }
 }
+/* Home sotto 1024 px: la foto sta subito sotto l'header, senza spazio */
+.dc-page--flush {
+  padding-top: 0;
+}
+@media (min-width: 1024px) {
+  .dc-page--flush {
+    padding-top: var(--space-8);
+  }
+}
+
+/* Pagine di contenuto (DESIGN.md §5.4): una colonna di 720 px centrata, con il gutter sotto i 760 px */
+.dc-col {
+  width: 100%;
+  max-width: calc(var(--measure) + 2 * var(--gutter-mobile));
+  margin-inline: auto;
+  padding-inline: var(--gutter-mobile);
+}
+@media (min-width: 600px) {
+  .dc-col {
+    max-width: calc(var(--measure) + 2 * var(--gutter-tablet));
+    padding-inline: var(--gutter-tablet);
+  }
+}
+/* Apertura e sezioni H2 delle pagine: 16 px tra i blocchi, 20 px da 1024 px (mockup desktop-tiella) */
+.dc-intro,
+.dc-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.dc-intro > p,
+.dc-block > p {
+  margin: 0;
+}
+@media (min-width: 1024px) {
+  .dc-intro,
+  .dc-block {
+    gap: var(--gap-intro);
+  }
+  /* La foto sotto la riga CTA prende 12 px in più */
+  .dc-intro__media {
+    margin-top: var(--space-3);
+  }
+}
+
+/* ---------- Ancore di categoria (Prodotti) ---------- */
+/* Link alle sezioni della pagina, non tab (design/HANDOFF.md §4); vanno a capo sotto i 390 px */
+.dc-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dc-cat {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+  padding: 0 var(--cat-pad);
+  border: var(--border-hairline) solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper-deep);
+  color: var(--ink);
+  font-size: var(--text-small);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    border-color var(--transition),
+    color var(--transition);
+}
+.dc-cat:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+/* L'header non è fisso: basta un po' d'aria sopra il titolo della sezione raggiunta */
+.dc-anchor {
+  scroll-margin-top: var(--space-5);
+}
+
+/* ---------- Dati societari (Note legali): etichetta come il chip, valore sotto ---------- */
+.dc-dl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-1);
+  margin: 0;
+}
+.dc-dl dt {
+  margin-top: var(--space-3);
+  font-size: var(--text-chip);
+  line-height: var(--leading-chip);
+  font-weight: var(--weight-chip);
+  letter-spacing: var(--tracking-chip);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.dc-dl dd {
+  margin: 0;
+}
 
 /* ---------- Button ---------- */
 .dc-btn {
@@ -683,6 +783,15 @@ body:has(.dc-navsheet[open]) {
   line-height: var(--leading-small);
   color: var(--ink-soft);
 }
+/* Nell'apertura delle pagine la riga CTA c'è solo da 1024 px: sotto fa questo lavoro la CtaBar */
+.dc-ctarow--intro {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .dc-ctarow--intro {
+    display: flex;
+  }
+}
 /* Il body lascia spazio alla barra fissa; da 1024 px la barra non c'è (design/HANDOFF.md §4) */
 body {
   padding-bottom: calc(var(--ctabar) + env(safe-area-inset-bottom));
@@ -963,6 +1072,15 @@ a.dc-card {
 .dc-figure--4x5 .dc-figure__placeholder {
   aspect-ratio: 4 / 5;
 }
+/* Un altro ritaglio da 1024 px (hero della Home: 3:2 sul telefono, 4:3 accanto all'H1) */
+@media (min-width: 1024px) {
+  .dc-figure--desktop-3x2 img {
+    aspect-ratio: 3 / 2;
+  }
+  .dc-figure--desktop-4x3 img {
+    aspect-ratio: 4 / 3;
+  }
+}
 .dc-figure figcaption {
   margin-top: var(--space-2);
   font-size: var(--text-small);
@@ -1054,6 +1172,11 @@ a.dc-card {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+}
+@media (min-width: 1024px) {
+  .dc-mode__title {
+    gap: var(--space-4);
+  }
 }
 
 /* ---------- HoursTable con il blocco degli orari delle feste ---------- */

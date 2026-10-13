@@ -1,0 +1,44 @@
+---
+// Note legali e privacy (BRIEF.md §8.10, DESIGN.md §5.4): H1 and text only, no photo, no CTA row
+// (the fixed bar stays), no VisitBlock. Company data come from business.json, the labels and the
+// privacy notice from the content files.
+import type { Locale } from '../routes';
+import { displayPhone, getPage, telHref, type Business, type Strings } from '../lib/site';
+import Section from '../components/Section.astro';
+import Text from '../components/Text.astro';
+
+interface Props {
+  locale: Locale;
+  t: Strings;
+  business: Business;
+}
+
+const { locale, business } = Astro.props;
+const page = await getPage('legal', locale);
+const { company, privacy } = page;
+const { address } = business;
+---
+
+<section class="dc-col dc-intro">
+  <h1 class="dc-h1"><Text value={page.title} /></h1>
+  <dl class="dc-dl">
+    <dt>{company.name}</dt>
+    <dd>{business.legalName}</dd>
+    <dt>{company.office}</dt>
+    <dd>
+      {address.street}
+      <Text value={address.number} />, {address.postalCode}
+      {address.locality} ({address.region})
+    </dd>
+    <dt>{company.vat}</dt>
+    <dd>{business.vatId}</dd>
+    <dt>{company.rea}</dt>
+    <dd>{business.rea}</dd>
+    <dt>{company.phone}</dt>
+    <dd><a href={telHref(business)}>{displayPhone(business, locale)}</a></dd>
+    <dt>{company.email}</dt>
+    <dd><Text value={business.pec} /></dd>
+  </dl>
+</section>
+
+<Section title={privacy.title} text={privacy.text} />

@@ -1,0 +1,88 @@
+---
+// La tiella di Gaeta (BRIEF.md §8.5, DESIGN.md §5.4): the content-page template, 720 px column.
+// The photo sits under the subtitle (under the CTA row from 1024 px); the two fillings are cards
+// with the photo placeholders 5 and 6; the booking rule closes the page before the VisitBlock.
+import type { Locale } from '../routes';
+import { getPage, type Business, type Strings } from '../lib/site';
+import Callout from '../components/Callout.astro';
+import CtaBar from '../components/CtaBar.astro';
+import Figure from '../components/Figure.astro';
+import OrderRule from '../components/OrderRule.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Section from '../components/Section.astro';
+import Text from '../components/Text.astro';
+
+interface Props {
+  locale: Locale;
+  t: Strings;
+  business: Business;
+}
+
+const { locale, t, business } = Astro.props;
+const page = await getPage('tiella', locale);
+const { photo, what, fillings, when, takeaway } = page;
+---
+
+<section class="dc-col dc-intro">
+  <h1 class="dc-h1"><Text value={page.title} /></h1>
+  <p><Text value={page.subtitle} /></p>
+  <CtaBar t={t} business={business} variant="row" call={page.call} intro />
+  <div class="dc-intro__media">
+    <Figure
+      ratio="3x2"
+      image={photo.image}
+      alt={photo.alt}
+      placeholder={photo.placeholder}
+      caption={photo.caption}
+      sizes="(min-width: 760px) 720px, calc(100vw - 40px)"
+      widths={[480, 720, 780]}
+      priority
+    />
+  </div>
+</section>
+
+<Section title={what.title} text={what.text} />
+
+<Section title={fillings.title}>
+  <div class="dc-grid dc-grid--2">
+    {
+      fillings.items.map((item) => (
+        <ProductCard
+          locale={locale}
+          t={t}
+          name={item.name}
+          line={item.line}
+          image={item.image}
+          alt={item.alt}
+          placeholder={item.placeholder}
+        />
+      ))
+    }
+    {
+      fillings.more && (
+        <article class="dc-card fillings__more">
+          <div class="dc-card__body">
+            <p class="dc-card__line">
+              <Text value={fillings.more} />
+            </p>
+          </div>
+        </article>
+      )
+    }
+  </div>
+  <Callout><Text value={fillings.note} /></Callout>
+</Section>
+
+<Section title={when.title} text={when.text} />
+
+<Section title={takeaway.title} text={takeaway.text} />
+
+<div class="dc-col">
+  <OrderRule business={business} size="h3" title={t.cta.day_before} text={page.rule} />
+</div>
+
+<style>
+  .fillings__more {
+    grid-column: 1 / -1;
+  }
+</style>

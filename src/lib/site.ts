@@ -12,6 +12,24 @@ export async function getStrings(locale: Locale): Promise<Strings> {
   return entry.data;
 }
 
+export type PageData = CollectionEntry<'pages'>['data'];
+export type PageKey = PageData['page'];
+
+/** Copy of a page in a language: src/content/pages/<locale>/<page>.json. */
+export async function getPage<K extends PageKey>(
+  page: K,
+  locale: Locale,
+): Promise<Extract<PageData, { page: K }>> {
+  const entry = await getEntry('pages', `${locale}/${page}`);
+  if (!entry) throw new Error(`Missing src/content/pages/${locale}/${page}.json`);
+  if (entry.data.page !== page) {
+    throw new Error(
+      `src/content/pages/${locale}/${page}.json declares "page": "${entry.data.page}"`,
+    );
+  }
+  return entry.data as Extract<PageData, { page: K }>;
+}
+
 export async function getBusiness(): Promise<Business> {
   const entry = await getEntry('business', 'business');
   if (!entry) throw new Error('Missing src/content/business.json');

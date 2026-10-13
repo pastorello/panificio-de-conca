@@ -19,12 +19,14 @@ interface Props {
   routeKey?: RouteKey;
   title: string;
   description: string;
-  /** "Vieni a trovarci" closes every page except Note legali and 404. */
+  /** "Vieni a trovarci" closes every page except Contatti, Note legali and 404. */
   visit?: boolean;
+  /** Home: the photo right under the header on phones, no space above it. */
+  flush?: boolean;
   jsonLd?: Record<string, unknown>;
 }
 
-const { locale, routeKey, title, description, visit = true, jsonLd } = Astro.props;
+const { locale, routeKey, title, description, visit = true, flush = false, jsonLd } = Astro.props;
 const t = await getStrings(locale);
 const business = await getBusiness();
 const site = Astro.site ?? new URL('http://localhost:4321');
@@ -75,7 +77,7 @@ const ogImage = new URL('/img/og.jpg', site).href;
   <body>
     <a class="dc-skip" href="#contenuto">{t.ui.skip}</a>
     <Header locale={locale} routeKey={routeKey} t={t} business={business} />
-    <main id="contenuto" class="dc-page">
+    <main id="contenuto" class:list={['dc-page', { 'dc-page--flush': flush }]}>
       <slot />
       {visit && <VisitBlock locale={locale} t={t} business={business} />}
     </main>

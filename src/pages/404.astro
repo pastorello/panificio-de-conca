@@ -1,11 +1,63 @@
 ---
-// Trilingual 404 (BRIEF.md §4, DESIGN.md §5.9). Phase 1: empty, layout only.
+// Trilingual 404 (BRIEF.md §4, DESIGN.md §5.9): one block per language with the link to that
+// language's home, then the phone number. One H1 (Italian, the language of the page); the English
+// and German blocks have an H2 with their own lang. No VisitBlock; the CtaBar stays.
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getStrings } from '../lib/site';
+import Button from '../components/Button.astro';
+import PhoneNumber from '../components/PhoneNumber.astro';
+import Text from '../components/Text.astro';
+import { locales, pathFor } from '../routes';
+import { getBusiness, getPage, getStrings } from '../lib/site';
 
-const [it, en, de] = await Promise.all([getStrings('it'), getStrings('en'), getStrings('de')]);
-const title = [it, en, de].map((t) => t.meta.notFound.title).join(' · ');
-const description = [it, en, de].map((t) => t.meta.notFound.description).join(' ');
+const business = await getBusiness();
+const strings = await Promise.all(locales.map((locale) => getStrings(locale)));
+const blocks = await Promise.all(
+  locales.map(async (locale) => ({ locale, page: await getPage('404', locale) })),
+);
+const title = strings.map((t) => t.meta.notFound.title).join(' · ');
+const description = strings.map((t) => t.meta.notFound.description).join(' ');
 ---
 
-<BaseLayout locale="it" title={title} description={description} visit={false} />
+<BaseLayout locale="it" title={title} description={description} visit={false}>
+  <div class="dc-col blocks">
+    {
+      blocks.map(({ locale, page }, index) => {
+        const Heading = index === 0 ? 'h1' : 'h2';
+        return (
+          <section class="block" lang={locale}>
+            <Heading class={index === 0 ? 'dc-h1' : 'dc-h2'}>
+              <Text value={page.title} />
+            </Heading>
+            <div>
+              <Button variant="link" href={pathFor('home', locale)} hreflang={locale}>
+                {page.home}
+              </Button>
+            </div>
+          </section>
+        );
+      })
+    }
+    <div class="block">
+      {/* International format, as in the mockup: the page speaks to all three languages. */}
+      <PhoneNumber locale="en" business={business} />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Mockup mobile-404: 32 px between blocks, a rule above each block after the first. */
+  .blocks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  .block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .block + .block {
+    padding-top: var(--space-5);
+    border-top: var(--border-hairline) solid var(--line);
+  }
+</style>

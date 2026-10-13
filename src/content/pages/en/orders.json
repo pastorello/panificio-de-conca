@@ -1,0 +1,47 @@
+{
+  "_review": "Copied from the brief §8.7. Not in the brief: the label of the holiday price list button (a placeholder, as in the mockup).",
+  "page": "orders",
+  "title": "Orders are taken by phone",
+  "subtitle": "Call +39 0771 460651 during opening hours. The shop answers, not a call centre. We speak [[LINGUE_AL_BANCO]].",
+  "fresh": {
+    "title": "Fresh items are ordered the day before",
+    "text": [
+      "Calzoncini, potato frittatine, focaccine, tielle and pizzette are baked each day in the quantity ordered, plus a little extra. Simple rule: **call by [[ORA_LIMITE]], collect tomorrow at the time you choose**. Baking times: [[ORARI_SFORNATE]]. If something has sold out, the counter will set it aside for you for the next day."
+    ]
+  },
+  "what": {
+    "title": "What you can order",
+    "text": [
+      "Whole tielle, cakes, maritozzi, yeast-free bread, trays of pizzette and savoury pastries, gift baskets. Suggested notice: [[ANTICIPO]]; for Christmas and Easter, by the dates on the seasonal price list [[LINK]]."
+    ]
+  },
+  "holidays": {
+    "title": "Holidays",
+    "text": [
+      "Every year we prepare a holiday price list: Christmas (sciuscelle, mostaccioli, baskets), Carnival and St Joseph's Day (zeppole), Easter (pigna, casatiello). You'll find it in the shop and below."
+    ],
+    "priceList": {
+      "label": "[[Holiday price list]]",
+      "href": "[[LINK]]"
+    }
+  },
+  "business": {
+    "title": "Bars, restaurants, B&Bs and hotels",
+    "text": [
+      "We supply bread, pizzette, croissants and tielle to businesses in Gaeta and the Gulf, delivered [[DELIVERY TIME: to confirm]]. Call for a price list and a trial order."
+    ]
+  },
+  "boats": {
+    "title": "Boats",
+    "text": [
+      "Moored in Gaeta? Bread, pizzette and tielle for the galley, ordered by [[CUT-OFF TIME: to confirm]] for the next day, ready at the time you choose."
+    ]
+  },
+  "shipping": {
+    "title": "Shipping",
+    "text": [
+      "[[If active: \"We ship wine ring biscuits, tozzetti, taralli and vacuum-packed tielle within Italy: call for the bakery box.\"]]",
+      "[[If not: \"We don't ship yet: for now everything travels in your suitcase. Ask at the counter for the suitcase pack.\"]]"
+    ]
+  }
+}

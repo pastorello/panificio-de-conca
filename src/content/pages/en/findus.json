@@ -1,0 +1,37 @@
+{
+  "_review": "Copied from the brief §8.8. The brief has no subtitle for this page. Not in the brief: photo alt texts and captions (photo 1's caption is a placeholder, as in the mockup), the placeholder of photo 24. Proposed on 14 October 2026, to be reviewed by a native speaker.",
+  "page": "findus",
+  "title": "On the seafront, in the medieval quarter",
+  "photo": {
+    "image": "../../../assets/photos/banco-hero-mobile-3x2.jpg",
+    "alt": "The bakery's counter",
+    "caption": "[[Photo 1 — shop front with its sign, still to be taken: the counter stands in for now]]"
+  },
+  "address": "Lungomare Giovanni Caboto [[CIVICO]], 04024 Gaeta (LT), Italy — corner of Salita Porta di Terra, opposite the naval base.",
+  "modes": [
+    {
+      "icon": "car",
+      "title": "By car",
+      "text": "Parking along Lungomare Caboto [[parking notes]]. From Rome: A1 motorway, exit Cassino, then SS 630 towards Formia and Gaeta, about 1 h 40; or the Pontina and Flacca coastal road. From Naples: A1, exit Caianello or Capua, then Formia, about 1 h 15."
+    },
+    {
+      "icon": "train-front",
+      "title": "By train",
+      "text": "Formia-Gaeta station (Intercity and regional trains from Rome Termini in 1 h 10, from Naples in 50 minutes), then the Cotral bus to Gaeta (stop [[STOP]]) or a taxi, 10 km."
+    },
+    {
+      "icon": "footprints",
+      "title": "On foot",
+      "text": "From the Montagna Spaccata sanctuary and Serapo beach, [[minutes]] along the sea; from the castle and the cathedral, five minutes downhill."
+    },
+    {
+      "icon": "sailboat",
+      "title": "By boat",
+      "text": "From Base Nautica Flavio Gioia and the marina, ten minutes on foot along the seafront."
+    }
+  ],
+  "view": {
+    "placeholder": "Photo 24 — the seafront with the naval base behind, 3:2",
+    "caption": "Lungomare Caboto and the naval base"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_review": "Testi copiati dal brief §8.5. I ripieni sono divisi in nome e riga come nel mockup («Polpo» / «Con olive di Gaeta e pomodoro — la più richiesta.»). Non sono nel brief: alt e didascalia della foto (dai mockup), i segnaposti delle foto 5 e 6, il riquadro finale «rule» (dal mockup: la seconda frase di «Quando la trovi» con il telefono; da confermare).",
+  "page": "tiella",
+  "title": "La tiella di Gaeta",
+  "subtitle": "Due sfoglie sottili, un ripieno di mare o di orto, il forno. La facciamo dal 1922.",
+  "call": "Chiama per prenotare",
+  "photo": {
+    "image": "../../../assets/photos/tielle-intere.jpg",
+    "alt": "Tielle di Gaeta intere, appena sfornate, sul vassoio",
+    "caption": "Tielle intere sul vassoio"
+  },
+  "what": {
+    "title": "Cos'è",
+    "text": [
+      "La tiella è la pizza ripiena di Gaeta: due dischi di pasta sottile chiusi sul bordo, cotti in teglia rotonda. Nasce come pasto dei pescatori e dei contadini, da portare in barca o nei campi, e si mangia a temperatura ambiente. Dal 2005 ha la Denominazione Comunale d'Origine (De.Co.) del Comune di Gaeta ed è tra i prodotti tradizionali del Lazio."
+    ]
+  },
+  "fillings": {
+    "title": "I nostri ripieni",
+    "items": [
+      {
+        "name": "Polpo",
+        "line": "Con olive di Gaeta e pomodoro — la più richiesta.",
+        "placeholder": "Foto 5 — tiella a fette, ripieno di polpo, 4:3"
+      },
+      {
+        "name": "Cipolla",
+        "line": "Dolce, con olive e un po' di pecorino.",
+        "placeholder": "Foto 6 — tiella con la cipolla, 4:3"
+      }
+    ],
+    "more": "[[Altri ripieni del forno: scarola, alici, zucchine, baccalà… da confermare con il titolare]]",
+    "note": "I ripieni cambiano con la stagione e con il pescato: chiedi al banco cosa c'è oggi."
+  },
+  "when": {
+    "title": "Quando la trovi e quanto costa",
+    "text": [
+      "Tutti i giorni di apertura [[fasce orarie della tiella]]. A fetta [[PREZZO_FETTA]], intera [[PREZZO_INTERA]] ([[diametro/peso]], [[porzioni]]).",
+      "Le tielle intere si prenotano per telefono con [[ANTICIPO]] di anticipo, anche per la spiaggia, la barca o il viaggio di ritorno."
+    ]
+  },
+  "takeaway": {
+    "title": "Come portarla via",
+    "text": [
+      "Si mangia a temperatura ambiente e regge bene [[ORE DI CONSERVAZIONE: da confermare]]; incartata e in una borsa termica arriva a Roma o a Napoli intatta. [[Se attiva: \"Su richiesta la confezioniamo sottovuoto: dura 10 giorni in frigo.\"]]"
+    ]
+  },
+  "rule": "Le tielle intere si prenotano per telefono al 0771 460651 con [[ANTICIPO]] di anticipo, anche per la spiaggia, la barca o il viaggio di ritorno."
+}

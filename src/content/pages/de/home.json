@@ -1,0 +1,69 @@
+{
+  "_review": "Aus dem Brief §8.3 übernommen. Die Kartenzeilen sind die Punkte des Briefs nach dem Gedankenstrich, wie in den Mockups großgeschrieben. Nicht im Brief: Alt-Texte und Bildunterschrift (Vorschlag vom 14. Oktober 2026, muttersprachlich prüfen lassen), die Kartenbeschriftung „Die Tiella“ (nav.tiella).",
+  "page": "home",
+  "title": "Die Bäckerei an der Uferpromenade von Gaeta, seit 1922",
+  "subtitle": "Brot, Tiella di Gaeta, Pizzette und Festtagsgebäck. Drei Generationen, ein Ofen, derselbe Laden mit Blick aufs Meer.",
+  "hero": {
+    "image": "../../../assets/photos/banco-hero-mobile-3x2.jpg",
+    "imageDesktop": "../../../assets/photos/banco-hero-desktop-4x3.jpg",
+    "alt": "Die Theke der Bäckerei mit Pizzette, Focaccia und der Waage"
+  },
+  "counter": {
+    "title": "Das finden Sie an der Theke",
+    "items": [
+      {
+        "name": "Tägliches Brot",
+        "line": "Morgens und nachmittags frisch gebacken; hefefreies Brot jeden [[GIORNO]].",
+        "image": "../../../assets/photos/pane-di-giornata.jpg",
+        "alt": "Frisch gebackene Brote und Laibe"
+      },
+      {
+        "name": "Tiella di Gaeta",
+        "line": "Die gefüllte Teigspezialität aus Gaeta, mit Oktopus, mit Zwiebeln und anderen traditionellen Füllungen; stückweise oder ganz.",
+        "image": "../../../assets/photos/tiella-card.jpg",
+        "alt": "Tielle di Gaeta auf einem Tablett",
+        "link": "tiella"
+      },
+      {
+        "name": "Rote Pizzette",
+        "line": "Die kleinen Tomatenpizzen, für die unsere Bäckerei bekannt ist, auch kalt ein Genuss.",
+        "image": "../../../assets/photos/pizzette-rosse.jpg",
+        "alt": "Rote Pizzette und Focaccine auf einem Tablett"
+      },
+      {
+        "name": "Weinkringel und Mandel-Tozzetti",
+        "line": "Das Gebäck, das unsere Kunden nach dem Urlaub mit nach Hause nehmen.",
+        "image": "../../../assets/photos/ciambelline-al-vino.jpg",
+        "alt": "Weinkringel"
+      },
+      {
+        "name": "Croissants und Frühstück",
+        "line": "Täglich frisch ab 7:30 Uhr.",
+        "image": "../../../assets/photos/cornetti.jpg",
+        "alt": "Croissants und Focaccia am Morgen in der Theke"
+      },
+      {
+        "name": "Festtagsgebäck",
+        "line": "Zeppole zu Karneval, Pigna zu Ostern, Sciuscelle und Mostaccioli zu Weihnachten.",
+        "image": "../../../assets/photos/dolci-di-natale.jpg",
+        "alt": "Verpackte Körbe mit Weihnachtsgebäck"
+      }
+    ],
+    "more": "Alle Produkte"
+  },
+  "story": {
+    "title": "Seit 1922 im selben Laden",
+    "text": "Almerindo De Conca kehrte aus Amerika zurück und eröffnete am 4. April 1922 mit seiner Frau Annunziata diese Bäckerei an der Ecke Salita Porta di Terra. Seitdem haben hier drei Generationen den Teig geknetet: Almerindo, seine Kinder (die „Brüder De Conca“) und heute Alessandro. 2022 hat die Stadt Gaeta mit uns das hundertjährige Bestehen gefeiert.",
+    "photo": {
+      "image": "../../../assets/photos/epoca-fornai-in-laboratorio-bn.jpg",
+      "alt": "Historisches Schwarzweißfoto: die Bäcker bei der Arbeit in der Backstube",
+      "caption": "Bei der Arbeit in der Backstube, [[JAHR]]"
+    },
+    "more": "Unsere Geschichte"
+  },
+  "order": {
+    "title": "Heute bestellen, morgen abholen",
+    "text": "Calzoncini, Kartoffel-Frittatine, Focaccine, Tielle und Pizzette werden in einer Menge gebacken, die am Vortag festgelegt wird: Wer bis [[ORA_LIMITE]] Uhr unter +39 0771 460651 anruft, findet sie zur gewünschten Uhrzeit bereit; wer ohne Bestellung vorbeikommt, bekommt sie, solange der Vorrat reicht. Ganze Tielle, Torten, Maritozzi und Geschenkkörbe brauchen [[ANTICIPO]] Vorlauf. Kein Formular, keine App: im Laden geht jemand ans Telefon.",
+    "more": "So bestellen Sie"
+  }
+}

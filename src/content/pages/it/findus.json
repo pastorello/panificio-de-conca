@@ -1,0 +1,37 @@
+{
+  "_review": "Testi copiati dal brief §8.8. Il brief non ha un sottotitolo per questa pagina. Non sono nel brief: alt e didascalie delle foto (dai mockup; la didascalia della foto 1 è un segnaposto, come nel mockup), i segnaposti della foto 24.",
+  "page": "findus",
+  "title": "Sul lungomare, nel quartiere medievale",
+  "photo": {
+    "image": "../../../assets/photos/banco-hero-mobile-3x2.jpg",
+    "alt": "Il banco del panificio",
+    "caption": "[[Foto 1 — facciata con insegna, da scattare: qui il banco come segnaposto]]"
+  },
+  "address": "Lungomare Giovanni Caboto [[CIVICO]], 04024 Gaeta (LT) — angolo Salita Porta di Terra, di fronte alla base della Marina.",
+  "modes": [
+    {
+      "icon": "car",
+      "title": "In auto",
+      "text": "Parcheggio lungo il Lungomare Caboto [[note su strisce blu/ZTL estiva da confermare]]. Da Roma: A1 uscita Cassino, poi SS 630 verso Formia e Gaeta, 1h40; oppure Pontina e Flacca. Da Napoli: A1 uscita Caianello o Capua, poi Formia, 1h15."
+    },
+    {
+      "icon": "train-front",
+      "title": "In treno",
+      "text": "Stazione di Formia-Gaeta (Intercity e regionali da Roma Termini in 1h10, da Napoli in 50 minuti), poi bus Cotral per Gaeta (fermata [[FERMATA più vicina]]) o taxi, 10 km."
+    },
+    {
+      "icon": "footprints",
+      "title": "A piedi",
+      "text": "Dal Santuario della Montagna Spaccata e dalla spiaggia di Serapo, [[minuti]] lungo il mare; dal Castello e dal Duomo, cinque minuti in discesa."
+    },
+    {
+      "icon": "sailboat",
+      "title": "In barca",
+      "text": "Dalla Base Nautica Flavio Gioia e dal porto turistico, dieci minuti a piedi lungo il lungomare."
+    }
+  ],
+  "view": {
+    "placeholder": "Foto 24 — vista del lungomare con la base sullo sfondo, 3:2",
+    "caption": "Il Lungomare Caboto e la base della Marina"
+  }
+}

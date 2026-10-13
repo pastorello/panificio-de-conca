@@ -1,0 +1,20 @@
+{
+  "_review": "Der Brief §8.10 verlangt denselben Inhalt wie die italienische Seite, übersetzt, mit dem Titel „Impressum & Datenschutz“: Die ganze Seite ist ein Vorschlag vom 14. Oktober 2026 und muss vor der Veröffentlichung muttersprachlich geprüft werden (Brief §2.3).",
+  "page": "legal",
+  "title": "Impressum & Datenschutz",
+  "company": {
+    "name": "Firma",
+    "office": "Sitz",
+    "vat": "MwSt.-Nr.",
+    "rea": "REA",
+    "phone": "Telefon",
+    "email": "E-Mail / PEC"
+  },
+  "privacy": {
+    "title": "Datenschutzhinweis",
+    "text": [
+      "Diese Website verwendet keine Cookies und erhebt keine personenbezogenen Daten; die Besuchsstatistiken sind zusammengefasst und anonym (Cloudflare Web Analytics); die Links zu Google Maps, Apple Karten, Facebook und Instagram führen zu Diensten mit eigenen Datenschutzhinweisen.",
+      "Verantwortlicher: De Conca Alessandro e C. S.n.c."
+    ]
+  }
+}

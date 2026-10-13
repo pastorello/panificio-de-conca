@@ -116,8 +116,21 @@ const p2 = await ctx.newPage();
 await p2.goto(origin + '/storia/');
 await p2.click('[data-navsheet-open]');
 check('no JS: Menu goes to #menu', p2.url().endsWith('#menu'));
+await p2.goto(origin + '/contatti/');
 check('no JS: no today row', (await p2.locator('.dc-hours__today').count()) === 0);
 await ctx.close();
+const p6 = await browser.newPage();
+await p6.goto(origin + '/contatti/', { waitUntil: 'networkidle' });
+check('today row in the hours table', (await p6.locator('.dc-hours__today').count()) === 1);
+// Category links of Pane e prodotti are anchors to sections of the same page, in every language.
+for (const path of ['/prodotti/', '/en/bread-and-pastries/', '/de/brot-und-gebaeck/']) {
+  await p6.goto(origin + path);
+  const missing = await p6.$$eval('a.dc-cat', (links) =>
+    links.map((a) => a.getAttribute('href')).filter((href) => !document.querySelector(href)),
+  );
+  check(`category anchors on ${path}`, missing.length === 0, missing.join(' '));
+}
+await p6.close();
 
 // Directions on iOS → Apple Maps
 const ios = await browser.newContext({

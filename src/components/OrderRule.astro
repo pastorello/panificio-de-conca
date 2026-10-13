@@ -10,7 +10,8 @@ import Text from './Text.astro';
 interface Props {
   business: Business;
   title: string;
-  text: string;
+  /** One paragraph, or the paragraphs of a section of the brief. */
+  text: string | string[];
   /** Title size: h2 in Home and Ordini, h3 inside a section. */
   size?: 'h2' | 'h3';
   call?: string;
@@ -33,7 +34,13 @@ const Heading = size;
 <section class:list={['dc-orderrule', { 'dc-orderrule--split': split }]} aria-labelledby={id}>
   <div class="dc-orderrule__text">
     <Heading class={`dc-${size}`} id={id}>{title}</Heading>
-    <p><Text value={text} tel={telLink(business)} /></p>
+    {
+      [text].flat().map((paragraph) => (
+        <p>
+          <Text value={paragraph} tel={telLink(business)} />
+        </p>
+      ))
+    }
   </div>
   {
     (call || more) && (

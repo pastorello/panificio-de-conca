@@ -1,0 +1,37 @@
+{
+  "_review": "Aus dem Brief §8.8 übernommen. Der Brief hat für diese Seite keinen Untertitel. Nicht im Brief: Alt-Texte und Bildunterschriften (die Bildunterschrift von Foto 1 ist ein Platzhalter, wie im Mockup), der Platzhalter von Foto 24. Vorschlag vom 14. Oktober 2026, muttersprachlich prüfen lassen.",
+  "page": "findus",
+  "title": "An der Promenade, in der Altstadt",
+  "photo": {
+    "image": "../../../assets/photos/banco-hero-mobile-3x2.jpg",
+    "alt": "Die Theke der Bäckerei",
+    "caption": "[[Foto 1 — Fassade mit Ladenschild, noch aufzunehmen: vorerst die Theke als Platzhalter]]"
+  },
+  "address": "Lungomare Giovanni Caboto [[CIVICO]], 04024 Gaeta (LT), Italien — Ecke Salita Porta di Terra, gegenüber dem Marinestützpunkt.",
+  "modes": [
+    {
+      "icon": "car",
+      "title": "Mit dem Auto",
+      "text": "Parkplätze entlang des Lungomare Caboto [[Hinweise zum Parken]]. Aus Rom: Autobahn A1, Ausfahrt Cassino, dann SS 630 Richtung Formia und Gaeta, ca. 1 Std. 40; oder über Pontina und die Küstenstraße Flacca. Aus Neapel: A1, Ausfahrt Caianello oder Capua, dann Formia, ca. 1 Std. 15."
+    },
+    {
+      "icon": "train-front",
+      "title": "Mit dem Zug",
+      "text": "Bahnhof Formia-Gaeta (Intercity und Regionalzüge ab Rom Termini in 1 Std. 10, ab Neapel in 50 Minuten), dann mit dem Cotral-Bus nach Gaeta (Haltestelle [[HALTESTELLE]]) oder mit dem Taxi, 10 km."
+    },
+    {
+      "icon": "footprints",
+      "title": "Zu Fuß",
+      "text": "Vom Wallfahrtsort Montagna Spaccata und vom Strand Serapo [[Minuten]] am Meer entlang; von der Burg und dem Dom fünf Minuten bergab."
+    },
+    {
+      "icon": "sailboat",
+      "title": "Mit dem Boot",
+      "text": "Von der Base Nautica Flavio Gioia und dem Yachthafen zehn Minuten zu Fuß an der Promenade entlang."
+    }
+  ],
+  "view": {
+    "placeholder": "Foto 24 — Blick auf die Promenade mit dem Marinestützpunkt im Hintergrund, 3:2",
+    "caption": "Der Lungomare Caboto und der Marinestützpunkt"
+  }
+}

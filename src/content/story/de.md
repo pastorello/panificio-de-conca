@@ -1,0 +1,46 @@
+---
+_review: 'Aus dem Brief §8.4 übernommen; der Platzhalter „[[Foto der Urkunde]]“ des Briefs ist die Bildunterschrift von Foto 22, wie im Mockup. Nicht im Brief: Alt-Texte und Bildunterschriften sowie die Beschriftung „Quellen“ (der „Quellenkasten“ des Briefs). Vorschlag vom 14. Oktober 2026, muttersprachlich prüfen lassen. Für das Familienfoto ist die Einwilligung nötig (Brief §10).'
+title: 'Hundert Jahre Brot an der Uferpromenade'
+subtitle: 'Seit dem 4. April 1922 hat die Bäckerei ihre Adresse nie gewechselt.'
+items:
+  - year: '1922'
+    text: 'Almerindo De Conca kehrt aus Amerika zurück und eröffnet mit seiner Frau Annunziata Di Schino die Bäckerei an der Ecke Lungomare Caboto / Salita Porta di Terra in der Altstadt. Gas und Strom gibt es in den Häusern noch nicht: Brot und Gebäck werden mit Holz gebacken.'
+    image: '../../assets/photos/epoca-manifesto-tre-ritratti-bn.jpg'
+    alt: 'Historisches Schwarzweißfoto: das Plakat „Panificio De Conca“ mit drei Porträts'
+    caption: 'Das Plakat „Panificio De Conca“ mit den drei Porträts, [[JAHR UND NAMEN]]'
+    vintage: true
+  - year: 'Nachkriegszeit'
+    text: 'Nach der kurzen Unterbrechung durch den Krieg öffnet die Bäckerei wieder. In den ersten Nachkriegsjahren gibt es Brot auch für die, die es brauchen, darunter die in der Kaserne Cosenz untergebrachten Evakuierten.'
+    image: '../../assets/photos/epoca-fornai-in-laboratorio-bn.jpg'
+    alt: 'Historisches Schwarzweißfoto: die Bäcker bei der Arbeit in der Backstube'
+    caption: 'Bei der Arbeit in der Backstube, [[JAHR]]'
+    vintage: true
+  - year: '1958'
+    text: 'Die Ladenaufschrift lautet nun „Il Fornaio di De Conca Almerindo e figli“: Anna, Aida, Antonio und Alfonso arbeiten mit ihrem Vater.'
+  - year: '1965'
+    text: 'Antonio und Alfonso übernehmen den Betrieb. Für zwei Generationen in Gaeta sind sie „die Brüder De Conca“: Brot, Tielle in allen Varianten, Pizza, Pizzette, Tozzi, Kekse, herzhaftes Gebäck, Torten und Festtagsgebäck.'
+    image: '../../assets/photos/epoca-insegna-fornaio-flli-de-conca-bn.jpg'
+    alt: 'Schwarzweißfoto: das Holzschild „Fornaio F.lli De Conca“ über der Tür'
+    caption: 'Das Schild „Fornaio F.lli De Conca“ über der Tür, [[JAHR]]'
+    vintage: true
+  - year: '2005'
+    text: 'Alessandro, der Sohn von Alfonso, übernimmt die Leitung. Die Rezepte bleiben; neue Produkte kommen dazu.'
+  - year: '2022'
+    text: 'Das hundertjährige Jubiläum. Die Stadt Gaeta überreicht eine Urkunde „an drei Generationen, die seit April 1922 Können, Einsatz und Opfer in das Panificio De Conca investiert haben, eine der festen Größen der Gaetaner Gastronomie“.'
+    placeholder: 'Foto 22 — Urkunde zum Jubiläum, 3:2'
+    caption: '[[Foto der Urkunde]]'
+  - year: 'Heute'
+    text: 'Derselbe Laden, derselbe Ofen, dieselbe Familie. Und die Sciusciata, der Gaetaner Silvesterbrauch mit Liedern und Glückwünschen, der jedes Jahr am 31. Dezember hier beginnt [[mit dem Inhaber zu bestätigen]].'
+    image: '../../assets/photos/famiglia-dietro-il-banco.jpg'
+    alt: 'Die Familie hinter der Theke der Bäckerei'
+    caption: 'Die Familie an der Theke, Weihnachten [[JAHR]]'
+sources:
+  label: 'Quellen'
+  items:
+    - href: 'https://www.ilmessaggero.it/pay/gaeta_compie_un_secolo_il_panificio_de_conca_e_il_piu_antico_della_provincia-6733111.html'
+      text: 'Il Messaggero, 5. Juni 2022'
+      note: '(nur für Abonnenten, auf Italienisch)'
+    - href: 'https://www.arcidiocesigaeta.it/wp-content/uploads/sites/6/2022/06/13/Diocesane_Lazio7_Gaeta_20220612_E01.pdf'
+      text: 'Lazio Sette, 12. Juni 2022'
+      note: '(auf Italienisch)'
+---

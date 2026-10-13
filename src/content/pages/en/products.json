@@ -1,0 +1,16 @@
+{
+  "_review": "Copied from the brief §8.6. The title is the first part of the brief's meta title. The closing box repeats the first section of Orders (brief §8.7, read from pages/en/orders.json). Not in the brief, proposed on 14 October 2026 and to be reviewed by a native speaker: the category headings and «Categories», the product names in products/en/ (the brief gives them in Italian only), alt texts and the placeholder of photo 13.",
+  "page": "products",
+  "title": "Bread, pizzette and pastries",
+  "subtitle": "Everything we sell comes out of our own oven. The list changes with the seasons and the holidays: what you see here is what you usually find; for the rest, ask at the counter.",
+  "categoriesLabel": "Categories",
+  "categories": {
+    "pane": "Bread",
+    "salato": "Savoury",
+    "colazione": "Breakfast",
+    "biscotti": "Biscuits",
+    "dolci": "Cakes",
+    "feste": "Holidays"
+  },
+  "more": "How to order"
+}

@@ -16,8 +16,10 @@ npm run preview  # anteprima della build
 npm run check    # astro check, ESLint, Prettier, token
 npm run test     # test degli orari (tests/) e verifiche su dist/
 npm run test:e2e # comportamento su dist/: menu, tastiera, fallback senza JS, link mappe
-npm run shots    # screenshot a 390 × 844 e 1440 × 900 in .shots/ (--menu, --nojs)
+npm run shots    # screenshot a 390 × 844 e 1440 × 900 in .shots/ (--menu, --nojs, --at=2026-10-13T10:00)
 ```
+
+Con `--at` l'orologio è fermo a quell'ora di Roma, così OpenNow e la riga «oggi» sono quelli dei mockup (martedì, aperto). I testi delle pagine sono in `src/content/pages/{it,en,de}/`, le schede prodotto in `src/content/products/`, la storia in `src/content/story/`; i modelli delle pagine in `src/views/`.
 
 Catalogo dei componenti con varianti e stati, solo in locale: `SITE_GALLERY=true npm run build`, poi `npm run shots -- /componenti/` (hover, focus e attivo sono forzati sugli elementi con `data-force`).
 

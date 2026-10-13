@@ -1,0 +1,185 @@
+---
+// Home (BRIEF.md §8.3, DESIGN.md §5.2–5.3, variant A on desktop). Below 1024 px the photo sits
+// above the H1, flush under the header; from 1024 px text on the left and the 4:3 photo on the
+// right. In the HTML the text comes first, so the H1 is the first thing after the header for
+// screen readers (DESIGN.md §10.3). The VisitBlock comes from the layout.
+import { pathFor, type Locale } from '../routes';
+import { getPage, type Business, type Strings } from '../lib/site';
+import Button from '../components/Button.astro';
+import CtaBar from '../components/CtaBar.astro';
+import Figure from '../components/Figure.astro';
+import OpenNow from '../components/OpenNow.astro';
+import OrderRule from '../components/OrderRule.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Text from '../components/Text.astro';
+
+interface Props {
+  locale: Locale;
+  t: Strings;
+  business: Business;
+}
+
+const { locale, t, business } = Astro.props;
+const page = await getPage('home', locale);
+const { hero, counter, story, order } = page;
+---
+
+<section class="hero">
+  <div class="hero__text">
+    <h1 class="dc-h1 dc-h1--home"><Text value={page.title} /></h1>
+    <p><Text value={page.subtitle} /></p>
+    <OpenNow locale={locale} t={t} business={business} />
+    <CtaBar t={t} business={business} variant="row" intro />
+  </div>
+  <div class="hero__photo">
+    <Figure
+      ratio="3x2"
+      image={hero.image}
+      alt={hero.alt}
+      sizes="100vw"
+      widths={[480, 780]}
+      desktop={{
+        image: hero.imageDesktop,
+        ratio: '4x3',
+        sizes: '(min-width: 1184px) 640px, 57vw',
+        widths: [640, 960],
+      }}
+      priority
+    />
+  </div>
+</section>
+
+<section class="dc-container counter" aria-labelledby="counter-title">
+  <h2 class="dc-h2" id="counter-title"><Text value={counter.title} /></h2>
+  <div class="dc-grid counter__grid">
+    {
+      counter.items.map((item) => (
+        <ProductCard
+          locale={locale}
+          t={t}
+          name={item.name}
+          line={item.line}
+          image={item.image}
+          alt={item.alt}
+          placeholder={item.placeholder}
+          link={item.link && { href: pathFor(item.link, locale), label: t.nav[item.link] }}
+        />
+      ))
+    }
+  </div>
+  <Button variant="link" href={pathFor('products', locale)}>{counter.more}</Button>
+</section>
+
+<section class="dc-container story" aria-labelledby="story-title">
+  <h2 class="dc-h2 story__title" id="story-title"><Text value={story.title} /></h2>
+  <p class="story__text"><Text value={story.text} /></p>
+  <div class="story__more">
+    <Button variant="link" href={pathFor('story', locale)}>{story.more}</Button>
+  </div>
+  <div class="story__photo">
+    <Figure
+      ratio="3x2"
+      vintage
+      image={story.photo.image}
+      alt={story.photo.alt}
+      placeholder={story.photo.placeholder}
+      caption={story.photo.caption}
+      sizes="(min-width: 1184px) 560px, (min-width: 1024px) 50vw, 100vw"
+      widths={[480, 720, 900]}
+    />
+  </div>
+</section>
+
+<div class="dc-container">
+  <OrderRule
+    business={business}
+    title={order.title}
+    text={order.text}
+    call={t.cta.call}
+    more={{ href: pathFor('orders', locale), label: order.more }}
+    split
+  />
+</div>
+
+<style>
+  /* Below 1024 px: photo at full width, then the text with the page gutter (mockup mobile-home). */
+  .hero {
+    display: grid;
+    grid-template-areas: 'photo' 'text';
+  }
+  .hero__photo {
+    grid-area: photo;
+  }
+  .hero__text {
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--gutter-mobile) var(--gutter-mobile) 0;
+  }
+  .hero__text p {
+    margin: 0;
+  }
+  .counter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  /* The link keeps its own width: the focus ring hugs the words. */
+  .counter > :global(.dc-link) {
+    align-self: flex-start;
+  }
+  .story {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-areas: 'title' 'photo' 'text' 'more';
+  }
+  .story__title {
+    grid-area: title;
+  }
+  .story__text {
+    grid-area: text;
+    margin: 0;
+  }
+  .story__more {
+    grid-area: more;
+  }
+  .story__photo {
+    grid-area: photo;
+  }
+  @media (min-width: 600px) {
+    .hero__text {
+      padding-inline: var(--gutter-tablet);
+    }
+  }
+  /* From 1024 px: variant A, text 440 px and photo 640 px in the 1120 px container (mockup desktop-home-a). */
+  @media (min-width: 1024px) {
+    .hero {
+      grid-template-columns: var(--cols-hero);
+      grid-template-areas: 'text photo';
+      gap: var(--gap-columns);
+      align-items: center;
+      width: calc(100% - 2 * var(--gutter-tablet));
+      max-width: var(--container);
+      margin-inline: auto;
+    }
+    .hero__text {
+      gap: var(--gap-intro);
+      padding: 0;
+    }
+    .counter {
+      gap: var(--space-5);
+    }
+    .counter__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .story {
+      grid-template-columns: var(--cols-home-story);
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas: 'title photo' 'text photo' 'more photo';
+      column-gap: var(--gap-columns);
+      row-gap: var(--gap-intro);
+      align-items: start;
+    }
+  }
+</style>

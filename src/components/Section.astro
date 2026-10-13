@@ -1,0 +1,24 @@
+---
+// An H2 section of a content page (DESIGN.md §5.4): title and paragraphs from the content files,
+// in the 720 px column, plus whatever the page puts in the slot (cards, a Callout…).
+import Text from './Text.astro';
+
+interface Props {
+  title: string;
+  text?: string[];
+}
+
+const { title, text = [] } = Astro.props;
+---
+
+<section class="dc-col dc-block">
+  <h2 class="dc-h2"><Text value={title} /></h2>
+  {
+    text.map((paragraph) => (
+      <p>
+        <Text value={paragraph} />
+      </p>
+    ))
+  }
+  <slot />
+</section>

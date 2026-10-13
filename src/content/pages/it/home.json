@@ -1,0 +1,69 @@
+{
+  "_review": "Testi copiati dal brief §8.3. Le righe delle card sono le voci del brief dopo il trattino, con l'iniziale maiuscola come nei mockup. Non sono nel brief: gli alt e la didascalia (dai mockup, confermare), l'etichetta «La tiella» della card (nav.tiella).",
+  "page": "home",
+  "title": "Il forno del lungomare di Gaeta, dal 1922",
+  "subtitle": "Pane, tiella di Gaeta, pizzette e dolci delle feste. Tre generazioni, stesso forno, stesso locale di fronte al mare.",
+  "hero": {
+    "image": "../../../assets/photos/banco-hero-mobile-3x2.jpg",
+    "imageDesktop": "../../../assets/photos/banco-hero-desktop-4x3.jpg",
+    "alt": "Il banco del panificio con pizzette, focacce e la bilancia"
+  },
+  "counter": {
+    "title": "Cosa trovi al banco",
+    "items": [
+      {
+        "name": "Pane di giornata",
+        "line": "Sfornato al mattino e nel pomeriggio; il pane senza lievito ogni [[GIORNO]].",
+        "image": "../../../assets/photos/pane-di-giornata.jpg",
+        "alt": "Pagnotte e filoni appena sfornati"
+      },
+      {
+        "name": "Tiella di Gaeta",
+        "line": "Con il polpo, con la cipolla e gli altri ripieni della tradizione; a fette o intera.",
+        "image": "../../../assets/photos/tiella-card.jpg",
+        "alt": "Tielle di Gaeta sul vassoio",
+        "link": "tiella"
+      },
+      {
+        "name": "Pizzette rosse",
+        "line": "Le \"storiche\" pizzette del forno, buone anche fredde.",
+        "image": "../../../assets/photos/pizzette-rosse.jpg",
+        "alt": "Pizzette rosse e focaccine sul vassoio"
+      },
+      {
+        "name": "Ciambelline al vino e tozzetti alle mandorle",
+        "line": "I biscotti che i clienti portano a casa dopo le vacanze.",
+        "image": "../../../assets/photos/ciambelline-al-vino.jpg",
+        "alt": "Ciambelline al vino"
+      },
+      {
+        "name": "Cornetti e colazione",
+        "line": "Produzione giornaliera dalle 7:30.",
+        "image": "../../../assets/photos/cornetti.jpg",
+        "alt": "Cornetti e focacce nel banco del mattino"
+      },
+      {
+        "name": "Dolci delle feste",
+        "line": "Zeppole a Carnevale, pigna a Pasqua, sciuscelle e mostaccioli a Natale.",
+        "image": "../../../assets/photos/dolci-di-natale.jpg",
+        "alt": "Cesti di dolci di Natale confezionati"
+      }
+    ],
+    "more": "Tutti i prodotti"
+  },
+  "story": {
+    "title": "Dal 1922, nello stesso locale",
+    "text": "Almerindo De Conca tornò dall'America e il 4 aprile 1922 aprì il forno con la moglie Annunziata, all'angolo di Salita Porta di Terra. Da allora tre generazioni hanno impastato qui: Almerindo, i figli (i \"fratelli De Conca\") e oggi Alessandro. Nel 2022 il Comune di Gaeta ha festeggiato con noi i cento anni.",
+    "photo": {
+      "image": "../../../assets/photos/epoca-fornai-in-laboratorio-bn.jpg",
+      "alt": "Foto d'epoca in bianco e nero: i fornai al lavoro in laboratorio",
+      "caption": "Al lavoro in laboratorio, [[ANNO]]"
+    },
+    "more": "Leggi la storia"
+  },
+  "order": {
+    "title": "Prenota oggi, ritira domani",
+    "text": "Calzoncini, frittatine di patate, focaccine, tielle e pizzette escono dal forno in quantità decisa il giorno prima: chi telefona entro le [[ORA_LIMITE]] al 0771 460651 li trova pronti all'ora che chiede; chi passa senza prenotare li trova se ne sono rimasti. Tielle intere, torte, maritozzi e cesti si prenotano con [[ANTICIPO]] di anticipo. Nessun modulo, nessuna app: risponde il negozio.",
+    "more": "Come prenotare"
+  }
+}
