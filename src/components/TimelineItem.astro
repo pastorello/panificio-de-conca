@@ -1,0 +1,45 @@
+---
+// One entry of the timeline: the year («1922», «Dopoguerra», «Oggi») in Fraunces 28 px
+// brand-deep, the text and, where there is one, a black-and-white period photo with caption.
+import type { ImageMetadata } from 'astro';
+import Figure from './Figure.astro';
+import Text from './Text.astro';
+
+interface Props {
+  year: string;
+  text: string;
+  figure?: {
+    image?: ImageMetadata;
+    alt?: string;
+    placeholder?: string;
+    caption?: string;
+    /** Period photo, converted to black and white in the file. */
+    vintage?: boolean;
+  };
+  /** Heading level of the year: h2 right under the page H1. */
+  heading?: 'h2' | 'h3';
+}
+
+const { year, text, figure, heading = 'h2' } = Astro.props;
+const Heading = heading;
+---
+
+<li class="dc-timeline__item">
+  <Heading class="dc-timeline__year">{year}</Heading>
+  <div class="dc-timeline__body">
+    <p class="dc-timeline__text"><Text value={text} /></p>
+  </div>
+  {
+    figure && (
+      <Figure
+        ratio="3x2"
+        vintage={figure.vintage ?? false}
+        image={figure.image}
+        alt={figure.alt}
+        placeholder={figure.placeholder}
+        caption={figure.caption}
+        sizes="(min-width: 1024px) 560px, 100vw"
+      />
+    )
+  }
+</li>

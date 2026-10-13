@@ -33,6 +33,8 @@ export default defineConfig({
         values: ['preview', 'live'],
         default: 'preview',
       }),
+      // Builds /componenti/, the gallery of components and states used for the screenshots.
+      SITE_GALLERY: envField.boolean({ context: 'server', access: 'public', default: false }),
     },
   },
   // No sitemap in preview (CLAUDE.md, Pubblicazione). Alternates come from routes.ts,

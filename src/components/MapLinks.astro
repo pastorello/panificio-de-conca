@@ -1,0 +1,34 @@
+---
+// Links to the maps (DESIGN.md §6.5, §7 decision 6), never an embedded map. "pair": Google Maps
+// and Apple Maps side by side (Dove siamo, Contatti); "single": the one «Indicazioni» button,
+// Google Maps everywhere, Apple Maps on iOS and iPadOS with JavaScript.
+import { mapUrls, type Business, type Strings } from '../lib/site';
+import DirectionsButton from './DirectionsButton.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  business: Business;
+  t: Strings;
+  variant: 'pair' | 'single';
+}
+
+const { business, t, variant } = Astro.props;
+const { google, apple } = mapUrls(business);
+---
+
+{
+  variant === 'single' ? (
+    <DirectionsButton business={business} label={t.cta.directions} />
+  ) : (
+    <div class="dc-maplinks">
+      <a class="dc-btn dc-btn--secondary" href={google}>
+        <Icon name="map-pin" />
+        {t.maps.google}
+      </a>
+      <a class="dc-btn dc-btn--secondary" href={apple}>
+        <Icon name="map-pin" />
+        {t.maps.apple}
+      </a>
+    </div>
+  )
+}

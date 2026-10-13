@@ -34,11 +34,20 @@ const site = defineCollection({
     }),
     hours: z.object({
       open_today: z.string().includes('{ranges}'),
+      closed_now: z.string().includes('{next}'),
       closed_today: z.string().includes('{next}'),
       closed_sunday: z.string(),
+      next_today: z.string().includes('{time}'),
+      next_tomorrow: z.string().includes('{time}'),
+      next_day: z.string().includes('{day}').includes('{time}'),
+      closed: z.string(),
+      today: z.string(),
       special: z.string(),
+      table_caption: z.string(),
     }),
     visit: z.object({ title: z.string(), address: z.string(), full_hours: z.string() }),
+    /** Link labels of MapLinks (brief §8.8: «Apple Karten» in German). */
+    maps: z.object({ google: z.string(), apple: z.string() }),
     footer: z.object({ legal: z.string(), since: z.string() }),
     lang: z.object({ switch: z.string() }),
     season: z.object({
@@ -102,13 +111,22 @@ const business = defineCollection({
     hours: z.object({
       timeZone: z.literal('Europe/Rome'),
       weekly: z.object({ mon: day, tue: day, wed: day, thu: day, fri: day, sat: day, sun: day }),
+      // Holiday periods: hours by weekday and/or by date win over the week; "pending" holds
+      // the [[placeholder]] while the owner has not confirmed them (src/lib/hours.ts).
       special: z.array(
-        z.object({
-          id: z.string(),
-          from: z.string().date(),
-          to: z.string().date(),
-          ranges: z.union([placeholder, z.record(z.string().date(), day)]),
-        }),
+        z
+          .object({
+            id: z.string(),
+            from: z.string().date(),
+            to: z.string().date(),
+            weekly: z
+              .object({ mon: day, tue: day, wed: day, thu: day, fri: day, sat: day, sun: day })
+              .partial()
+              .optional(),
+            dates: z.record(z.string().date(), day).optional(),
+            pending: placeholder.optional(),
+          })
+          .refine((special) => special.from <= special.to, 'from must not be after to'),
       ),
     }),
     orderCutoff: z.string(),

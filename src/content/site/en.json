@@ -1,5 +1,5 @@
 {
-  "_review": "Copied from the brief §8.1–8.3. Not in the brief: cta.day_before (CtaBar line, from the mockups), the ui keys and the meta of the legal and 404 pages; translations proposed on 13 October 2026, to be reviewed by a native speaker with the other texts (brief §8).",
+  "_review": "Copied from the brief §8.1–8.3. Not in the brief: cta.day_before (CtaBar line, from the mockups), the ui keys, the meta of the legal and 404 pages and the hours keys other than open_today, closed_today, closed_sunday and special; translations proposed on 13 October 2026, to be reviewed by a native speaker with the other texts (brief §8).",
   "nav": {
     "home": "Home",
     "story": "Our story",
@@ -18,14 +18,25 @@
   },
   "hours": {
     "open_today": "Open today {ranges}",
+    "closed_now": "Closed now · opens {next}",
     "closed_today": "Closed today · opens {next}",
     "closed_sunday": "Closed on Sundays",
-    "special": "Holiday hours"
+    "next_today": "today at {time}",
+    "next_tomorrow": "tomorrow at {time}",
+    "next_day": "{day} at {time}",
+    "closed": "Closed",
+    "today": "today",
+    "special": "Holiday hours",
+    "table_caption": "Opening hours"
   },
   "visit": {
     "title": "Come and see us",
     "address": "Lungomare Caboto [[CIVICO]], Gaeta, in the medieval quarter, opposite the naval base. Parking on the seafront.",
     "full_hours": "Full hours"
+  },
+  "maps": {
+    "google": "Google Maps",
+    "apple": "Apple Maps"
   },
   "footer": {
     "legal": "Legal & privacy",

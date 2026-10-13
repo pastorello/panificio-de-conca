@@ -1,0 +1,377 @@
+---
+// Gallery of the components with their variants and states (DESIGN.md §6.5), to compare with
+// design/components/<Nome>/preview.html and design/mockups/states.png. Built only with
+// SITE_GALLERY=true; hover, focus and active come from scripts/shots.mjs, which forces the real
+// pseudo-classes on the elements marked data-force. Example texts are the brief's (§8).
+import { SITE_GALLERY } from 'astro:env/server';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import Callout from '../components/Callout.astro';
+import CtaBar from '../components/CtaBar.astro';
+import Directions from '../components/Directions.astro';
+import Figure from '../components/Figure.astro';
+import HoursTable from '../components/HoursTable.astro';
+import MapLinks from '../components/MapLinks.astro';
+import OpenNow from '../components/OpenNow.astro';
+import OrderRule from '../components/OrderRule.astro';
+import PhoneNumber from '../components/PhoneNumber.astro';
+import ProductCard from '../components/ProductCard.astro';
+import SeasonTag from '../components/SeasonTag.astro';
+import SourcesBox from '../components/SourcesBox.astro';
+import StoryTimeline from '../components/StoryTimeline.astro';
+import TimelineItem from '../components/TimelineItem.astro';
+import { getBusiness, getStrings, mapUrls, telHref } from '../lib/site';
+import { pathFor } from '../routes';
+import banco from '../assets/photos/banco-hero-mobile-3x2.jpg';
+import pane from '../assets/photos/pane-di-giornata.jpg';
+import tiella from '../assets/photos/tiella-card.jpg';
+import mostaccioli from '../assets/photos/mostaccioli.jpg';
+import insegna from '../assets/photos/epoca-insegna-fornaio-flli-de-conca-bn.jpg';
+import fornai from '../assets/photos/epoca-fornai-in-laboratorio-bn.jpg';
+
+export function getStaticPaths() {
+  return SITE_GALLERY ? [{ params: { gallery: 'componenti' } }] : [];
+}
+
+const locale = 'it';
+const t = await getStrings(locale);
+const de = await getStrings('de');
+const en = await getStrings('en');
+const business = await getBusiness();
+const { google } = mapUrls(business);
+const states = ['normale', 'hover', 'focus-visible', 'active'] as const;
+const force = (state: (typeof states)[number]) => (state === 'normale' ? undefined : state);
+---
+
+<BaseLayout locale={locale} title="Componenti" description="">
+  <div class="dc-container gallery">
+    <h1 class="dc-h1">Componenti</h1>
+
+    <section class="gallery__section">
+      <h2 class="dc-h2">Button</h2>
+      <div class="gallery__states">
+        {
+          states.map((state) => (
+            <div class="gallery__cell">
+              <span class="gallery__label">{state}</span>
+              <Button
+                variant="primary"
+                icon="phone"
+                href={telHref(business)}
+                data-force={force(state)}
+              >
+                {t.cta.call}
+              </Button>
+              <Button variant="secondary" icon="map-pin" href={google} data-force={force(state)}>
+                {t.cta.directions}
+              </Button>
+              <Button variant="link" href={pathFor('products', locale)} data-force={force(state)}>
+                Tutti i prodotti
+              </Button>
+            </div>
+          ))
+        }
+      </div>
+      <div class="dc-actions">
+        <Button variant="primary" icon="phone" href={telHref(business)} lang="de">
+          {de.cta.call}
+        </Button>
+        <Button variant="secondary" icon="map-pin" href={google} lang="de">
+          {de.cta.directions}
+        </Button>
+        <Button variant="primary" icon="phone" href={telHref(business)} lang="en">
+          {en.cta.call}
+        </Button>
+        <Button variant="secondary" icon="map-pin" href={google} lang="en">
+          {en.cta.directions}
+        </Button>
+      </div>
+    </section>
+
+    <section class="gallery__section">
+      <h2 class="dc-h2">OpenNow</h2>
+      <span class="gallery__label">1 · lunedì 10:00</span>
+      <OpenNow locale={locale} t={t} business={business} at="2026-10-12T10:00:00+02:00" />
+      <span class="gallery__label">2 · lunedì 14:00</span>
+      <OpenNow locale={locale} t={t} business={business} at="2026-10-12T14:00:00+02:00" />
+      <span class="gallery__label">3 · domenica 10:00</span>
+      <OpenNow locale={locale} t={t} business={business} at="2026-10-18T10:00:00+02:00" />
+      <span class="gallery__label">4 · domenica 15 novembre, luminarie</span>
+      <OpenNow locale={locale} t={t} business={business} at="2026-11-15T10:00:00+01:00" />
+      <span class="gallery__label">5 · senza JavaScript</span>
+      <OpenNow locale={locale} t={t} business={business} static />
+      <span class="gallery__label">tedesco · sabato 21:00</span>
+      <OpenNow locale="de" t={de} business={business} at="2026-10-17T21:00:00+02:00" />
+    </section>
+
+    <section class="gallery__section gallery__narrow">
+      <h2 class="dc-h2">HoursTable · martedì 13 ottobre</h2>
+      <HoursTable locale={locale} t={t} business={business} at="2026-10-13T10:00:00+02:00" />
+      <HoursTable locale="de" t={de} business={business} at="2026-10-18T10:00:00+02:00" />
+    </section>
+
+    <section class="gallery__section">
+      <h2 class="dc-h2">SeasonTag</h2>
+      <div class="dc-actions">
+        <SeasonTag label={t.season.christmas} />
+        <SeasonTag label={t.season.easter} />
+        <SeasonTag label={t.season.carnival} />
+        <SeasonTag label={t.season.order} />
+        <SeasonTag label={de.season.carnival} />
+        <SeasonTag label={de.hours.special} />
+      </div>
+    </section>
+
+    <section class="gallery__section">
+      <h2 class="dc-h2">ProductCard</h2>
+      <div class="dc-grid">
+        <ProductCard
+          locale={locale}
+          t={t}
+          name="Pane di giornata"
+          line="Filoni e pagnotte sfornati due volte al giorno; al chilo."
+          price="[[PREZZO al chilo]]"
+          image={pane}
+          alt="Pagnotte e filoni appena sfornati"
+        />
+        <ProductCard
+          locale={locale}
+          t={t}
+          name="Pane senza lievito"
+          line="Solo il [[GIORNO]], una volta a settimana: prenotalo."
+          chip={t.season.order}
+          placeholder="Foto 9 — pane senza lievito"
+        />
+        <ProductCard
+          locale={locale}
+          t={t}
+          name="Freselle e taralli"
+          line="Secchi, per la barca, la spiaggia e la valigia."
+        />
+        <ProductCard
+          locale={locale}
+          t={t}
+          name="Tiella di Gaeta"
+          line="A fette o intera; vedi la pagina dedicata."
+          image={tiella}
+          alt="Tielle di Gaeta sul vassoio"
+          link={{ href: pathFor('tiella', locale), label: t.nav.tiella }}
+        />
+        <ProductCard
+          locale={locale}
+          t={t}
+          name="Sciuscelle e mostaccioli"
+          line="Natale: i dolci di Gaeta, anche confezionati per regalo."
+          chip={t.season.christmas}
+          image={mostaccioli}
+          alt="Mostaccioli al cioccolato"
+        />
+        <ProductCard
+          locale="de"
+          t={de}
+          name="Zeppole"
+          line="Karneval und Josefstag (19. März)."
+          chip={de.season.carnival}
+          price={1.2}
+        />
+        <ProductCard
+          locale="en"
+          t={en}
+          name="Zeppole"
+          line="Carnival and St Joseph's Day (19 March)."
+          price={1.2}
+        />
+        <ProductCard
+          locale={locale}
+          t={t}
+          name="Tiella di Gaeta · hover"
+          line="A fette o intera; vedi la pagina dedicata."
+          link={{ href: pathFor('tiella', locale), label: t.nav.tiella }}
+          force="hover"
+        />
+      </div>
+    </section>
+
+    <section class="gallery__section gallery__narrow">
+      <h2 class="dc-h2">OrderRule</h2>
+      <OrderRule
+        business={business}
+        title="Prenota oggi, ritira domani"
+        text="Calzoncini, frittatine di patate, focaccine, tielle e pizzette escono dal forno in quantità decisa il giorno prima: chi telefona entro le [[ORA_LIMITE]] al 0771 460651 li trova pronti all'ora che chiede; chi passa senza prenotare li trova se ne sono rimasti. Tielle intere, torte, maritozzi e cesti si prenotano con [[ANTICIPO]] di anticipo. Nessun modulo, nessuna app: risponde il negozio."
+        call={t.cta.call}
+        more={{ href: pathFor('orders', locale), label: 'Come prenotare' }}
+        id="rule-gallery-1"
+      />
+      <OrderRule
+        business={business}
+        size="h3"
+        title="Il fresco si prenota il giorno prima"
+        text="Calzoncini, frittatine di patate, focaccine, tielle e pizzette si preparano ogni giorno nella quantità prenotata più poco altro. Regola semplice: **chiami entro le [[ORA_LIMITE]], ritiri domani all'ora che vuoi**."
+        id="rule-gallery-2"
+      />
+    </section>
+
+    <section class="gallery__section">
+      <h2 class="dc-h2">OrderRule · split (desktop)</h2>
+      <OrderRule
+        business={business}
+        title="Prenota oggi, ritira domani"
+        text="Chi telefona entro le [[ORA_LIMITE]] al 0771 460651 li trova pronti all'ora che chiede."
+        call={t.cta.call}
+        more={{ href: pathFor('orders', locale), label: 'Come prenotare' }}
+        split
+        id="rule-gallery-3"
+      />
+    </section>
+
+    <section class="gallery__section gallery__narrow">
+      <h2 class="dc-h2">StoryTimeline</h2>
+      <StoryTimeline>
+        <TimelineItem
+          heading="h3"
+          year="1922"
+          text="Almerindo De Conca torna dall'America e, con la moglie Annunziata Di Schino, apre il forno all'angolo tra il Lungomare Caboto e Salita Porta di Terra, nel quartiere medievale. Gas e corrente elettrica non sono ancora arrivati nelle case: pane e dolci si fanno con la legna."
+          figure={{
+            image: insegna,
+            alt: "L'insegna in legno «Fornaio F.lli De Conca»",
+            caption: "L'insegna «Fornaio F.lli De Conca», [[ANNO]]",
+            vintage: true,
+          }}
+        />
+        <TimelineItem
+          heading="h3"
+          year="Dopoguerra"
+          text="Il forno riapre dopo la breve interruzione della guerra. Nell'immediato dopoguerra il pane va anche a chi ne ha bisogno, tra cui gli sfollati della caserma Cosenz."
+        />
+        <TimelineItem
+          heading="h3"
+          year="2022"
+          text="Il centenario. Il Comune di Gaeta consegna una pergamena «a tre generazioni che dall'aprile 1922 hanno investito capacità, sforzi e sacrifici nel Panificio De Conca, uno dei punti di riferimento della gastronomia gaetana»."
+          figure={{ placeholder: 'Foto 22 — pergamena del centenario' }}
+        />
+      </StoryTimeline>
+    </section>
+
+    <section class="gallery__section">
+      <h2 class="dc-h2">Figure</h2>
+      <div class="gallery__figures">
+        <Figure ratio="3x2" image={banco} alt="Il banco del panificio" caption="3:2" />
+        <Figure ratio="4x3" image={pane} alt="Pagnotte e filoni" caption="4:3" />
+        <Figure
+          ratio="3x2"
+          image={fornai}
+          alt="I fornai al lavoro in laboratorio, in bianco e nero"
+          caption="Al lavoro in laboratorio, [[ANNO]]"
+          vintage
+        />
+        <Figure
+          ratio="3x2"
+          placeholder="Foto 24 — vista del lungomare con la base sullo sfondo"
+          caption="Segnaposto"
+        />
+      </div>
+    </section>
+
+    <section class="gallery__section gallery__narrow">
+      <h2 class="dc-h2">Callout · SourcesBox</h2>
+      <Callout>
+        I ripieni cambiano con la stagione e con il pescato: chiedi al banco cosa c'è oggi.
+      </Callout>
+      <Callout label={t.hours.special}>Con etichetta: una o due frasi.</Callout>
+      <SourcesBox
+        label="Fonti"
+        items={[
+          {
+            href: 'https://www.ilmessaggero.it/pay/gaeta_compie_un_secolo_il_panificio_de_conca_e_il_piu_antico_della_provincia-6733111.html',
+            text: 'Il Messaggero, 5 giugno 2022, "Gaeta, compie un secolo il panificio De Conca: è il più antico della provincia"',
+            note: '(per abbonati)',
+          },
+          {
+            href: 'https://www.arcidiocesigaeta.it/wp-content/uploads/sites/6/2022/06/13/Diocesane_Lazio7_Gaeta_20220612_E01.pdf',
+            text: 'Lazio Sette, 12 giugno 2022, "Lo storico forno «De Conca» di Gaeta da un secolo fa il pane sul lungomare"',
+          },
+        ]}
+      />
+    </section>
+
+    <section class="gallery__section gallery__narrow">
+      <h2 class="dc-h2">MapLinks · telefono grande · riga CTA</h2>
+      <MapLinks business={business} t={t} variant="pair" />
+      <MapLinks business={business} t={de} variant="pair" />
+      <MapLinks business={business} t={t} variant="single" />
+      <PhoneNumber locale={locale} business={business} />
+      <PhoneNumber locale="de" business={business} />
+      <CtaBar t={t} business={business} variant="row" />
+      <CtaBar t={de} business={business} variant="row" />
+    </section>
+
+    <section class="gallery__section gallery__narrow">
+      <h2 class="dc-h2">Directions</h2>
+      <Directions
+        modes={[
+          {
+            icon: 'car',
+            title: 'In auto',
+            text: 'Parcheggio lungo il Lungomare Caboto [[note su strisce blu/ZTL estiva da confermare]]. Da Roma: A1 uscita Cassino, poi SS 630 verso Formia e Gaeta, 1h40; oppure Pontina e Flacca. Da Napoli: A1 uscita Caianello o Capua, poi Formia, 1h15.',
+          },
+          {
+            icon: 'train-front',
+            title: 'In treno',
+            text: 'Stazione di Formia-Gaeta (Intercity e regionali da Roma Termini in 1h10, da Napoli in 50 minuti), poi bus Cotral per Gaeta (fermata [[FERMATA più vicina]]) o taxi, 10 km.',
+          },
+          {
+            icon: 'footprints',
+            title: 'A piedi',
+            text: 'Dal Santuario della Montagna Spaccata e dalla spiaggia di Serapo, [[minuti]] lungo il mare; dal Castello e dal Duomo, cinque minuti in discesa.',
+          },
+          {
+            icon: 'sailboat',
+            title: 'In barca',
+            text: 'Dalla Base Nautica Flavio Gioia e dal porto turistico, dieci minuti a piedi lungo il lungomare.',
+          },
+        ]}
+      />
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+  }
+  .gallery__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding-top: var(--space-5);
+    border-top: var(--border-hairline) solid var(--line);
+  }
+  .gallery__narrow {
+    max-width: var(--measure);
+  }
+  .gallery__label {
+    font-size: var(--text-chip);
+    font-weight: var(--weight-chip);
+    letter-spacing: var(--tracking-chip);
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .gallery__states {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, calc(var(--measure) / 3)), 1fr));
+    gap: var(--space-5);
+  }
+  .gallery__cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  .gallery__figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, calc(var(--measure) / 3)), 1fr));
+    gap: var(--space-5);
+  }
+</style>

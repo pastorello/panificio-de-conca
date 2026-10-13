@@ -13,9 +13,10 @@
     "preview": "astro preview",
     "check": "astro check && eslint . && prettier --check . && node scripts/check-tokens.mjs",
     "format": "prettier --write .",
-    "test": "node scripts/verify-dist.mjs",
+    "test": "node --test 'tests/**/*.test.mjs' && node scripts/verify-dist.mjs",
     "shots": "node scripts/shots.mjs",
-    "font:subset": "node scripts/subset-font.mjs"
+    "font:subset": "node scripts/subset-font.mjs",
+    "test:e2e": "node scripts/e2e.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "~3.7.0",

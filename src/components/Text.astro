@@ -1,13 +1,14 @@
 ---
-// A content string, escaped, with [[placeholders]] shown as <mark class="todo"> in preview.
-import { fill, rich } from '../lib/text';
+// A content string, escaped, with **bold**, the shop's phone as a tel: link and
+// [[placeholders]] shown as <mark class="todo"> in preview.
+import { fill, rich, type RichOptions } from '../lib/text';
 
-interface Props {
+interface Props extends RichOptions {
   value: string;
   vars?: Record<string, string>;
 }
 
-const { value, vars } = Astro.props;
+const { value, vars, tel } = Astro.props;
 ---
 
-<Fragment set:html={rich(vars ? fill(value, vars) : value)} />
+<Fragment set:html={rich(vars ? fill(value, vars) : value, { tel })} />

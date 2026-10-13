@@ -14,9 +14,12 @@ npm run dev      # sviluppo su http://localhost:4321
 npm run build    # build statica in dist/ più le verifiche su dist/
 npm run preview  # anteprima della build
 npm run check    # astro check, ESLint, Prettier, token
-npm run test     # solo le verifiche su dist/
-npm run shots    # screenshot a 390 × 844 e 1440 × 900 in .shots/
+npm run test     # test degli orari (tests/) e verifiche su dist/
+npm run test:e2e # comportamento su dist/: menu, tastiera, fallback senza JS, link mappe
+npm run shots    # screenshot a 390 × 844 e 1440 × 900 in .shots/ (--menu, --nojs)
 ```
+
+Catalogo dei componenti con varianti e stati, solo in locale: `SITE_GALLERY=true npm run build`, poi `npm run shots -- /componenti/` (hover, focus e attivo sono forzati sugli elementi con `data-force`).
 
 Variabili di build (vedi `.env.example`): `SITE_URL` e `SITE_PHASE` (`preview` | `live`). In anteprima le pagine hanno `noindex` e i segnaposti `[[…]]` sono evidenziati; in `live` un segnaposto rimasto fa fallire la build.
 

@@ -1,0 +1,100 @@
+---
+// A product of the counter (DESIGN.md §6.5, §7 decision 9): 4:3 photo, name, one line, the price
+// «da …» only if the content has it, at most one SeasonTag. Cards are not links, except the
+// tiella card, which leads to its page and says so with «La tiella →».
+import type { ImageMetadata } from 'astro';
+import { Picture } from 'astro:assets';
+import type { Locale } from '../routes';
+import type { Strings } from '../lib/site';
+import { intlLocale } from '../lib/hours';
+import Icon from './Icon.astro';
+import SeasonTag from './SeasonTag.astro';
+import Text from './Text.astro';
+
+interface Props {
+  locale: Locale;
+  t: Strings;
+  name: string;
+  line: string;
+  /** Number in euro, or a [[placeholder]]; nothing when there is no price. */
+  price?: number | string;
+  chip?: string;
+  image?: ImageMetadata;
+  alt?: string;
+  /** «Foto 9 — pane senza lievito», when the photo is missing. */
+  placeholder?: string;
+  /** Only the tiella card. */
+  link?: { href: string; label: string };
+  /** Forced pseudo-class for the component gallery (scripts/shots.mjs). */
+  force?: string;
+}
+
+const {
+  locale,
+  t,
+  name,
+  line,
+  price,
+  chip,
+  image,
+  alt = '',
+  placeholder,
+  link,
+  force,
+} = Astro.props;
+const Tag = link ? 'a' : 'article';
+const priceText =
+  typeof price === 'number'
+    ? new Intl.NumberFormat(intlLocale(locale), { style: 'currency', currency: 'EUR' }).format(
+        price,
+      )
+    : price;
+---
+
+<Tag class:list={['dc-card', { 'dc-card--link': link }]} href={link?.href} data-force={force}>
+  {
+    image ? (
+      <Picture
+        class="dc-card__media"
+        src={image}
+        alt={alt}
+        formats={['avif', 'webp']}
+        widths={[320, 480, 640, 800].filter((width) => width <= image.width)}
+        sizes="(min-width: 1024px) 265px, (min-width: 600px) 33vw, 50vw"
+        loading="lazy"
+      />
+    ) : (
+      placeholder && (
+        <div class="dc-card__placeholder">
+          <Text value={`[[${placeholder}]]`} />
+        </div>
+      )
+    )
+  }
+  <div class="dc-card__body">
+    <h3 class="dc-card__name">{name}</h3>
+    <p class="dc-card__line"><Text value={line} /></p>
+    {
+      priceText && (
+        <p class="dc-card__price">
+          {t.price.from} <Text value={priceText} />
+        </p>
+      )
+    }
+    {
+      chip && (
+        <div class="dc-card__meta">
+          <SeasonTag label={chip} />
+        </div>
+      )
+    }
+    {
+      link && (
+        <span class="dc-link">
+          {link.label}
+          <Icon name="arrow-right" />
+        </span>
+      )
+    }
+  </div>
+</Tag>

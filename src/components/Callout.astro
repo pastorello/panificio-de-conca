@@ -1,0 +1,17 @@
+---
+// Short note in a paper-deep box (DESIGN.md §6.5): one or two sentences, optionally with a
+// chip as label. No icon, no coloured border: that is the OrderRule.
+import type { HTMLAttributes } from 'astro/types';
+import SeasonTag from './SeasonTag.astro';
+
+interface Props extends HTMLAttributes<'div'> {
+  label?: string;
+}
+
+const { label, ...attrs } = Astro.props;
+---
+
+<div class="dc-callout" {...attrs}>
+  {label && <SeasonTag label={label} />}
+  <p><slot /></p>
+</div>
