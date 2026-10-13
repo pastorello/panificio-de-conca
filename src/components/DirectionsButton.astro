@@ -1,0 +1,32 @@
+---
+// The single "Indicazioni" button (DESIGN.md §7, decision 6): a universal Google Maps link;
+// with JavaScript on iOS and iPadOS the href becomes Apple Maps, the default app there.
+import { mapUrls, type Business } from '../lib/site';
+import Icon from './Icon.astro';
+
+interface Props {
+  business: Business;
+  label: string;
+  /** The CtaBar buttons are text only: at 390 px the two labels with icons do not fit. */
+  icon?: boolean;
+}
+
+const { business, label, icon = true } = Astro.props;
+const { google, apple } = mapUrls(business);
+---
+
+<a class="dc-btn dc-btn--secondary" href={google} data-apple-href={apple}>
+  {icon && <Icon name="map-pin" />}{label}
+</a>
+
+<script>
+  const ua = navigator.userAgent;
+  // iPadOS reports itself as a Mac: tell it apart by the touch screen.
+  const appleDevice =
+    /iP(hone|od|ad)/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  if (appleDevice) {
+    document.querySelectorAll<HTMLAnchorElement>('a[data-apple-href]').forEach((link) => {
+      link.href = link.dataset.appleHref ?? link.href;
+    });
+  }
+</script>

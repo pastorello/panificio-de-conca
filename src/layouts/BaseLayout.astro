@@ -1,0 +1,86 @@
+---
+// The single page template (DESIGN.md §5): Header · content · VisitBlock · Footer, plus the
+// CtaBar fixed at the bottom on mobile. Head: title, description, canonical, hreflang,
+// Open Graph, robots (noindex in preview), optional JSON-LD.
+import '../styles/tokens.css';
+import '../styles/components.css';
+import { alternatesFor, pathFor, type Locale, type RouteKey } from '../routes';
+import { getBusiness, getStrings } from '../lib/site';
+import { isPreview } from '../lib/text';
+import CtaBar from '../components/CtaBar.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import NavSheet from '../components/NavSheet.astro';
+import VisitBlock from '../components/VisitBlock.astro';
+
+interface Props {
+  locale: Locale;
+  /** Undefined only on the 404 page. */
+  routeKey?: RouteKey;
+  title: string;
+  description: string;
+  /** "Vieni a trovarci" closes every page except Note legali and 404. */
+  visit?: boolean;
+  jsonLd?: Record<string, unknown>;
+}
+
+const { locale, routeKey, title, description, visit = true, jsonLd } = Astro.props;
+const t = await getStrings(locale);
+const business = await getBusiness();
+const site = Astro.site ?? new URL('http://localhost:4321');
+
+const canonical = routeKey ? new URL(pathFor(routeKey, locale), site).href : undefined;
+const alternates = routeKey ? alternatesFor(routeKey, site) : [];
+const ogLocales: Record<Locale, string> = { it: 'it_IT', en: 'en_GB', de: 'de_DE' };
+const ogImage = new URL('/img/og.jpg', site).href;
+---
+
+<!doctype html>
+<html lang={locale} dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {isPreview && <meta name="robots" content="noindex, nofollow" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    {alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
+    <link
+      rel="preload"
+      href="/fonts/fraunces.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={business.name} />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:locale" content={ogLocales[locale]} />
+    {
+      (Object.keys(ogLocales) as Locale[])
+        .filter((code) => code !== locale)
+        .map((code) => <meta property="og:locale:alternate" content={ogLocales[code]} />)
+    }
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <a class="dc-skip" href="#contenuto">{t.ui.skip}</a>
+    <Header locale={locale} routeKey={routeKey} t={t} business={business} />
+    <main id="contenuto" class="dc-page">
+      <slot />
+      {visit && <VisitBlock locale={locale} t={t} business={business} />}
+    </main>
+    <Footer locale={locale} routeKey={routeKey} t={t} business={business} />
+    <NavSheet locale={locale} routeKey={routeKey} t={t} business={business} />
+    <CtaBar t={t} business={business} variant="fixed" />
+  </body>
+</html>

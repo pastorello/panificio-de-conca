@@ -1,0 +1,95 @@
+{
+  "_review": "Testi copiati dal brief §8.1–8.3. Non sono nel brief: cta.day_before (riga della CtaBar, dai mockup), le chiavi ui e i meta di Note legali e 404; italiano da DESIGN.md e dalle schede dei componenti, confermati il 13 ottobre 2026.",
+  "nav": {
+    "home": "Home",
+    "story": "La storia",
+    "tiella": "La tiella",
+    "products": "Pane e prodotti",
+    "orders": "Ordini",
+    "findus": "Dove siamo",
+    "contact": "Contatti"
+  },
+  "cta": {
+    "call": "Chiama e prenota",
+    "rule": "Ordini entro le {time} per domani",
+    "day_before": "Prenota il giorno prima e dicci a che ora passi",
+    "sold_out": "Il fresco finisce presto: prenotalo",
+    "directions": "Indicazioni"
+  },
+  "hours": {
+    "open_today": "Aperto oggi {ranges}",
+    "closed_today": "Oggi chiuso · riapre {next}",
+    "closed_sunday": "Domenica chiuso",
+    "special": "Orari delle feste"
+  },
+  "visit": {
+    "title": "Vieni a trovarci",
+    "address": "Lungomare Caboto [[CIVICO]], Gaeta, nel quartiere medievale, di fronte alla base. Parcheggio sul lungomare.",
+    "full_hours": "Orari completi"
+  },
+  "footer": {
+    "legal": "Note legali e privacy",
+    "since": "Panificio a Gaeta dal 1922"
+  },
+  "lang": {
+    "switch": "Lingua"
+  },
+  "season": {
+    "christmas": "Solo a Natale",
+    "easter": "Solo a Pasqua",
+    "carnival": "Carnevale e San Giuseppe",
+    "order": "Su prenotazione"
+  },
+  "price": {
+    "from": "da"
+  },
+  "meta": {
+    "home": {
+      "title": "Panificio De Conca – Forno a Gaeta dal 1922, sul lungomare",
+      "description": "Pane, tiella di Gaeta, pizzette e dolci delle feste. Tre generazioni nello stesso forno sul Lungomare Caboto, di fronte al mare. Orari e telefono."
+    },
+    "story": {
+      "title": "La storia del Panificio De Conca, Gaeta 1922",
+      "description": "Dal ritorno dall'America di Almerindo De Conca al centenario del 2022: cento anni di pane nello stesso locale del quartiere medievale."
+    },
+    "tiella": {
+      "title": "Tiella di Gaeta: dove comprarla e cos'è – Panificio De Conca",
+      "description": "La tiella di Gaeta secondo un forno del 1922: polpo, cipolla e gli altri ripieni, quando la trovi, quanto costa, come portarla via."
+    },
+    "products": {
+      "title": "Pane, pizzette e dolci – Panificio De Conca Gaeta",
+      "description": "Pane di giornata, pane senza lievito, pizzette rosse, ciambelline al vino, tozzetti, cornetti e i dolci delle feste di Gaeta."
+    },
+    "orders": {
+      "title": "Ordini per telefono e forniture – Panificio De Conca",
+      "description": "Tielle intere, torte, maritozzi e cesti si ordinano per telefono. Forniture per bar, ristoranti, B&B, hotel e barche."
+    },
+    "findus": {
+      "title": "Dove siamo: Lungomare Caboto, Gaeta – Panificio De Conca",
+      "description": "Nel quartiere medievale, di fronte alla base, con parcheggio sul lungomare. Come arrivare da Formia, da Roma e da Napoli."
+    },
+    "contact": {
+      "title": "Contatti – Panificio De Conca, Gaeta",
+      "description": "Telefono, orari e indirizzo del Panificio De Conca, Lungomare Caboto, Gaeta."
+    },
+    "legal": {
+      "title": "Note legali e privacy – Panificio De Conca, Gaeta",
+      "description": "Dati societari del Panificio De Conca (De Conca Alessandro e C. S.n.c.) e informativa privacy: il sito non usa cookie né raccoglie dati personali."
+    },
+    "notFound": {
+      "title": "Pagina non trovata",
+      "description": "La pagina che cerchi non esiste: torna alla home o chiama il negozio."
+    }
+  },
+  "ui": {
+    "skip": "Vai al contenuto",
+    "menu": "Menu",
+    "menu_close": "Chiudi il menu",
+    "nav_label": "Principale",
+    "footer_nav_label": "Pagine",
+    "call": "Chiama il {phone}",
+    "preview_notice": "Anteprima del sito: testi e foto provvisori",
+    "vat": "P.IVA",
+    "rea": "REA"
+  }
+}

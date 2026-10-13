@@ -1,0 +1,64 @@
+---
+// Header (DESIGN.md §5.1, §6.5): not sticky. One markup, two layouts: below 1024 px logo,
+// phone button and "Menu"; from 1024 px logo, six nav entries, language switch and phone.
+import { Image } from 'astro:assets';
+import logo from '../assets/photos/logo-192.jpg';
+import { headerNav, pathFor, type Locale, type RouteKey } from '../routes';
+import { displayPhone, navLabel, telHref, type Business, type Strings } from '../lib/site';
+import { fill } from '../lib/text';
+import Icon from './Icon.astro';
+import LangSwitch from './LangSwitch.astro';
+
+interface Props {
+  locale: Locale;
+  /** Undefined on the 404 page: no current entry, language links to the homes. */
+  routeKey?: RouteKey;
+  t: Strings;
+  business: Business;
+}
+
+const { locale, routeKey, t, business } = Astro.props;
+const phone = displayPhone(business, locale);
+---
+
+<header class="dc-header">
+  <div class="dc-header__inner">
+    <a class="dc-header__brand" href={pathFor('home', locale)}>
+      <Image
+        class="dc-header__logo"
+        src={logo}
+        alt=""
+        width={40}
+        height={40}
+        densities={[1, 2]}
+        loading="eager"
+      />
+      {business.name}
+    </a>
+    <nav class="dc-header__nav" aria-label={t.ui.nav_label}>
+      <ul class="dc-nav">
+        {
+          headerNav.map((key) => (
+            <li>
+              <a href={pathFor(key, locale)} aria-current={key === routeKey ? 'page' : undefined}>
+                {navLabel(t, key)}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <LangSwitch locale={locale} routeKey={routeKey} label={t.lang.switch} variant="header" />
+    <a class="dc-header__phone" href={telHref(business)}><Icon name="phone" />{phone}</a>
+    <a
+      class="dc-iconbtn dc-header__call"
+      href={telHref(business)}
+      aria-label={fill(t.ui.call, { phone })}
+    >
+      <Icon name="phone" />
+    </a>
+    <a class="dc-header__menu" href="#menu" data-navsheet-open>
+      {t.ui.menu}<Icon name="menu" />
+    </a>
+  </div>
+</header>

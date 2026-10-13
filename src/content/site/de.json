@@ -1,0 +1,95 @@
+{
+  "_review": "Aus dem Brief §8.1–8.3 übernommen. Nicht im Brief: cta.day_before (Zeile der CtaBar, aus den Mockups und der CtaBar-Komponente), die Schlüssel unter ui und die Meta-Angaben von Impressum und 404; Übersetzungen vom 13. Oktober 2026, mit den übrigen Texten muttersprachlich prüfen lassen (Brief §8).",
+  "nav": {
+    "home": "Start",
+    "story": "Geschichte",
+    "tiella": "Die Tiella",
+    "products": "Brot & Gebäck",
+    "orders": "Bestellen",
+    "findus": "Anfahrt",
+    "contact": "Kontakt"
+  },
+  "cta": {
+    "call": "Anrufen und bestellen",
+    "rule": "Bestellungen bis {time} Uhr für morgen",
+    "day_before": "Am Vortag bestellen und sagen, wann Sie kommen",
+    "sold_out": "Frisches ist schnell weg: bitte vorbestellen",
+    "directions": "Route"
+  },
+  "hours": {
+    "open_today": "Heute geöffnet {ranges}",
+    "closed_today": "Heute geschlossen · öffnet {next}",
+    "closed_sunday": "Sonntags geschlossen",
+    "special": "Feiertagsöffnungszeiten"
+  },
+  "visit": {
+    "title": "Besuchen Sie uns",
+    "address": "Lungomare Caboto [[CIVICO]], Gaeta, in der Altstadt, gegenüber dem Marinestützpunkt. Parkplätze an der Promenade.",
+    "full_hours": "Alle Öffnungszeiten"
+  },
+  "footer": {
+    "legal": "Impressum & Datenschutz",
+    "since": "Bäckerei in Gaeta seit 1922"
+  },
+  "lang": {
+    "switch": "Sprache"
+  },
+  "season": {
+    "christmas": "Nur zu Weihnachten",
+    "easter": "Nur zu Ostern",
+    "carnival": "Karneval und Josefstag",
+    "order": "Auf Vorbestellung"
+  },
+  "price": {
+    "from": "ab"
+  },
+  "meta": {
+    "home": {
+      "title": "Panificio De Conca – Bäckerei in Gaeta seit 1922",
+      "description": "Brot, Tiella di Gaeta, Pizzette und Festtagsgebäck aus einer Familienbäckerei an der Uferpromenade von Gaeta, drei Generationen im selben Laden. Öffnungszeiten und Telefon."
+    },
+    "story": {
+      "title": "Unsere Geschichte: Bäckerei in Gaeta seit 1922",
+      "description": "Von Almerindo De Concas Rückkehr aus Amerika bis zum 100-jährigen Jubiläum 2022: hundert Jahre Brot im selben Laden in der Altstadt von Gaeta."
+    },
+    "tiella": {
+      "title": "Tiella di Gaeta: was das ist und wo man sie bekommt",
+      "description": "Die gefüllte Teigspezialität aus Gaeta von einer Bäckerei aus dem Jahr 1922: Oktopus, Zwiebel und andere Füllungen, wann es sie gibt, Preise und Mitnahme."
+    },
+    "products": {
+      "title": "Brot, Pizzette und Gebäck – Panificio De Conca",
+      "description": "Frisches Brot vom Tag, hefefreies Brot, rote Pizzette, Weinkringel, Mandel-Tozzetti, Croissants und das Festtagsgebäck aus Gaeta."
+    },
+    "orders": {
+      "title": "Bestellungen per Telefon und Lieferungen – Panificio De Conca",
+      "description": "Ganze Tielle, Torten, Maritozzi und Geschenkkörbe bestellen Sie telefonisch. Belieferung von Bars, Restaurants, B&Bs, Hotels und Booten."
+    },
+    "findus": {
+      "title": "Anfahrt: Lungomare Caboto, Gaeta",
+      "description": "In der Altstadt, gegenüber dem Marinestützpunkt, mit Parkplätzen an der Promenade. Anreise vom Bahnhof Formia, aus Rom und Neapel."
+    },
+    "contact": {
+      "title": "Kontakt – Panificio De Conca, Gaeta",
+      "description": "Telefon, Öffnungszeiten und Adresse der Bäckerei Panificio De Conca, Lungomare Caboto, Gaeta."
+    },
+    "legal": {
+      "title": "Impressum & Datenschutz – Panificio De Conca, Gaeta",
+      "description": "Firmenangaben der Bäckerei Panificio De Conca (De Conca Alessandro e C. S.n.c.) und Datenschutzhinweis: Diese Website verwendet keine Cookies und erhebt keine personenbezogenen Daten."
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Die gesuchte Seite gibt es nicht: zurück zur Startseite oder rufen Sie den Laden an."
+    }
+  },
+  "ui": {
+    "skip": "Zum Inhalt springen",
+    "menu": "Menü",
+    "menu_close": "Menü schließen",
+    "nav_label": "Hauptnavigation",
+    "footer_nav_label": "Seiten",
+    "call": "{phone} anrufen",
+    "preview_notice": "Vorschau der Website: Texte und Fotos vorläufig",
+    "vat": "MwSt.-Nr.",
+    "rea": "REA"
+  }
+}

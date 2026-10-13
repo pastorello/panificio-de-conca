@@ -1,0 +1,87 @@
+{
+  "_todo": [
+    "Orari settimanali da confermare con il titolare (brief §1, §10)",
+    "Coordinate GPS da verificare sul posto (brief §5, §10)"
+  ],
+  "name": "Panificio De Conca",
+  "alternateName": "Il Fornaio De Conca",
+  "legalName": "De Conca Alessandro e C. S.n.c.",
+  "vatId": "01960040598",
+  "rea": "LT-135120",
+  "foundingDate": "1922-04-04",
+  "description": "Panificio artigianale a Gaeta dal 1922: pane, tiella di Gaeta, pizzette e dolci delle feste sul Lungomare Caboto.",
+  "phone": {
+    "e164": "+390771460651",
+    "national": "0771 460651",
+    "international": "+39 0771 460651"
+  },
+  "email": "[[EMAIL]]",
+  "pec": "[[PEC]]",
+  "address": {
+    "street": "Lungomare Giovanni Caboto",
+    "number": "[[CIVICO]]",
+    "postalCode": "04024",
+    "locality": "Gaeta",
+    "region": "LT",
+    "country": "IT"
+  },
+  "geo": {
+    "latitude": 41.2132,
+    "longitude": 13.5778
+  },
+  "maps": {
+    "googlePlaceId": "[[PLACE_ID della scheda Google]]",
+    "googleQuery": "Panificio De Conca Gaeta",
+    "appleQuery": "Panificio De Conca"
+  },
+  "hours": {
+    "timeZone": "Europe/Rome",
+    "weekly": {
+      "mon": [
+        ["07:30", "13:15"],
+        ["16:30", "20:00"]
+      ],
+      "tue": [
+        ["07:30", "13:15"],
+        ["16:30", "20:00"]
+      ],
+      "wed": [
+        ["07:30", "13:15"],
+        ["16:30", "20:00"]
+      ],
+      "thu": [
+        ["07:30", "13:15"],
+        ["17:00", "20:00"]
+      ],
+      "fri": [
+        ["07:30", "13:15"],
+        ["16:30", "20:00"]
+      ],
+      "sat": [
+        ["07:30", "13:15"],
+        ["16:30", "20:00"]
+      ],
+      "sun": []
+    },
+    "special": [
+      {
+        "id": "luminarie-2026-27",
+        "from": "2026-11-09",
+        "to": "2027-01-11",
+        "ranges": "[[Aperture straordinarie nei weekend delle luminarie: giorni e fasce orarie da confermare]]"
+      }
+    ]
+  },
+  "orderCutoff": "[[ORA_LIMITE]]",
+  "orderNotice": "[[ANTICIPO]]",
+  "yeastFreeDay": "[[GIORNO]]",
+  "priceRange": "€",
+  "paymentAccepted": "Cash, Credit Card, Debit Card, Contactless",
+  "currenciesAccepted": "EUR",
+  "social": {
+    "facebook": "https://www.facebook.com/panificio.deconca/",
+    "instagram": "[[URL Instagram quando creato]]",
+    "googleMaps": "[[URL scheda Google Maps]]",
+    "tripadvisor": "[[URL TripAdvisor]]"
+  }
+}

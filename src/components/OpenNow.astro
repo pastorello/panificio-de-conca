@@ -1,0 +1,23 @@
+---
+// Open/closed line (DESIGN.md §6.5). Phase 1: only state 5, the static week that pages
+// show without JavaScript; the live states computed in Europe/Rome come in phase 2.
+import type { Locale } from '../routes';
+import type { Business, Strings } from '../lib/site';
+import { summarizeWeek } from '../lib/hours';
+import Icon from './Icon.astro';
+
+interface Props {
+  locale: Locale;
+  t: Strings;
+  business: Business;
+}
+
+const { locale, t, business } = Astro.props;
+const week = summarizeWeek(business.hours.weekly, locale, t.hours.closed_sunday);
+const rest = [week.ranges, ...week.exceptions].join(', ');
+---
+
+<p class="dc-opennow">
+  <Icon name="clock" />
+  <span class="dc-opennow__text"><strong>{week.lead}</strong> {rest} · {week.closed}</span>
+</p>

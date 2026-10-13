@@ -1,0 +1,77 @@
+---
+// Full-screen navigation sheet (DESIGN.md §5.1, §6.5): modal <dialog>, closed with ✕, Esc
+// or a tap outside; the browser keeps focus inside while it is open. Without JavaScript the
+// "Menu" link goes to #menu, the navigation repeated in the footer, and this stays closed.
+import { pathFor, sheetNav, type Locale, type RouteKey } from '../routes';
+import { displayPhone, navLabel, telHref, type Business, type Strings } from '../lib/site';
+import Icon from './Icon.astro';
+import LangSwitch from './LangSwitch.astro';
+
+interface Props {
+  locale: Locale;
+  /** Undefined on the 404 page: no current entry, language links to the homes. */
+  routeKey?: RouteKey;
+  t: Strings;
+  business: Business;
+}
+
+const { locale, routeKey, t, business } = Astro.props;
+---
+
+<dialog class="dc-navsheet" id="navsheet" aria-label={t.ui.menu} data-navsheet>
+  <div class="dc-navsheet__head">
+    <span>{business.name}</span>
+    <button class="dc-iconbtn" type="button" aria-label={t.ui.menu_close} data-navsheet-close>
+      <Icon name="x" />
+    </button>
+  </div>
+  <nav aria-label={t.ui.nav_label}>
+    <ul class="dc-navsheet__list">
+      {
+        sheetNav.map((key) => (
+          <li>
+            <a href={pathFor(key, locale)} aria-current={key === routeKey ? 'page' : undefined}>
+              {navLabel(t, key)}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <div class="dc-navsheet__foot">
+    <LangSwitch locale={locale} routeKey={routeKey} label={t.lang.switch} variant="sheet" />
+    <a class="dc-navsheet__phone" href={telHref(business)}>
+      <Icon name="phone" />{displayPhone(business, locale)}
+    </a>
+  </div>
+</dialog>
+
+<script>
+  const sheet = document.querySelector<HTMLDialogElement>('[data-navsheet]');
+  const opener = document.querySelector<HTMLAnchorElement>('[data-navsheet-open]');
+  const closer = sheet?.querySelector<HTMLButtonElement>('[data-navsheet-close]');
+
+  if (sheet && opener && closer && typeof sheet.showModal === 'function') {
+    opener.setAttribute('aria-haspopup', 'dialog');
+    opener.setAttribute('aria-controls', sheet.id);
+    opener.addEventListener('click', (event) => {
+      event.preventDefault();
+      sheet.showModal();
+    });
+    closer.addEventListener('click', () => sheet.close());
+    // A click on the backdrop targets the dialog itself, outside its box.
+    sheet.addEventListener('click', (event) => {
+      const box = sheet.getBoundingClientRect();
+      const inside =
+        event.clientX >= box.left &&
+        event.clientX <= box.right &&
+        event.clientY >= box.top &&
+        event.clientY <= box.bottom;
+      if (event.target === sheet && !inside) sheet.close();
+    });
+    // From 1024 px the header shows the full navigation: the sheet has no reason to stay open.
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', (query) => {
+      if (query.matches && sheet.open) sheet.close();
+    });
+  }
+</script>

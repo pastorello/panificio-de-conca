@@ -1,0 +1,33 @@
+---
+// Every page in every language, from the slug map in src/routes.ts.
+// Phase 1: empty pages that show the shared layout; contents arrive page by page in phase 3.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { staticPaths, type Locale, type RouteKey } from '../routes';
+import { getBusiness, getStrings } from '../lib/site';
+import { bakeryJsonLd } from '../lib/jsonld';
+
+export function getStaticPaths() {
+  return staticPaths();
+}
+
+interface Props {
+  routeKey: RouteKey;
+  locale: Locale;
+}
+
+const { routeKey, locale } = Astro.props;
+const t = await getStrings(locale);
+const business = await getBusiness();
+const site = Astro.site ?? new URL('http://localhost:4321');
+const meta = t.meta[routeKey];
+const withJsonLd = routeKey === 'home' || routeKey === 'findus';
+---
+
+<BaseLayout
+  locale={locale}
+  routeKey={routeKey}
+  title={meta.title}
+  description={meta.description}
+  visit={routeKey !== 'legal'}
+  jsonLd={withJsonLd ? bakeryJsonLd(business, site) : undefined}
+/>
