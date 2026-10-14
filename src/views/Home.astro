@@ -1,8 +1,8 @@
 ---
-// Home (BRIEF.md §8.3, DESIGN.md §5.2–5.3, variant A on desktop). Below 1024 px the photo sits
-// above the H1, flush under the header; from 1024 px text on the left and the 4:3 photo on the
-// right. In the HTML the text comes first, so the H1 is the first thing after the header for
-// screen readers (DESIGN.md §10.3). The VisitBlock comes from the layout.
+// Home (BRIEF.md §8.3, DESIGN.md §5.2–5.3, variant A on desktop). Below 1024 px the H1, the
+// subtitle and OpenNow come first and the 3:2 photo follows at full width, so that all three stay
+// above the fold of a phone (DESIGN.md §3 principle 2, design/HANDOFF.md §5); from 1024 px text on
+// the left and the 4:3 photo on the right. The VisitBlock comes from the layout.
 import { pathFor, type Locale } from '../routes';
 import { getPage, type Business, type Strings } from '../lib/site';
 import Button from '../components/Button.astro';
@@ -103,10 +103,11 @@ const { hero, counter, story, order } = page;
 </div>
 
 <style>
-  /* Below 1024 px: photo at full width, then the text with the page gutter (mockup mobile-home). */
+  /* Below 1024 px: the text with the page gutter, then the photo at full width. */
   .hero {
     display: grid;
-    grid-template-areas: 'photo' 'text';
+    grid-template-areas: 'text' 'photo';
+    row-gap: var(--space-4);
   }
   .hero__photo {
     grid-area: photo;
@@ -116,7 +117,7 @@ const { hero, counter, story, order } = page;
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
-    padding: var(--gutter-mobile) var(--gutter-mobile) 0;
+    padding-inline: var(--gutter-mobile);
   }
   .hero__text p {
     margin: 0;
