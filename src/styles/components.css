@@ -1168,6 +1168,14 @@ a.dc-card {
   font-weight: var(--weight-semibold);
   white-space: nowrap;
 }
+/* Below 390 px the «today» label goes under the day name: «Wednesday TODAY» in a wide system
+   font (Linux, some Android phones) made the table wider than a 360 px screen */
+@media (max-width: 389px) {
+  .dc-hours__badge {
+    display: block;
+    margin-left: 0;
+  }
+}
 .dc-hours__today th,
 .dc-hours__today td {
   background: var(--paper-deep);
