@@ -27,6 +27,8 @@ interface Props {
   link?: { href: string; label: string };
   /** Forced pseudo-class for the component gallery (scripts/shots.mjs). */
   force?: string;
+  /** Rendered width of the card, for srcset; the default fits .dc-grid (2, 3, 4 columns). */
+  sizes?: string;
 }
 
 const {
@@ -41,6 +43,7 @@ const {
   placeholder,
   link,
   force,
+  sizes = '(min-width: 1184px) 268px, (min-width: 1024px) calc(25vw - 28px), (min-width: 600px) calc(33.3vw - 32px), calc(50vw - 28px)',
 } = Astro.props;
 const Tag = link ? 'a' : 'article';
 const priceText =
@@ -60,7 +63,7 @@ const priceText =
         alt={alt}
         formats={['avif', 'webp']}
         widths={[320, 480, 640, 800].filter((width) => width <= image.width)}
-        sizes="(min-width: 1024px) 265px, (min-width: 600px) 33vw, 50vw"
+        sizes={sizes}
         loading="lazy"
       />
     ) : (

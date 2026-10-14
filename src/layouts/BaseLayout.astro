@@ -47,13 +47,18 @@ const ogImage = new URL('/img/og.jpg', site).href;
     {isPreview && <meta name="robots" content="noindex, nofollow" />}
     {canonical && <link rel="canonical" href={canonical} />}
     {alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
-    <link
-      rel="preload"
-      href="/fonts/fraunces.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
+    {/* Both weights are above the fold: the name in the header (600) and the H1 (700). */}
+    {
+      [600, 700].map((weight) => (
+        <link
+          rel="preload"
+          href={`/fonts/fraunces-${weight}.woff2`}
+          as="font"
+          type="font/woff2"
+          crossorigin="anonymous"
+        />
+      ))
+    }
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

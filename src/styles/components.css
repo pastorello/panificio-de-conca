@@ -24,6 +24,10 @@ body {
   line-height: var(--leading-body);
   hyphens: auto;
   -webkit-hyphens: auto;
+  /* Words of 6+ letters only, at least 3 letters on each side: no «Promena-de», no «al-mond» */
+  hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
 }
 p {
   margin: 0 0 var(--space-4);
@@ -84,13 +88,19 @@ button {
   display: none !important;
 }
 
-/* Segnaposti [[...]] in anteprima (design/HANDOFF.md §4): paper-deep, corsivo, nessun colore in più */
+/* German headings and labels break only where the content puts a soft hyphen (U+00AD), at the
+   joints of compounds: «Ufer-promenade», not «Uferpro-menade». Running text keeps hyphens: auto. */
+:lang(de) :is(h1, h2, h3, .dc-card__name, .dc-timeline__year, .dc-chip) {
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+/* Segnaposti [[...]] in anteprima (design/HANDOFF.md §4): paper-deep, corsivo, nessun colore in più;
+   si sillabano come il resto del testo, come nei mockup */
 mark.todo {
   background: var(--paper-deep);
   color: inherit;
   font-style: italic;
-  hyphens: manual;
-  -webkit-hyphens: manual;
 }
 
 /* ---------- Tipografia ---------- */
@@ -302,6 +312,12 @@ mark.todo {
   border-color: var(--ink);
   color: var(--ink);
 }
+/* 16 px from 1024 px, as in desktop-prodotti.html (the phone board has 14) */
+@media (min-width: 1024px) {
+  .dc-cat {
+    padding: 0 var(--space-4);
+  }
+}
 /* L'header non è fisso: basta un po' d'aria sopra il titolo della sezione raggiunta */
 .dc-anchor {
   scroll-margin-top: var(--space-5);
@@ -398,8 +414,17 @@ mark.todo {
 .dc-link:hover {
   color: var(--ink);
 }
+/* brand-deep, not brand as in bundle.css: brand on paper is 4.4:1 (3.9:1 in the cards), below AA
+   for 18 and 15 px text, and DESIGN.md §6.1 keeps brand away from text at 18 px. */
 .dc-link:active {
-  color: var(--brand);
+  color: var(--brand-deep);
+}
+/* A link alone on its line that is still a tap target (the phone in the footer and in Note legali):
+   44 px tall (DESIGN.md §3, principle 3), where the mockups have a plain line of text */
+.dc-target {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
 }
 .dc-actions {
   display: flex;
@@ -427,6 +452,9 @@ mark.todo {
   font-weight: var(--weight-strong);
   text-decoration: none;
 }
+.dc-skip:hover {
+  color: var(--paper);
+}
 .dc-skip:focus {
   width: auto;
   height: auto;
@@ -445,7 +473,8 @@ mark.todo {
   display: flex;
   align-items: center;
   gap: var(--space-1);
-  min-height: var(--header-mobile);
+  /* 56 px with the bottom border, as in the mockups */
+  min-height: calc(var(--header-mobile) - var(--border-hairline));
   padding-inline: var(--gutter-mobile) var(--space-2);
 }
 .dc-header__brand {
@@ -461,7 +490,8 @@ mark.todo {
   font-weight: var(--weight-semibold);
   font-size: var(--text-brand);
   line-height: 1;
-  white-space: nowrap;
+  /* At 360 px the name does not fit beside the phone and «Menu»: it goes on two lines */
+  text-wrap: balance;
 }
 .dc-header__brand:hover {
   color: var(--ink);
@@ -568,8 +598,10 @@ mark.todo {
     padding-inline: var(--gutter-tablet);
   }
   .dc-header__brand {
+    flex: none;
     margin-right: 0;
     font-size: var(--text-brand-lg);
+    white-space: nowrap;
   }
   .dc-header__logo {
     width: var(--logo-header-desktop);
@@ -593,8 +625,10 @@ mark.todo {
   .dc-header__lang .dc-lang {
     gap: 0;
   }
+  /* The codes sit 32 px apart as in bundle.css, but each one answers to a 44 px target
+     (DESIGN.md §3, principle 3): the extra width overlaps the separators, not the next code. */
   .dc-header__lang .dc-lang a {
-    min-width: var(--lang-min-desktop);
+    margin-inline: calc((var(--lang-min-desktop) - var(--target)) / 2);
     padding: 0 var(--space-hair);
   }
   .dc-header__lang .dc-lang__sep {
@@ -657,6 +691,10 @@ body:has(.dc-navsheet[open]) {
 }
 .dc-navsheet__list a:hover {
   background: var(--paper-deep);
+}
+/* The entries span the whole sheet, which would cut the sides of a ring drawn outside */
+.dc-navsheet__list a:focus-visible {
+  outline-offset: calc(-1 * var(--focus-ring));
 }
 .dc-navsheet__list a[aria-current='page'] {
   padding-left: calc(var(--gutter-mobile) + var(--space-4) + var(--space-2));
@@ -810,6 +848,11 @@ body {
   }
   .dc-ctabar {
     display: none;
+  }
+  /* Browsers leave backgrounds out of print: without its red the white label would vanish. */
+  .dc-btn--primary {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 
@@ -1335,6 +1378,7 @@ a.dc-card {
   display: inline-flex;
   align-items: center;
   min-height: var(--target);
+  min-width: var(--target);
   text-decoration: none;
 }
 .dc-footer__nav a:hover {

@@ -102,10 +102,19 @@
   --bp-desktop: 1024px;
 }
 
+/* Solo i pesi 600 e 700, statici (design/HANDOFF.md §7.3): 17 KB l'uno invece dei 59 del variabile,
+   che rallentava l'LCP. Generati da `npm run font:subset`, opsz fisso a 28 e 36. */
 @font-face {
   font-family: "Fraunces";
-  src: url("/fonts/fraunces.woff2") format("woff2");
-  font-weight: 500 800;
+  src: url("/fonts/fraunces-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-700.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -146,7 +155,7 @@
   --logo-header: 32px;
   --logo-header-desktop: 40px;
   --logo-footer: 96px;
-  --lang-min-desktop: 32px; /* codici IT/EN/DE nell'header desktop */
+  --lang-min-desktop: 32px; /* passo dei codici IT/EN/DE nell'header desktop (bersaglio: --target) */
   --navsheet-width: 390px;
   --navsheet-row: 56px;
   --ctabar-pad-top: 6px;
