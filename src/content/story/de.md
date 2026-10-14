@@ -1,6 +1,6 @@
 ---
 _review: 'Aus dem Brief §8.4 übernommen; der Platzhalter „[[Foto der Urkunde]]“ des Briefs ist die Bildunterschrift von Foto 22, wie im Mockup. Nicht im Brief: Alt-Texte und Bildunterschriften sowie die Beschriftung „Quellen“ (der „Quellenkasten“ des Briefs). Vorschlag vom 14. Oktober 2026, muttersprachlich prüfen lassen. Für das Familienfoto ist die Einwilligung nötig (Brief §10).'
-title: 'Hundert Jahre Brot an der Uferpromenade'
+title: "Hundert Jahre Brot an der Ufer\u00adpromenade"
 subtitle: 'Seit dem 4. April 1922 hat die Bäckerei ihre Adresse nie gewechselt.'
 items:
   - year: '1922'
@@ -9,7 +9,7 @@ items:
     alt: 'Historisches Schwarzweißfoto: das Plakat „Panificio De Conca“ mit drei Porträts'
     caption: 'Das Plakat „Panificio De Conca“ mit den drei Porträts, [[JAHR UND NAMEN]]'
     vintage: true
-  - year: 'Nachkriegszeit'
+  - year: "Nach\u00adkriegszeit"
     text: 'Nach der kurzen Unterbrechung durch den Krieg öffnet die Bäckerei wieder. In den ersten Nachkriegsjahren gibt es Brot auch für die, die es brauchen, darunter die in der Kaserne Cosenz untergebrachten Evakuierten.'
     image: '../../assets/photos/epoca-fornai-in-laboratorio-bn.jpg'
     alt: 'Historisches Schwarzweißfoto: die Bäcker bei der Arbeit in der Backstube'

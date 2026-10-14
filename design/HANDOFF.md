@@ -135,6 +135,19 @@ Decisioni confermate durante la build (14 ottobre 2026, pagine):
 | Brief §10: prezzi indicativi da raccogliere (pizzetta, pane al chilo, ciambelline, tozzetti, cornetto) | Nessun prezzo né segnaposto nelle card finché non arrivano; il campo `price` c'è | Il brief §8.6 non li mette nelle schede; DESIGN.md §6.5: prezzo solo se nel contenuto |
 | Testi assenti dal brief | Alt e didascalie di tutte le foto (l'italiano dai mockup); nomi dei prodotti e titoli delle categorie in inglese e tedesco, «Categorie»; H1 di Prodotti in inglese e tedesco dai meta title; titoli delle sezioni di Contatti in inglese e tedesco, «Come arrivare», «E-mail»; «Fonti»; link della 404 (dal mockup); etichette dei dati societari, «Informativa privacy» e Note legali intere in inglese e tedesco | Proposti e accettati; da far rileggere a madrelingua (brief §8 e §2.3). Ogni file di contenuto li elenca nel campo `_review` |
 
+Decisioni confermate durante la build (14 ottobre 2026, verifica):
+
+| Nei mockup o nel brief | Nel sito | Perché |
+| --- | --- | --- |
+| Riquadri delle foto mancanti «Foto 5 — …» senza parentesi; didascalia della foto 1 in Dove siamo in tondo | «[[Foto 5 — …]]» con `<mark>`, in corsivo | Sono segnaposti: una build live non può pubblicarli (`Figure.astro`) |
+| Footer: «[[Instagram, quando creato]]» | «[[URL Instagram quando creato]]», uguale nelle tre lingue | Valore di `business.json`, dal `sameAs` del brief §6 |
+| Footer tedesco: «04024 Gaeta (LT), Italien» | Senza «Italien», come in italiano e inglese | L'indirizzo del footer viene da `business.json`, uguale nelle tre lingue |
+| Anfahrt: «10 km» | Può andare a capo tra numero e unità («10 / km.») | Testo del brief invariato |
+| Segnaposti su fondo `paper-deep` (card, riquadri, footer) | Il `<mark>` non si distingue dal fondo, resta il corsivo | È un segnaposto, sparisce con il dato vero |
+| `nav.home` tedesco «Start» (brief §8.1) | «Startseite» | Lighthouse considera «Start» un testo di link generico: SEO 89 sulle pagine tedesche |
+| Composti tedeschi spezzati dalla sillabazione automatica nei titoli e nelle etichette («Uferpro-menade», «Promena-de», «Kastenku-chen», «VORBESTEL-LUNG») | Trattini morbidi (U+00AD, `­`) ai giunti nei file di contenuto («Ufer-promenade»); i titoli e le etichette tedesche vanno a capo solo lì; nel testo corrente sillabazione automatica con almeno 3 lettere per parte | Nessuna parola cambia; `npm run test:e2e` elenca le parole spezzate e fallisce se qualcosa sborda |
+| OpenNow: stato del mockup già al primo disegno | Con JavaScript la riga statica della settimana viene sostituita dopo il primo disegno: piccolo spostamento (CLS 0,006–0,057) | Sotto la soglia di 0,1; nessun punto perso in Lighthouse |
+
 ## 6. Foto usate nei mockup
 
 Tutte in `mockups/html/assets/`, bassa risoluzione (800 × 600 le card, 780 × 520 e 960 × 720 le hero, 900 × 600 le foto d'epoca). Nome → soggetto → numero nella lista foto del brief §9:

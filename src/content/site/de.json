@@ -1,7 +1,7 @@
 {
-  "_review": "Aus dem Brief §8.1–8.3 übernommen. Nicht im Brief: cta.day_before (Zeile der CtaBar, aus den Mockups und der CtaBar-Komponente), die Schlüssel unter ui, die Meta-Angaben von Impressum und 404 und die Schlüssel unter hours außer open_today, closed_today, closed_sunday und special; Übersetzungen vom 13. Oktober 2026, mit den übrigen Texten muttersprachlich prüfen lassen (Brief §8).",
+  "_review": "Aus dem Brief §8.1–8.3 übernommen. Nicht im Brief: cta.day_before (Zeile der CtaBar, aus den Mockups und der CtaBar-Komponente), die Schlüssel unter ui, die Meta-Angaben von Impressum und 404 und die Schlüssel unter hours außer open_today, closed_today, closed_sunday und special; Übersetzungen vom 13. Oktober 2026, mit den übrigen Texten muttersprachlich prüfen lassen (Brief §8). Abweichend vom Brief: nav.home „Startseite“ statt „Start“ (Lighthouse wertet „Start“ als nichtssagenden Linktext), bestätigt am 14. Oktober 2026.",
   "nav": {
-    "home": "Start",
+    "home": "Startseite",
     "story": "Geschichte",
     "tiella": "Die Tiella",
     "products": "Brot & Gebäck",
@@ -46,10 +46,10 @@
     "switch": "Sprache"
   },
   "season": {
-    "christmas": "Nur zu Weihnachten",
+    "christmas": "Nur zu Weih\u00adnachten",
     "easter": "Nur zu Ostern",
     "carnival": "Karneval und Josefstag",
-    "order": "Auf Vorbestellung"
+    "order": "Auf Vor\u00adbestellung"
   },
   "price": {
     "from": "ab"
