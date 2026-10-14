@@ -147,6 +147,14 @@ Decisioni confermate durante la build (14 ottobre 2026, verifica):
 | `nav.home` tedesco «Start» (brief §8.1) | «Startseite» | Lighthouse considera «Start» un testo di link generico: SEO 89 sulle pagine tedesche |
 | Composti tedeschi spezzati dalla sillabazione automatica nei titoli e nelle etichette («Uferpro-menade», «Promena-de», «Kastenku-chen», «VORBESTEL-LUNG») | Trattini morbidi (U+00AD, `­`) ai giunti nei file di contenuto («Ufer-promenade»); i titoli e le etichette tedesche vanno a capo solo lì; nel testo corrente sillabazione automatica con almeno 3 lettere per parte | Nessuna parola cambia; `npm run test:e2e` elenca le parole spezzate e fallisce se qualcosa sborda |
 | OpenNow: stato del mockup già al primo disegno | Con JavaScript la riga statica della settimana viene sostituita dopo il primo disegno: piccolo spostamento (CLS 0,006–0,057) | Sotto la soglia di 0,1; nessun punto perso in Lighthouse |
+| Fraunces variabile, assi `opsz` 9–144 e `wght` 500–800 (DESIGN.md §6.2) | Due file statici, 600 con `opsz` 28 e 700 con `opsz` 36, 34 KB in tutto (`npm run font:subset`). A 390 px i titoli vanno a capo come prima; su desktop l'H1 è circa il 3 % più largo, e l'H1 inglese di Ordini va su due righe a 1024–1440 px | §7.3 qui sotto: il variabile da 59 KB rallentava l'LCP (fino a 0,8 s su Prodotti) |
+| Link con freccia, stato attivo in `brand` (`bundle.css`) | `brand-deep` | DESIGN.md §6.1 esclude `brand` dal testo a 18 px; 4,4:1 su `paper` e 3,9:1 nelle card, sotto AA |
+| Telefono nel footer e nelle Note legali come riga di testo semplice (18–21 px di altezza) | Bersaglio alto 44 px: la colonna centrale del footer scende di circa 21 px | DESIGN.md §3, principio 3: bersagli ≥ 44 × 44 px |
+| Codici IT · EN · DE dell'header desktop larghi 32 px (`bundle.css`) | Stesso passo visivo di 32 px, ma ogni codice risponde a un bersaglio di 44 px | Idem; l'header italiano resta su una riga a 1440 px |
+| Nome «Panificio De Conca» nell'header sempre su una riga | A 360 px va su due righe | Sbordava sull'icona del telefono |
+| Stampa: CtaBar nascosta (DESIGN.md §5.1) | In più, il bottone primario si stampa con il fondo rosso (`print-color-adjust: exact`) | Senza fondo il testo bianco spariva sulla carta (A4 orizzontale, dove compare la riga CTA) |
+| Tabella orari: «oggi» accanto al nome del giorno | Sotto i 390 px «oggi» va sotto il nome del giorno | Con un font di sistema largo «Wednesday TODAY» portava la tabella oltre i 360 px |
+| Titoli inglesi: sillabazione automatica (es. «bak-ery» nell'H1 della Home a 1440 px) | Lasciata com'è | I trattini morbidi valgono per i composti tedeschi |
 
 ## 6. Foto usate nei mockup
 
