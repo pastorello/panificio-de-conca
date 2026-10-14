@@ -18,7 +18,8 @@
     "compare": "node scripts/compare.mjs",
     "font:subset": "node scripts/subset-font.mjs",
     "test:e2e": "node scripts/e2e.mjs",
-    "lighthouse": "node scripts/lighthouse.mjs"
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "check:site": "node scripts/check-site.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "~3.7.0",

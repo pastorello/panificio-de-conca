@@ -16,7 +16,8 @@ npm run preview  # anteprima della build
 npm run check    # astro check, ESLint, Prettier, token
 npm run test     # test degli orari e delle due fasi (build preview e live in node_modules/.cache/phases/), verifiche su dist/
 npm run test:e2e # su dist/: comportamento, stringhe lunghe a 360–1440 px e zoom 200 %, axe e contrasto degli stati, tastiera e bersagli, stampa (--only=behaviour,layout,a11y,keyboard,print)
-npm run lighthouse # Lighthouse mobile sulle 25 pagine con le soglie di lighthouserc.json; tabella in .lighthouseci/summary.md (-- /storia/ per una pagina, --runs=3)
+npm run lighthouse # Lighthouse mobile sulle 25 pagine con le soglie di lighthouserc.json; tabella in .lighthouseci/summary.md (-- /storia/ per una pagina, --runs=3, --site=<URL pubblicato>, --4g)
+npm run check:site -- <URL pubblicato> # via HTTP: 200, canonical e hreflang sull'indirizzo pubblicato, noindex e robots.txt della fase (--live), 404, intestazioni
 npm run shots    # screenshot a 390 × 844 e 1440 × 900 in .shots/ (--menu, --nojs, --at=2026-10-13T10:00)
 npm run compare  # mockup e pagina affiancati, a fette, in .shots/compare/ (stesso browser, ora dei mockup)
 npm run font:subset # rigenera public/fonts/fraunces-600.woff2 e -700.woff2 da design/fonts/
