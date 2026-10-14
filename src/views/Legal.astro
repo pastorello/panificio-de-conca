@@ -35,7 +35,7 @@ const { address } = business;
     <dt>{company.rea}</dt>
     <dd>{business.rea}</dd>
     <dt>{company.phone}</dt>
-    <dd><a href={telHref(business)}>{displayPhone(business, locale)}</a></dd>
+    <dd><a class="dc-target" href={telHref(business)}>{displayPhone(business, locale)}</a></dd>
     <dt>{company.email}</dt>
     <dd><Text value={business.pec} /></dd>
   </dl>

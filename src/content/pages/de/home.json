@@ -1,7 +1,7 @@
 {
   "_review": "Aus dem Brief §8.3 übernommen. Die Kartenzeilen sind die Punkte des Briefs nach dem Gedankenstrich, wie in den Mockups großgeschrieben. Nicht im Brief: Alt-Texte und Bildunterschrift (Vorschlag vom 14. Oktober 2026, muttersprachlich prüfen lassen), die Kartenbeschriftung „Die Tiella“ (nav.tiella).",
   "page": "home",
-  "title": "Die Bäckerei an der Uferpromenade von Gaeta, seit 1922",
+  "title": "Die Bäckerei an der Ufer\u00adpromenade von Gaeta, seit 1922",
   "subtitle": "Brot, Tiella di Gaeta, Pizzette und Festtagsgebäck. Drei Generationen, ein Ofen, derselbe Laden mit Blick aufs Meer.",
   "hero": {
     "image": "../../../assets/photos/banco-hero-mobile-3x2.jpg",
@@ -31,7 +31,7 @@
         "alt": "Rote Pizzette und Focaccine auf einem Tablett"
       },
       {
-        "name": "Weinkringel und Mandel-Tozzetti",
+        "name": "Wein\u00adkringel und Mandel-Tozzetti",
         "line": "Das Gebäck, das unsere Kunden nach dem Urlaub mit nach Hause nehmen.",
         "image": "../../../assets/photos/ciambelline-al-vino.jpg",
         "alt": "Weinkringel"
@@ -43,7 +43,7 @@
         "alt": "Croissants und Focaccia am Morgen in der Theke"
       },
       {
-        "name": "Festtagsgebäck",
+        "name": "Festtags\u00adgebäck",
         "line": "Zeppole zu Karneval, Pigna zu Ostern, Sciuscelle und Mostaccioli zu Weihnachten.",
         "image": "../../../assets/photos/dolci-di-natale.jpg",
         "alt": "Verpackte Körbe mit Weihnachtsgebäck"

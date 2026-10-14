@@ -63,6 +63,7 @@ const { hero, counter, story, order } = page;
           alt={item.alt}
           placeholder={item.placeholder}
           link={item.link && { href: pathFor(item.link, locale), label: t.nav[item.link] }}
+          sizes="(min-width: 1184px) 363px, (min-width: 600px) calc(33.3vw - 32px), calc(50vw - 28px)"
         />
       ))
     }
@@ -84,7 +85,7 @@ const { hero, counter, story, order } = page;
       alt={story.photo.alt}
       placeholder={story.photo.placeholder}
       caption={story.photo.caption}
-      sizes="(min-width: 1184px) 560px, (min-width: 1024px) 50vw, 100vw"
+      sizes="(min-width: 1184px) 560px, (min-width: 1024px) 47vw, (min-width: 600px) calc(100vw - 64px), calc(100vw - 40px)"
       widths={[480, 720, 900]}
     />
   </div>

@@ -42,7 +42,7 @@ const { address, social } = business;
         <Text value={address.number} />, {address.postalCode}
         {address.locality} ({address.region})
       </p>
-      <p><a href={telHref(business)}>{displayPhone(business, locale)}</a></p>
+      <p><a class="dc-target" href={telHref(business)}>{displayPhone(business, locale)}</a></p>
       <p>
         <a href={social.facebook}>Facebook</a> · {
           hasPlaceholder(social.instagram) ? (

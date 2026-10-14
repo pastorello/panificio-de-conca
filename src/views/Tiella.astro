@@ -34,7 +34,7 @@ const { photo, what, fillings, when, takeaway } = page;
       alt={photo.alt}
       placeholder={photo.placeholder}
       caption={photo.caption}
-      sizes="(min-width: 760px) 720px, calc(100vw - 40px)"
+      sizes="(min-width: 784px) 720px, (min-width: 600px) calc(100vw - 64px), calc(100vw - 40px)"
       widths={[480, 720, 780]}
       priority
     />
@@ -55,6 +55,7 @@ const { photo, what, fillings, when, takeaway } = page;
           image={item.image}
           alt={item.alt}
           placeholder={item.placeholder}
+          sizes="(min-width: 784px) 352px, (min-width: 600px) calc(50vw - 40px), calc(50vw - 28px)"
         />
       ))
     }

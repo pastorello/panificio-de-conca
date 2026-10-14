@@ -10,7 +10,8 @@ import { join, relative, sep } from 'node:path';
 import { loadEnv } from 'vite';
 import { locales, pathFor, routeKeys, xDefaultLocale } from '../src/routes.ts';
 
-const DIST = 'dist';
+// DIST_DIR: another output folder, for tests/phases.test.mjs.
+const DIST = process.env.DIST_DIR || 'dist';
 const env = { ...loadEnv('production', process.cwd(), ''), ...process.env };
 const phase = env.SITE_PHASE || 'preview';
 const site = env.SITE_URL || 'http://localhost:4321';

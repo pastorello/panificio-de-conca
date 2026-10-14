@@ -1,5 +1,5 @@
 ---
-name: 'Weinkringel'
+name: "Wein\u00adkringel"
 line: 'Weinkringel: das Gebäck zum Mitnehmen, wochenlang haltbar.'
 category: 'biscotti'
 order: 12

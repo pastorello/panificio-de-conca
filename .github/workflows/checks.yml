@@ -1,0 +1,69 @@
+# Verifiche di CLAUDE.md su ogni pull request e su main: astro check, ESLint, Prettier e token;
+# build in anteprima con le verifiche su dist/; test (orari e fasi di pubblicazione); prove nel
+# browser (comportamento, stringhe lunghe, accessibilità, tastiera, stampa); Lighthouse mobile
+# su tutte le 25 pagine con la soglia 95 di lighthouserc.json.
+name: Verifiche
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SITE_PHASE: preview
+
+jobs:
+  checks:
+    name: Check, build, test, e2e
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run check
+      - run: npm run build
+      - run: npm test
+      - run: npm run test:e2e
+      - name: PDF di stampa
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: stampa
+          path: .shots/print/
+          if-no-files-found: ignore
+
+  lighthouse:
+    name: Lighthouse mobile (soglia 95)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # The same Chromium as the local runs (scripts/lighthouse.mjs uses Playwright's).
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      # One run per page: the scores sit at 99–100, far from the threshold, and a run takes ~10 s.
+      - run: npm run lighthouse
+      - name: Rapporti Lighthouse
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: lighthouse
+          path: .lighthouseci/
+          if-no-files-found: ignore
