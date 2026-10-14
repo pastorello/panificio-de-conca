@@ -8,7 +8,10 @@
 //   npm run lighthouse -- --site=https://panificio-de-conca.luca-6ad.workers.dev/
 //                                         the published site instead of dist/ (DESIGN.md §9.2, Fase 5)
 //   npm run lighthouse -- --4g            a 4G network (60 ms, 9 Mbps, CPU ×4) instead of Lighthouse's
-//                                         «slow 4G» (150 ms, 1.6 Mbps): the brief asks LCP < 1.5 s on 4G
+//                                         «slow 4G» (150 ms, 1.6 Mbps): the brief's «LCP < 1.5 s on 4G»
+//                                         is measured on this profile, where it is an error; on slow 4G
+//                                         it is a warning (design/HANDOFF.md §5). Reports and summary
+//                                         go to .lighthouseci/reports-4g/ and summary-4g.md
 // Prints the four scores, LCP, CLS, TBT and transfer size per page, then the audits that cost points;
 // writes .lighthouseci/summary.md (also the job summary in GitHub Actions) and HTML reports in
 // .lighthouseci/reports/.
@@ -55,7 +58,11 @@ const config = JSON.parse(await readFile(BASE_CONFIG, 'utf8'));
 if (site) delete config.ci.collect.staticDistDir;
 const settings = (config.ci.collect.settings ??= {});
 if (preview) settings.skipAudits = ['is-crawlable'];
-if (fast4g) settings.throttling = { rttMs: 60, throughputKbps: 9000, cpuSlowdownMultiplier: 4 };
+if (fast4g) {
+  settings.throttling = { rttMs: 60, throughputKbps: 9000, cpuSlowdownMultiplier: 4 };
+  config.ci.assert.assertMatrix[0].assertions['largest-contentful-paint'][0] = 'error';
+  config.ci.upload.outputDir = join(OUT, 'reports-4g');
+}
 // GitHub's Ubuntu runners do not allow Chrome's sandbox (as Playwright does by default).
 if (process.env.CI) settings.chromeFlags = '--no-sandbox';
 await mkdir(dirname(CONFIG), { recursive: true });
@@ -72,7 +79,9 @@ const asserted = lhci('assert');
 lhci('upload');
 
 // Summary from the representative (median) run of each page.
-const manifest = JSON.parse(await readFile(join(OUT, 'reports', 'manifest.json'), 'utf8'));
+const manifest = JSON.parse(
+  await readFile(join(config.ci.upload.outputDir, 'manifest.json'), 'utf8'),
+);
 const rows = [];
 const losses = new Map();
 for (const entry of manifest.filter((item) => item.isRepresentativeRun)) {
@@ -137,7 +146,7 @@ lines.push(
 );
 
 const summary = lines.join('\n') + '\n';
-await writeFile(join(OUT, 'summary.md'), summary);
+await writeFile(join(OUT, fast4g ? 'summary-4g.md' : 'summary.md'), summary);
 if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, summary);
 console.log('\n' + summary);
 process.exit(asserted);

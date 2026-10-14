@@ -28,6 +28,14 @@ export const allPaths = [
 /** Language of a site path, from its prefix (the 404 is Italian first). */
 export const localeOf = (path) => locales.find((code) => path.startsWith(`/${code}/`)) ?? 'it';
 
+/** "2026-10-13T10:00" read as Rome time (summer or winter offset of that date). */
+export function romeInstant(local) {
+  const guess = new Date(`${local}Z`);
+  const rome = new Date(guess.toLocaleString('en-US', { timeZone: 'Europe/Rome' }));
+  const utc = new Date(guess.toLocaleString('en-US', { timeZone: 'UTC' }));
+  return new Date(guess.getTime() - (rome.getTime() - utc.getTime()));
+}
+
 /** Serves a built site on 127.0.0.1; unknown paths get the 404 page with status 404. */
 export async function serveDist(dir = 'dist') {
   const server = createServer(async (req, res) => {

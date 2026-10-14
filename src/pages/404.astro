@@ -1,9 +1,12 @@
 ---
 // Trilingual 404 (BRIEF.md §4, DESIGN.md §5.9): one block per language with the link to that
 // language's home, then the phone number. One H1 (Italian, the language of the page); the English
-// and German blocks have an H2 with their own lang. No VisitBlock; the CtaBar stays.
+// and German blocks have an H2 with their own lang. No VisitBlock; the CtaBar stays, and from
+// 1024 px, where it is gone, the CTA row follows the phone number (DESIGN.md §3 principle 1,
+// design/HANDOFF.md §5).
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import CtaBar from '../components/CtaBar.astro';
 import PhoneNumber from '../components/PhoneNumber.astro';
 import Text from '../components/Text.astro';
 import { locales, pathFor } from '../routes';
@@ -40,6 +43,7 @@ const description = strings.map((t) => t.meta.notFound.description).join(' ');
     <div class="block">
       {/* International format, as in the mockup: the page speaks to all three languages. */}
       <PhoneNumber locale="en" business={business} />
+      <CtaBar t={strings[0]} business={business} variant="row" intro />
     </div>
   </div>
 </BaseLayout>

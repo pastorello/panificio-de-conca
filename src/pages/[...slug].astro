@@ -40,7 +40,6 @@ const view = { locale, t, business };
   title={meta.title}
   description={meta.description}
   visit={visit}
-  flush={routeKey === 'home'}
   jsonLd={withJsonLd ? bakeryJsonLd(business, site) : undefined}
 >
   {routeKey === 'home' && <Home {...view} />}

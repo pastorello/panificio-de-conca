@@ -156,6 +156,17 @@ Decisioni confermate durante la build (14 ottobre 2026, verifica):
 | Tabella orari: «oggi» accanto al nome del giorno | Sotto i 390 px «oggi» va sotto il nome del giorno | Con un font di sistema largo «Wednesday TODAY» portava la tabella oltre i 360 px |
 | Titoli inglesi: sillabazione automatica (es. «bak-ery» nell'H1 della Home a 1440 px) | Lasciata com'è | I trattini morbidi valgono per i composti tedeschi |
 
+Decisioni confermate durante la build (14 ottobre 2026, principi di `DESIGN.md` §3 e checklist §10, misurati da `npm run test:e2e -- --only=principles`):
+
+| Nei mockup o nel design | Nel sito | Perché |
+| --- | --- | --- |
+| Home sotto 1024 px: foto 3:2 sopra l'H1, subito sotto l'header (DESIGN.md §5.2, §3 qui sopra) | H1, sottotitolo e OpenNow, poi la foto a tutta larghezza; il desktop non cambia | A 390 × 660 la CtaBar copriva OpenNow (16 px in italiano, 4 in inglese, 83 in tedesco, dove copriva anche il sottotitolo): DESIGN.md §3, principio 2. Ora restano 173–252 px di margine con JavaScript (117–224 senza) e nella prima schermata si vedono 157–236 dei 260 px della foto |
+| Note legali e 404 senza riga CTA (DESIGN.md §5.4, §5.9): da 1024 px, dove la CtaBar non c'è, restava solo il telefono dell'header | Da 1024 px la riga CTA («Chiama e prenota», «Indicazioni», «Prenota il giorno prima e dicci a che ora passi»): sotto l'H1 in Note legali, sotto il numero di telefono nella 404 | DESIGN.md §3, principio 1: bottone e frase della prenotazione su ogni pagina, senza scorrere |
+| Dove siamo: OpenNow sopra la piega (DESIGN.md §3, principio 2) | Senza JavaScript la riga statica con gli orari della settimana va su tre righe e finisce 14–26 px sotto la CtaBar; con JavaScript sta sopra | Accettato: il caso senza JavaScript è raro; il test lo segnala senza fallire |
+| Nessun bersaglio essenziale nel terzo alto dello schermo oltre a logo, telefono e Menu (DESIGN.md §3, principio 3; §10.1) | Nella 404 i link alle tre home stanno nel terzo alto | Sono il contenuto della pagina; la chiamata resta nella CtaBar |
+| Rosso solo nei bottoni primari, nei link, nei punti della timeline e negli H1 di Home (DESIGN.md §10.2) | Anche il bordo sinistro dell'OrderRule (`brand`) e gli anni della timeline (`brand-deep`) | Li prevedono DESIGN.md §5.2 («bordo sinistro rosso») e §3 qui sopra (anni in `brand-deep`) |
+| «LCP < 1,5 s su 4G» (brief §2.6, DESIGN.md §3, principio 9) | Misurato con il profilo 4G di `npm run lighthouse -- --4g` (60 ms, 9 Mbps, CPU ×4), dove è un errore; con il 4G lento di Lighthouse (150 ms, 1,6 Mbps) è un avviso. Sul sito pubblicato le Home stanno a 0,61–0,64 s con il 4G, a 1,81–1,87 s con il 4G lento | Il 4G lento di Lighthouse rappresenta la parte bassa delle reti mobili; la soglia 95 dei punteggi resta misurata con quel profilo |
+
 ## 6. Foto usate nei mockup
 
 Tutte in `mockups/html/assets/`, bassa risoluzione (800 × 600 le card, 780 × 520 e 960 × 720 le hero, 900 × 600 le foto d'epoca). Nome → soggetto → numero nella lista foto del brief §9:

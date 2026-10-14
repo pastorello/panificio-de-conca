@@ -236,15 +236,6 @@ mark.todo {
     padding: var(--space-8) 0 var(--space-9);
   }
 }
-/* Home sotto 1024 px: la foto sta subito sotto l'header, senza spazio */
-.dc-page--flush {
-  padding-top: 0;
-}
-@media (min-width: 1024px) {
-  .dc-page--flush {
-    padding-top: var(--space-8);
-  }
-}
 
 /* Pagine di contenuto (DESIGN.md §5.4): una colonna di 720 px centrata, con il gutter sotto i 760 px */
 .dc-col {
