@@ -7,6 +7,8 @@
 //   npm run shots -- --nojs /         with JavaScript disabled, to check the fallbacks (-nojs.png)
 //   npm run shots -- --at=2026-10-13T10:00 /   the clock fixed at that time in Rome, so that OpenNow
 //                                     and the «oggi» row show the state of the mockups (Tuesday, open)
+//   npm run shots -- --fold /         only the first screen at 390 × 660, the visible height of an
+//                                     iPhone with Safari's bars (DESIGN.md §3 principle 2), -fold.png
 // Elements with data-force="hover|focus-visible|active" get that pseudo-class forced through the
 // Chrome DevTools Protocol, so the gallery shows the real :hover, :focus-visible and :active.
 // At 390 px it also saves the first screen only (-screen.png), with the fixed CtaBar in place.
@@ -15,13 +17,17 @@ import { readFile, mkdir, stat } from 'node:fs/promises';
 import { extname, join } from 'node:path';
 import { chromium } from 'playwright';
 import { locales, pathFor, routeKeys } from '../src/routes.ts';
+import { romeInstant } from './lib/dist.mjs';
 
 const DIST = 'dist';
 const OUT = '.shots';
-const VIEWPORTS = [
-  { name: '390', width: 390, height: 844 },
-  { name: '1440', width: 1440, height: 900 },
-];
+const fold = process.argv.includes('--fold');
+const VIEWPORTS = fold
+  ? [{ name: '390', width: 390, height: 660 }]
+  : [
+      { name: '390', width: 390, height: 844 },
+      { name: '1440', width: 1440, height: 900 },
+    ];
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css',
@@ -40,13 +46,6 @@ const args = process.argv.slice(2);
 const withMenu = args.includes('--menu');
 const noJs = args.includes('--nojs');
 const at = args.find((arg) => arg.startsWith('--at='))?.slice(5);
-/** "2026-10-13T10:00" read as Rome time (summer or winter offset of that date). */
-function romeInstant(local) {
-  const guess = new Date(`${local}Z`);
-  const rome = new Date(guess.toLocaleString('en-US', { timeZone: 'Europe/Rome' }));
-  const utc = new Date(guess.toLocaleString('en-US', { timeZone: 'UTC' }));
-  return new Date(guess.getTime() - (rome.getTime() - utc.getTime()));
-}
 const requested = args.filter((arg) => arg.startsWith('/'));
 const paths = requested.length
   ? requested
@@ -117,9 +116,15 @@ try {
     for (const path of paths) {
       await page.goto(origin + path, { waitUntil: 'networkidle' });
       if (!noJs) await page.evaluate(() => document.fonts.ready);
+      const suffix = noJs ? '-nojs' : '';
+      if (fold) {
+        const file = join(OUT, `${slug(path)}-${viewport.name}${suffix}-fold.png`);
+        await page.screenshot({ path: file });
+        console.log(file);
+        continue;
+      }
       await loadLazyImages(page);
       await forceStates(page);
-      const suffix = noJs ? '-nojs' : '';
       const file = join(OUT, `${slug(path)}-${viewport.name}${suffix}.png`);
       await page.screenshot({ path: file, fullPage: true });
       console.log(file);

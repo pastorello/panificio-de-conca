@@ -7,6 +7,8 @@
 //   a11y       axe WCAG 2.1 AA and contrast of hover/active states (scripts/e2e/a11y.mjs)
 //   keyboard   tab order = visual order, visible focus ring, targets ≥ 44 px (scripts/e2e/keyboard.mjs)
 //   print      Contatti and Dove siamo printed without the CtaBar (scripts/e2e/print.mjs)
+//   principles DESIGN.md §3 and §10.1: fold at 390 × 660, booking rule, one hand, no banner, form or
+//              carousel, counts, language switch (scripts/e2e/principles.mjs)
 //   npm run test:e2e                     every group
 //   npm run test:e2e -- --only=layout,a11y
 import { stat } from 'node:fs/promises';
@@ -15,6 +17,7 @@ import { serveDist } from './lib/dist.mjs';
 import * as a11y from './e2e/a11y.mjs';
 import * as keyboard from './e2e/keyboard.mjs';
 import * as layout from './e2e/layout.mjs';
+import * as principles from './e2e/principles.mjs';
 import * as print from './e2e/print.mjs';
 
 const only = process.argv
@@ -184,6 +187,7 @@ const groups = {
   a11y: a11y.run,
   keyboard: keyboard.run,
   print: print.run,
+  principles: principles.run,
 };
 try {
   for (const [name, run] of Object.entries(groups)) {

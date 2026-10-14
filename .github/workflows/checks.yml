@@ -1,7 +1,8 @@
 # Verifiche di CLAUDE.md su ogni pull request e su main: astro check, ESLint, Prettier e token;
 # build in anteprima con le verifiche su dist/; test (orari e fasi di pubblicazione); prove nel
-# browser (comportamento, stringhe lunghe, accessibilità, tastiera, stampa); Lighthouse mobile
-# su tutte le 25 pagine con la soglia 95 di lighthouserc.json.
+# browser (comportamento, stringhe lunghe, accessibilità, tastiera, stampa, principi di DESIGN.md
+# §3); Lighthouse mobile su tutte le 25 pagine con la soglia 95 di lighthouserc.json, poi con il
+# profilo 4G per l'LCP < 1,5 s del brief (design/HANDOFF.md §5).
 name: Verifiche
 
 on:
@@ -60,6 +61,9 @@ jobs:
       - run: npm run build
       # One run per page: the scores sit at 99–100, far from the threshold, and a run takes ~10 s.
       - run: npm run lighthouse
+      # LCP < 1.5 s on 4G (60 ms, 9 Mbps): an error here, a warning on Lighthouse's slow 4G above.
+      - run: npm run lighthouse -- --4g
+        if: success() || failure()
       - name: Rapporti Lighthouse
         if: always()
         uses: actions/upload-artifact@v7
