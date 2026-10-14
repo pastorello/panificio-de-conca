@@ -17,7 +17,7 @@
           }
         },
         {
-          "matchingUrlPattern": "^http://localhost:\\d+/(en/|de/)?$",
+          "matchingUrlPattern": "^https?://[^/]+/(en/|de/)?$",
           "assertions": {
             "total-byte-weight": ["error", { "maxNumericValue": 614400 }]
           }

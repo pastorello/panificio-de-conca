@@ -5,6 +5,10 @@
 //   npm run lighthouse                    every page
 //   npm run lighthouse -- /storia/ /de/   only these paths
 //   npm run lighthouse -- --runs=3        three runs per page, the median one is reported and asserted
+//   npm run lighthouse -- --site=https://panificio-de-conca.luca-6ad.workers.dev/
+//                                         the published site instead of dist/ (DESIGN.md §9.2, Fase 5)
+//   npm run lighthouse -- --4g            a 4G network (60 ms, 9 Mbps, CPU ×4) instead of Lighthouse's
+//                                         «slow 4G» (150 ms, 1.6 Mbps): the brief asks LCP < 1.5 s on 4G
 // Prints the four scores, LCP, CLS, TBT and transfer size per page, then the audits that cost points;
 // writes .lighthouseci/summary.md (also the job summary in GitHub Actions) and HTML reports in
 // .lighthouseci/reports/.
@@ -27,10 +31,14 @@ const CATEGORIES = ['performance', 'accessibility', 'best-practices', 'seo'];
 
 const args = process.argv.slice(2);
 const runs = Number(args.find((arg) => arg.startsWith('--runs='))?.slice(7) ?? 1);
+const site = args.find((arg) => arg.startsWith('--site='))?.slice(7);
+const fast4g = args.includes('--4g');
 const requested = args.filter((arg) => arg.startsWith('/'));
+// Cloudflare serves the 404 page at /404/ (/404.html redirects there).
+const notFound = site ? '/404/' : '/404.html';
 const paths = requested.length
   ? requested
-  : [...routeKeys.flatMap((key) => locales.map((locale) => pathFor(key, locale))), '/404.html'];
+  : [...routeKeys.flatMap((key) => locales.map((locale) => pathFor(key, locale))), notFound];
 
 function lhci(command, extra = []) {
   const result = spawnSync(process.execPath, [LHCI, command, `--config=${CONFIG}`, ...extra], {
@@ -39,12 +47,15 @@ function lhci(command, extra = []) {
   return result.status ?? 1;
 }
 
-const preview = /<meta name="robots" content="noindex/.test(
-  await readFile(join('dist', 'index.html'), 'utf8'),
-);
+const homeHtml = site
+  ? await (await fetch(new URL('/', site))).text()
+  : await readFile(join('dist', 'index.html'), 'utf8');
+const preview = /<meta name="robots" content="noindex/.test(homeHtml);
 const config = JSON.parse(await readFile(BASE_CONFIG, 'utf8'));
+if (site) delete config.ci.collect.staticDistDir;
 const settings = (config.ci.collect.settings ??= {});
 if (preview) settings.skipAudits = ['is-crawlable'];
+if (fast4g) settings.throttling = { rttMs: 60, throughputKbps: 9000, cpuSlowdownMultiplier: 4 };
 // GitHub's Ubuntu runners do not allow Chrome's sandbox (as Playwright does by default).
 if (process.env.CI) settings.chromeFlags = '--no-sandbox';
 await mkdir(dirname(CONFIG), { recursive: true });
@@ -52,7 +63,7 @@ await writeFile(CONFIG, JSON.stringify(config, null, 2));
 
 const chromePath = process.env.CHROME_PATH || chromium.executablePath();
 const collectArgs = [
-  ...paths.map((path) => `--url=${path}`),
+  ...paths.map((path) => `--url=${site ? new URL(path, site).href : path}`),
   `--numberOfRuns=${runs}`,
   `--chromePath=${chromePath}`,
 ];
@@ -93,7 +104,7 @@ rows.sort((a, b) => paths.indexOf(a.path) - paths.indexOf(b.path));
 const seconds = (ms) => (ms / 1000).toFixed(2).replace('.', ',') + ' s';
 const kb = (bytes) => Math.round(bytes / 1024) + ' KB';
 const lines = [
-  `### Lighthouse mobile · ${rows.length} pagine · ${runs} ${runs === 1 ? 'misura' : 'misure (mediana)'}`,
+  `### Lighthouse mobile · ${rows.length} pagine · ${runs} ${runs === 1 ? 'misura' : 'misure (mediana)'}${site ? ` · ${new URL(site).origin}` : ''} · ${fast4g ? '4G (60 ms, 9 Mbps)' : '4G lento (150 ms, 1,6 Mbps)'}`,
   '',
   ...(preview
     ? [

@@ -1172,6 +1172,9 @@ a.dc-card {
    font (Linux, some Android phones) made the table wider than a 360 px screen */
 @media (max-width: 389px) {
   .dc-hours__badge {
+    display: none;
+  }
+  .dc-hours__today .dc-hours__badge {
     display: block;
     margin-left: 0;
   }
@@ -1180,6 +1183,7 @@ a.dc-card {
 .dc-hours__today td {
   background: var(--paper-deep);
 }
+/* In every row, shown only in today's: the day column keeps its width when the script runs */
 .dc-hours__badge {
   margin-left: var(--space-2);
   font-size: var(--text-chip);
@@ -1187,6 +1191,10 @@ a.dc-card {
   letter-spacing: var(--tracking-chip);
   text-transform: uppercase;
   color: var(--ink-soft);
+  visibility: hidden;
+}
+.dc-hours__today .dc-hours__badge {
+  visibility: visible;
 }
 
 /* ---------- MapLinks ---------- */

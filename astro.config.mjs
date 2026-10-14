@@ -13,6 +13,13 @@ if (phase !== 'preview' && phase !== 'live') {
 if (phase === 'live' && !env.SITE_URL) {
   throw new Error('SITE_URL is required when SITE_PHASE=live');
 }
+// On Cloudflare Workers Builds (WORKERS_CI=1) a missing SITE_URL would publish canonical, hreflang,
+// Open Graph and JSON-LD pointing to localhost: the first preview did exactly that.
+if (env.WORKERS_CI && !env.SITE_URL) {
+  throw new Error(
+    'SITE_URL is required on Workers Builds: set it in Settings → Build → Build variables and secrets',
+  );
+}
 const site = env.SITE_URL || 'http://localhost:4321';
 
 export default defineConfig({
